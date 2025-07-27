@@ -78,7 +78,7 @@ export default function RootLayout({
         className={`${montserrat.variable} ${montserratArabic.variable} antialiased font-arabic`}
       >
         <Header />
-        {children}
+        <main className="">{children}</main>
         <Footer />
       </body>
     </html>
