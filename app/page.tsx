@@ -82,7 +82,7 @@ const Three = () => {
 
 const Four = () => {
   return (
-    <section className="relative w-full h-screen flex items-center justify-start overflow-hidden bg-[#8dc73f]">
+    <section className="relative w-full h-screen flex items-center justify-start overflow-hidden bg-[#967b60]">
       {/* Background Image */}
       <Image
         src="/bg-four.png"
@@ -114,7 +114,7 @@ const Four = () => {
 
 const Five = () => {
   return (
-    <section className="relative w-full h-screen flex items-center justify-start overflow-hidden bg-[#8dc73f]">
+    <section className="relative w-full h-screen flex items-center justify-start overflow-hidden bg-[#027dc3]">
       {/* Background Image */}
       <Image
         src="/bg-five.png"
