@@ -28,7 +28,7 @@ export default function Hero() {
         layout="fill"
         objectFit="cover"
         quality={90}
-        className="z-0 opacity-80 scale-x-[-1]"
+        className="z-0 scale-x-[-1]"
         priority
       />
       {/* Overlay */}
