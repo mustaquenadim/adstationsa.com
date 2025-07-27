@@ -2,7 +2,7 @@ import Image from "next/image";
 import { Spotlight } from "@/components/ui/spotlight";
 import { Button } from "@/components/ui/button";
 
-export default function Hero() {
+const Hero = () => {
   return (
     <section className="relative w-full h-screen flex items-center justify-start overflow-hidden bg-gray-900">
       {/* Spotlight */}
@@ -36,7 +36,7 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-20 text-left text-white px-8 max-w-2xl">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
+        <h1 className="text-4xl md:text-6xl font-medium mb-4 drop-shadow-lg">
           The first Saudi platform for advertising and advertising services
         </h1>
         <p className="text-lg md:text-2xl mb-6 drop-shadow">
@@ -44,10 +44,16 @@ export default function Hero() {
           requests, bringing together the largest group of advertising agencies
           and companies, all in one place, according to professional standards.
         </p>
-        <Button className="bg-primary hover:bg-primary/80 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition">
+        <Button
+          variant="default"
+          size="xl"
+          className="rounded-full bg-primary hover:bg-primary/80 text-white font-semibold py-3 px-8 shadow-lg transition"
+        >
           Get Started
         </Button>
       </div>
     </section>
   );
-}
+};
+
+export default Hero;
