@@ -10,6 +10,7 @@ export default function Home() {
       <Three />
       <Four />
       <Five />
+      <Six />
     </>
   );
 }
@@ -139,6 +140,38 @@ const Five = () => {
         </p>
         <Button className="bg-primary hover:bg-primary/80 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition">
           Get it Now
+        </Button>
+      </div>
+    </section>
+  );
+};
+
+const Six = () => {
+  return (
+    <section className="relative w-full h-screen flex items-center justify-start overflow-hidden bg-[#027dc3]">
+      {/* Background Image */}
+      <Image
+        src="/bg-six.png"
+        alt="Hero Background"
+        layout="fill"
+        objectFit="cover"
+        quality={90}
+        className="z-0 scale-x-[-1]"
+        priority
+      />
+
+      {/* Content */}
+      <div className="relative z-20 text-left text-dark px-8 max-w-2xl">
+        <h2 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
+          Billboards: All types of outdoor advertising and promotional panels
+        </h2>
+        <p className="text-lg md:text-2xl mb-6 drop-shadow">
+          At Adstation, you will find the best producers of project fencing
+          panels, unipolar panels, wall panels, facade panels, and building roof
+          panels.
+        </p>
+        <Button className="bg-primary hover:bg-primary/80 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition">
+          Contact Us
         </Button>
       </div>
     </section>
