@@ -32,7 +32,7 @@ const Two = () => {
 
       {/* Content */}
       <div className="relative max-w-2xl text-left z-20 px-8">
-        <h2 className="text-4xl font-bold text-white mb-6">
+        <h2 className="text-4xl md:text-6xl font-medium text-white mb-6">
           Your advertising partner that saves you time, effort and cost
         </h2>
         <p className="text-xl text-blue-100 mb-8">
@@ -41,7 +41,10 @@ const Two = () => {
           designing and implementing all types of billboards, product stands,
           and everything else they need...
         </p>
-        <Button className="bg-primary hover:bg-primary/80 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition">
+        <Button
+          size="xl"
+          className="rounded-full bg-white hover:bg-primary/80 text-black font-semibold py-3 px-8 shadow-lg transition"
+        >
           See Our Work
         </Button>
       </div>
@@ -65,7 +68,7 @@ const Three = () => {
 
       {/* Content */}
       <div className="relative z-20 text-left text-white px-8 max-w-2xl">
-        <h2 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
+        <h2 className="text-4xl md:text-6xl font-medium mb-4 drop-shadow-lg">
           Explore over 70 advertising services waiting for you
         </h2>
         <p className="text-lg md:text-2xl mb-6 drop-shadow">
@@ -73,7 +76,10 @@ const Three = () => {
           requests, bringing together the largest group of advertising agencies
           and companies, all in one place, according to professional standards.
         </p>
-        <Button className="bg-primary hover:bg-primary/80 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition">
+        <Button
+          size="xl"
+          className="rounded-full bg-white hover:bg-primary/80 text-black font-semibold py-3 px-8 shadow-lg transition"
+        >
           Explore Services
         </Button>
       </div>
@@ -86,26 +92,29 @@ const Four = () => {
     <section className="relative w-full h-screen flex items-center justify-start overflow-hidden bg-[#967b60]">
       {/* Background Image */}
       <Image
-        src="/bg-four.png"
+        src="/bg-four-en.png"
         alt="Hero Background"
         layout="fill"
         objectFit="cover"
         quality={90}
-        className="z-0 scale-x-[-1]"
+        className="z-0"
         priority
       />
 
       {/* Content */}
       <div className="relative z-20 text-left text-white px-8 max-w-2xl">
-        <h2 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
+        <h2 className="text-4xl md:text-6xl font-medium mb-4 drop-shadow-lg">
           Product and application logo design services
         </h2>
-        <p className="text-lg md:text-2xl mb-6 drop-shadow">
+        <p className="text-lg md:text-2xl font-light mb-6 drop-shadow">
           Adstation provides factories and importers with specialized solutions
           in product design and its various applications, from logo to
           distribution. Experienced agencies.
         </p>
-        <Button className="bg-primary hover:bg-primary/80 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition">
+        <Button
+          size="xl"
+          className="rounded-full bg-white hover:bg-primary/80 text-black font-semibold py-3 px-8 shadow-lg transition"
+        >
           Explore Services
         </Button>
       </div>
@@ -118,18 +127,18 @@ const Five = () => {
     <section className="relative w-full h-screen flex items-center justify-start overflow-hidden bg-[#027dc3]">
       {/* Background Image */}
       <Image
-        src="/bg-five.png"
+        src="/bg-five-en.png"
         alt="Hero Background"
         layout="fill"
         objectFit="cover"
         quality={90}
-        className="z-0 scale-x-[-1]"
+        className="z-0"
         priority
       />
 
       {/* Content */}
       <div className="relative z-20 text-left text-white px-8 max-w-2xl">
-        <h2 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
+        <h2 className="text-4xl md:text-6xl font-medium mb-4 drop-shadow-lg">
           Point of Sale Product Display Solutions
         </h2>
         <p className="text-lg md:text-2xl mb-6 drop-shadow">
@@ -138,7 +147,10 @@ const Five = () => {
           that distinguish your products at points of sale in grocery stores,
           supermarkets, and other stores.
         </p>
-        <Button className="bg-primary hover:bg-primary/80 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition">
+        <Button
+          size="xl"
+          className="rounded-full bg-white hover:bg-primary/80 text-black font-semibold py-3 px-8 shadow-lg transition"
+        >
           Get it Now
         </Button>
       </div>
@@ -148,7 +160,7 @@ const Five = () => {
 
 const Six = () => {
   return (
-    <section className="relative w-full h-screen flex items-center justify-start overflow-hidden bg-[#027dc3]">
+    <section className="relative w-full h-screen flex items-center justify-start overflow-hidden bg-[#fff]">
       {/* Background Image */}
       <Image
         src="/bg-six.png"
@@ -156,13 +168,13 @@ const Six = () => {
         layout="fill"
         objectFit="cover"
         quality={90}
-        className="z-0 scale-x-[-1]"
+        className="z-0"
         priority
       />
 
       {/* Content */}
-      <div className="relative z-20 text-left text-dark px-8 max-w-2xl">
-        <h2 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
+      <div className="relative z-20 text-left text-dark px-8 max-w-2xl space-y-8">
+        <h2 className="text-4xl md:text-6xl font-medium mb-4 drop-shadow-lg">
           Billboards: All types of outdoor advertising and promotional panels
         </h2>
         <p className="text-lg md:text-2xl mb-6 drop-shadow">
@@ -170,7 +182,10 @@ const Six = () => {
           panels, unipolar panels, wall panels, facade panels, and building roof
           panels.
         </p>
-        <Button className="bg-primary hover:bg-primary/80 text-white font-semibold py-3 px-8 rounded-lg shadow-lg transition">
+        <Button
+          size="xl"
+          className="rounded-full bg-primary hover:bg-primary/80 text-white font-semibold py-3 px-8 shadow-lg transition"
+        >
           Contact Us
         </Button>
       </div>

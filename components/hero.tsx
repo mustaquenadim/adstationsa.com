@@ -45,7 +45,6 @@ const Hero = () => {
           and companies, all in one place, according to professional standards.
         </p>
         <Button
-          variant="default"
           size="xl"
           className="rounded-full bg-primary hover:bg-primary/80 text-white font-semibold py-3 px-8 shadow-lg transition"
         >
