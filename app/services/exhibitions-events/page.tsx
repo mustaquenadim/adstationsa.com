@@ -8,58 +8,42 @@ import Link from "next/link";
 const exhibitionsEventsServicesData = [
   {
     id: 1,
-    title: "Exhibition Stand Design",
+    title: "Renting all kinds of advertising stands",
     description:
-      "Custom exhibition stand designs that capture attention and effectively showcase your products and services.",
+      "ADSTATION, in collaboration with its partners, seeks to offer pop-up and roll-up stand rental services with printing, aiming to provide economical and effective solutions for clients attending small or limited-capacity events.",
     bgColor: "bg-black",
     link: "/services/exhibitions-events",
   },
   {
     id: 2,
-    title: "Event Branding & Signage",
+    title: "Rental of screens and interactive devices",
     description:
-      "Comprehensive branding solutions for events including banners, backdrops, and promotional materials.",
+      "At ADSTATION, we aim to facilitate our clients' access to professional advertising screen booking and installation services, as well as interactive devices with audiences, from specialized providers, to ensure a comprehensive service for your event.",
     bgColor: "bg-[#11ABC4]",
     link: "/services/exhibitions-events",
   },
   {
     id: 3,
-    title: "Trade Show Displays",
+    title: "Design and implementation of Suites and booths",
     description:
-      "Professional trade show displays and booths designed to maximize visitor engagement and lead generation.",
+      "According to your budgets and marketing goals, our partners transform them into designs specific to you with innovative options, and we negotiate with them to provide a comprehensive service with minimal effort.",
     bgColor: "bg-[#118D8B]",
     link: "/services/exhibitions-events",
   },
   {
     id: 4,
-    title: "Corporate Event Solutions",
+    title: "Event and conference theatre design",
     description:
-      "Complete event solutions for corporate functions, product launches, and company celebrations.",
+      "We provide experts and specialists in designing and equipping theaters and facades for events and activities according to the type and purpose of the event.",
     bgColor: "bg-[#4D449B]",
     link: "/services/exhibitions-events",
   },
   {
     id: 5,
-    title: "Interactive Displays",
+    title: "Photographing and documenting events",
     description:
-      "Engaging interactive displays and digital installations for modern exhibition experiences.",
+      "Through our partners, we guarantee that you will receive professional photography and editing of events and activities.",
     bgColor: "bg-[#FAB91B]",
-    link: "/services/exhibitions-events",
-  },
-  {
-    id: 6,
-    title: "Event Photography & Video",
-    description:
-      "Professional event documentation services including photography and video coverage.",
-    bgColor: "bg-[#E17932]",
-    link: "/services/exhibitions-events",
-  },
-  {
-    id: 7,
-    title: "Virtual Event Platforms",
-    description:
-      "Digital event solutions and virtual exhibition platforms for online events and webinars.",
-    bgColor: "bg-[#6E42F2]",
     link: "/services/exhibitions-events",
   },
 ];
@@ -73,12 +57,15 @@ const ExhibitionsEventsPage = () => {
           <div className="text-left text-white max-w-2xl">
             <h1 className="text-2xl mb-6">Our Services</h1>
             <div className="text-3xl md:text-4xl lg:text-6xl font-normal text-white">
-              Exhibitions and Events
+              Exhibition and Event Services and Solutions
             </div>
             <p className="mt-6 text-base md:text-lg lg:text-xl font-light leading-6 text-white">
-              Complete exhibition and event solutions that create memorable
-              experiences and drive business growth through strategic event
-              planning.
+              Professional partners from freelancers and agencies in{" "}
+              <span className="block font-medium text-4xl md:text-5xl lg:text-6xl py-2">
+                adstation
+              </span>{" "}
+              We are ready to provide quality event services that achieve your
+              goals with unforgettable participation and make an impact.
             </p>
           </div>
         </div>
@@ -104,7 +91,8 @@ const ExhibitionsEventsPage = () => {
       <div className="pt-20">
         <div className="max-w-3xl mx-auto text-white text-center text-md font-normal mb-20">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium">
-            Our Exhibition and Event Services
+            Our list of services and solutions for exhibitions and events
+            includes
           </h2>
         </div>
 
@@ -131,9 +119,9 @@ const ExhibitionsEventsPage = () => {
           ))}
 
           {/* Image spanning from 2nd row 2nd column to 3rd row 2nd column - responsive positioning */}
-          <div className="lg:col-start-2 lg:row-start-2 lg:row-span-2 bg-gray-800 overflow-hidden aspect-square lg:aspect-auto">
+          <div className="lg:col-start-2 lg:row-start-2 lg:row-span-2 lg:col-span-2 bg-gray-800 overflow-hidden aspect-square lg:aspect-auto">
             <Image
-              src="/exhibitions-events-service.png"
+              src="/exhibitions-events.png"
               alt="Exhibitions and Events Services Image"
               width={400}
               height={800}
