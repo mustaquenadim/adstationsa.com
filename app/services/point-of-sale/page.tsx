@@ -8,58 +8,42 @@ import Link from "next/link";
 const pointOfSaleServicesData = [
   {
     id: 1,
-    title: "Retail Display Solutions",
+    title: "Brand Ambassadors and Promotion Team Management",
     description:
-      "Custom retail displays and fixtures designed to maximize product visibility and increase sales conversion.",
+      "Managing merchandising teams and promoting them as brand ambassadors at points of sale are services that Adstation coordinates with partners specialized in this type of field.",
     bgColor: "bg-black",
     link: "/services/point-of-sale",
   },
   {
     id: 2,
-    title: "Mall Kiosk Design",
+    title: "Promote products on store shelves",
     description:
-      "Professional kiosk designs for shopping malls and retail centers that attract customer attention.",
+      "Enhance your shelf presence with AdStation and integrated visual Branding Shelf solutions! Through customized, engaging designs, we motivate shoppers, enhance your brand's presence, and increase in-store sales.",
     bgColor: "bg-[#11ABC4]",
     link: "/services/point-of-sale",
   },
   {
     id: 3,
-    title: "Product Showcase Displays",
+    title: "Design and implementation of product display systems",
     description:
-      "Innovative product showcase displays that highlight features and benefits to drive purchasing decisions.",
+      "To enhance brand presence and increase sales by designing and implementing floor display stands, which are stand-alone units such as kiosks or stands, attractively designed to highlight new products in the main aisles.",
     bgColor: "bg-[#118D8B]",
     link: "/services/point-of-sale",
   },
   {
     id: 4,
-    title: "Promotional Stands",
+    title: "Shopper Research",
     description:
-      "Eye-catching promotional stands and displays for special offers, new products, and seasonal campaigns.",
+      "Design and conduct studies on products and shopper audiences, and identify opportunities and threats.",
     bgColor: "bg-[#4D449B]",
     link: "/services/point-of-sale",
   },
   {
     id: 5,
-    title: "Interactive POS Displays",
+    title: "Management and design of tasting campaigns",
     description:
-      "Modern interactive point-of-sale displays with touch screens and digital content for enhanced engagement.",
+      "To have an online presence, we offer you designers specialized in this type of digital design solutions efficiently and quickly according to your marketing goals.",
     bgColor: "bg-[#FAB91B]",
-    link: "/services/point-of-sale",
-  },
-  {
-    id: 6,
-    title: "Brand Experience Centers",
-    description:
-      "Comprehensive brand experience centers that create immersive shopping experiences for customers.",
-    bgColor: "bg-[#E17932]",
-    link: "/services/point-of-sale",
-  },
-  {
-    id: 7,
-    title: "Digital Signage Systems",
-    description:
-      "Dynamic digital signage solutions for retail environments with real-time content updates and analytics.",
-    bgColor: "bg-[#6E42F2]",
     link: "/services/point-of-sale",
   },
 ];
@@ -73,12 +57,20 @@ const PointOfSalePage = () => {
           <div className="text-left text-white max-w-2xl">
             <h1 className="text-2xl mb-6">Our Services</h1>
             <div className="text-3xl md:text-4xl lg:text-6xl font-normal text-white">
-              Point of Sale Product Solutions
+              Point-of-Sale Product Services
             </div>
             <p className="mt-6 text-base md:text-lg lg:text-xl font-light leading-6 text-white">
-              Innovative point-of-sale solutions that enhance customer
-              experience and drive sales through strategic product placement and
-              display design.
+              In cooperation with professional partners in{" "}
+              <span className="block font-medium text-4xl md:text-5xl lg:text-6xl py-2">
+                adstation
+              </span>{" "}
+              We strive to provide unique point-of-sale product display
+              solutions, aimed at enhancing the presence of your brand's
+              products in the customer's shopping experience and increasing
+              sales. From interior design and visual creativity to creating an
+              attractive shopping environment, we save you a lot of time
+              searching for specialized suppliers who can make a difference in
+              your success in the market.
             </p>
           </div>
         </div>
@@ -104,7 +96,7 @@ const PointOfSalePage = () => {
       <div className="pt-20">
         <div className="max-w-3xl mx-auto text-white text-center text-md font-normal mb-20">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium">
-            Our Point of Sale Services
+            Our list of services and product solutions includes
           </h2>
         </div>
 
@@ -133,7 +125,7 @@ const PointOfSalePage = () => {
           {/* Image spanning from 2nd row 2nd column to 3rd row 2nd column - responsive positioning */}
           <div className="lg:col-start-2 lg:row-start-2 lg:row-span-2 bg-gray-800 overflow-hidden aspect-square lg:aspect-auto">
             <Image
-              src="/point-of-sale-service.png"
+              src="/point-of-sale.jpg"
               alt="Point of Sale Services Image"
               width={400}
               height={800}
