@@ -91,7 +91,7 @@ const IndoorSignagePage = () => {
             className="w-full h-full flex items-center justify-center"
           >
             <Image
-              src="/indoor-signage.svg"
+              src="/outdoor-advertising-service.svg"
               alt="Indoor Signage Hero"
               width={350}
               height={350}
@@ -133,7 +133,7 @@ const IndoorSignagePage = () => {
           {/* Image spanning from 2nd row 2nd column to 3rd row 2nd column - responsive positioning */}
           <div className="lg:col-start-2 lg:row-start-2 lg:row-span-2 bg-gray-800 overflow-hidden aspect-square lg:aspect-auto">
             <Image
-              src="/indoor-signage-service.png"
+              src="/outdoor-advertising.png"
               alt="Indoor Signage Services Image"
               width={400}
               height={800}
