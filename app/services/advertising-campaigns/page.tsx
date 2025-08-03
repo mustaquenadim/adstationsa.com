@@ -73,12 +73,15 @@ const AdvertisingCampaignsPage = () => {
           <div className="text-left text-white max-w-2xl">
             <h1 className="text-2xl mb-6">Our Services</h1>
             <div className="text-3xl md:text-4xl lg:text-6xl font-normal text-white">
-              Advertising Campaign Solutions
+              Booking Services Advertising Campaigns
             </div>
             <p className="mt-6 text-base md:text-lg lg:text-xl font-light leading-6 text-white">
-              Strategic advertising campaigns that deliver measurable results
-              and drive business growth through targeted messaging and
-              placement.
+              Soon on{" "}
+              <span className="block font-medium text-4xl md:text-5xl lg:text-6xl py-2">
+                adstation
+              </span>{" "}
+              Outdoor advertising campaign booking service in streets, malls,
+              airports, metro and bus stations
             </p>
           </div>
         </div>
