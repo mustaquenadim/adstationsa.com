@@ -2,63 +2,62 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import * as motion from "motion/react-client";
 import Image from "next/image";
-import Link from "next/link";
 
 // Outdoor advertising services data structure
 const outdoorAdvertisingServicesData = [
   {
     id: 1,
-    title: "Billboard Advertising",
+    title: "Advertising Project Fences Hoarding Panels",
     description:
-      "Strategic billboard placement across high-traffic locations for maximum brand visibility and impact.",
+      "At ADSTATION, we offer, through our network of competent partners, professional, high-quality advertising fence solutions for projects, tailored to suit a variety of needs. Whether you're looking for temporary advertising coverage or a permanent design, we have you covered.",
     bgColor: "bg-black",
     link: "/services/outdoor-advertising",
   },
   {
     id: 2,
-    title: "Digital Billboards",
+    title: "Manufacture of giant billboards on roads and buildings",
     description:
-      "Dynamic digital billboard displays with rotating content and real-time updates for enhanced engagement.",
+      "ADSTATION is proud of its partner service providers who specialize in manufacturing and executing giant billboards on roads, buildings, and roofs, with high quality and professional standards.",
     bgColor: "bg-[#11ABC4]",
     link: "/services/outdoor-advertising",
   },
   {
     id: 3,
-    title: "Transit Advertising",
+    title: "Cladding panels and raised letters",
     description:
-      "Bus wraps, train advertising, and public transportation displays reaching commuters daily.",
+      "ADSTATION partners provide high-quality cladding and lettering services using aluminum composite panels in a variety of finishes. Lettering is also manufactured in a variety of materials, such as acrylic and stainless steel, with front or back lighting options.",
     bgColor: "bg-[#118D8B]",
     link: "/services/outdoor-advertising",
   },
   {
     id: 4,
-    title: "Street Furniture",
+    title: "Exhibition boards",
     description:
-      "Bus shelters, kiosks, and street furniture advertising in pedestrian-heavy areas.",
+      "Exhibition facade panels, side panels (polysign), internal information panels for displaying departments and services within the exhibition, temporary display panels (roll-ups and stands) within the exhibition, in addition to illuminated panels that provide a professional appearance and high visual appeal.",
     bgColor: "bg-[#4D449B]",
     link: "/services/outdoor-advertising",
   },
   {
     id: 5,
-    title: "Airport Advertising",
+    title: "Suspended Column Panels",
     description:
-      "Premium advertising spaces in airports targeting business travelers and tourists.",
+      "Our lampposts are available in a variety of styles, including single, double, illuminated, and seasonal, all designed to be clearly and attractively displayed on streets, events, and temporary or permanent advertisements.",
     bgColor: "bg-[#FAB91B]",
     link: "/services/outdoor-advertising",
   },
   {
     id: 6,
-    title: "Highway Signs",
+    title: "Interior panels for facilities, companies, and buildings",
     description:
-      "Strategic highway signage and directional advertising for long-distance travelers.",
+      "AdStation partners offer a variety of indoor signage solutions, including department signs, parking signs, site signs, and indoor event signs, all with high quality and efficiency that ensure clear identity and organization within facilities.",
     bgColor: "bg-[#E17932]",
     link: "/services/outdoor-advertising",
   },
   {
     id: 7,
-    title: "Mobile Billboards",
+    title: "Paintings",
     description:
-      "Mobile advertising units that travel through target areas for maximum exposure.",
+      "ADSTATION and its certified partners offer integrated solutions for designing and implementing various types of 3D billboards, including 3D, illuminated, interactive, and exhibition and facade displays, with innovative ideas that attract attention in various locations and events.",
     bgColor: "bg-[#6E42F2]",
     link: "/services/outdoor-advertising",
   },
@@ -73,12 +72,18 @@ const OutdoorAdvertisingPage = () => {
           <div className="text-left text-white max-w-2xl">
             <h1 className="text-2xl mb-6">Our Services</h1>
             <div className="text-3xl md:text-4xl lg:text-6xl font-normal text-white">
-              Outdoor Advertising Solutions
+              Services and solutions for all types of panels
             </div>
             <p className="mt-6 text-base md:text-lg lg:text-xl font-light leading-6 text-white">
-              Comprehensive outdoor advertising network with strategic locations
-              to maximize your brand's visibility and reach your target
-              audience.
+              We provide you with all the services and solutions for external
+              panels{" "}
+              <span className="block font-medium text-4xl md:text-5xl lg:text-6xl py-2">
+                adstation
+              </span>{" "}
+              Available in various sizes and materials, whether for road signs,
+              facades, or temporary billboards, we offer everything you need for
+              outdoor advertising. Our experts understand your requirements and
+              negotiate to achieve the best results.
             </p>
           </div>
         </div>
@@ -91,7 +96,7 @@ const OutdoorAdvertisingPage = () => {
             className="w-full h-full flex items-center justify-center"
           >
             <Image
-              src="/outdoor-advertising.svg"
+              src="/outdoor-advertising-service.svg"
               alt="Outdoor Advertising Hero"
               width={350}
               height={350}
@@ -104,7 +109,7 @@ const OutdoorAdvertisingPage = () => {
       <div className="pt-20">
         <div className="max-w-3xl mx-auto text-white text-center text-md font-normal mb-20">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium">
-            Our Outdoor Advertising Services
+            Our list of services and panel solutions includes
           </h2>
         </div>
 
@@ -133,7 +138,7 @@ const OutdoorAdvertisingPage = () => {
           {/* Image spanning from 2nd row 2nd column to 3rd row 2nd column - responsive positioning */}
           <div className="lg:col-start-2 lg:row-start-2 lg:row-span-2 bg-gray-800 overflow-hidden aspect-square lg:aspect-auto">
             <Image
-              src="/outdoor-advertising-service.png"
+              src="/outdoor-advertising.png"
               alt="Outdoor Advertising Services Image"
               width={400}
               height={800}
