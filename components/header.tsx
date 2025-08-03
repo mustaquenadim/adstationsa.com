@@ -20,8 +20,8 @@ const navigationLinks = [
   { href: "/", label: "Home", active: true },
   { href: "/about", label: "About Us" },
   { href: "/services", label: "Our Services" },
-  { href: "#", label: "Why AdStation?" },
-  { href: "#", label: "Become Our Partner" },
+  { href: "/why-adstation", label: "Why AdStation?" },
+  { href: "/join-us", label: "Become Our Partner" },
 ];
 
 export default function Header() {
