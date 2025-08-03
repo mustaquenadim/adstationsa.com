@@ -2,6 +2,67 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import * as motion from "motion/react-client";
 import Image from "next/image";
+import Link from "next/link";
+
+// Services data structure
+const servicesData = [
+  {
+    id: 1,
+    title: "Creative Design Solutions",
+    description:
+      "Identity design offering a wide range of professional design solutions with more than 20 services",
+    bgColor: "bg-[#F3746F]",
+    link: "/services/creative-design",
+  },
+  {
+    id: 2,
+    title: "Printing Solutions",
+    description:
+      "We provide all types of printing methods in implementing various types of printing",
+    bgColor: "bg-[#11ABC4]",
+    link: "/services/printing",
+  },
+  {
+    id: 3,
+    title: "Outdoor Advertising Solutions",
+    description:
+      "An integrated network of distinguished advertising service locations capable of providing everything related to outdoor signage work",
+    bgColor: "bg-[#118D8B]",
+    link: "/services/outdoor-advertising",
+  },
+  {
+    id: 4,
+    title: "Indoor Signage Solutions",
+    description:
+      "We excel in implementing all forms of indoor signage with the highest quality standards",
+    bgColor: "bg-[#4D449B]",
+    link: "/services/indoor-signage",
+  },
+  {
+    id: 5,
+    title: "Exhibitions and Events",
+    description:
+      "Our expertise extends to implementing exhibition wings, designing display platforms, and various events, providing necessary services for our clients commercial participations",
+    bgColor: "bg-[#FAB91B]",
+    link: "/services/exhibitions-events",
+  },
+  {
+    id: 6,
+    title: "Point of Sale Product Solutions",
+    description:
+      "We have extensive experience in designing and implementing high-end promotional models with integrated solutions for product marketing within malls and commercial centers",
+    bgColor: "bg-[#E17932]",
+    link: "/services/point-of-sale",
+  },
+  {
+    id: 7,
+    title: "Advertising Campaign Solutions",
+    description:
+      "Organization and booking of outdoor advertising campaigns with strategic locations to ensure maximum spread and effectiveness",
+    bgColor: "bg-[#6E42F2]",
+    link: "/services/advertising-campaigns",
+  },
+];
 
 const ServicesPage = () => {
   return (
@@ -68,76 +129,37 @@ const ServicesPage = () => {
       </div>
 
       <div className="py-20">
-        <div className="text-white text-center text-md font-normal mb-20">
-          <h2 className="text-4xl sm:text-6xl font-medium">Our Services</h2>
+        <div className="max-w-3xl mx-auto text-white text-center text-md font-normal mb-20">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium">
+            Our Services
+          </h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-          <div className="h-full w-full bg-[#F3746F] text-white p-6 sm:p-8 aspect-square flex flex-col justify-center overflow-hidden">
-            <h3 className="text-2xl sm:text-3xl lg:text-2xl xl:text-4xl font-medium">
-              Creative Design Solutions
-            </h3>
-            <p className="text-base sm:text-lg lg:text-base xl:text-lg font-light leading-6 mt-4">
-              Identity design offering a wide range of professional design
-              solutions with more than 20 services
-            </p>
-            <Button
-              size="lg"
-              className="mt-4 px-4 sm:px-6 py-2 bg-white text-black rounded-full text-sm font-medium hover:bg-gray-100 transition-all duration-300 w-fit cursor-pointer hover:scale-105 hover:shadow-lg active:scale-95 group"
+          {/* First 4 service items */}
+          {servicesData.slice(0, 4).map((service) => (
+            <div
+              key={service.id}
+              className={`h-full w-full ${service.bgColor} text-white p-6 sm:p-8 aspect-square flex flex-col justify-center overflow-hidden`}
             >
-              Learn More{" "}
-              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </Button>
-          </div>
-          <div className="h-full w-full bg-[#11ABC4] text-white p-6 sm:p-8 aspect-square flex flex-col justify-center overflow-hidden">
-            <h3 className="text-2xl sm:text-3xl lg:text-2xl xl:text-4xl font-medium">
-              Printing Solutions
-            </h3>
-            <p className="text-base sm:text-lg lg:text-base xl:text-lg font-light leading-6 mt-4">
-              We provide all types of printing methods in implementing various
-              types of printing
-            </p>
-            <Button
-              size="lg"
-              className="mt-4 px-4 sm:px-6 py-2 bg-white text-black rounded-full text-sm font-medium hover:bg-gray-100 transition-all duration-300 w-fit cursor-pointer hover:scale-105 hover:shadow-lg active:scale-95 group"
-            >
-              Learn More{" "}
-              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </Button>
-          </div>
-          <div className="h-full w-full bg-[#118D8B] text-white p-6 sm:p-8 aspect-square flex flex-col justify-center overflow-hidden">
-            <h3 className="text-2xl sm:text-3xl lg:text-2xl xl:text-4xl font-medium">
-              Outdoor Advertising Solutions
-            </h3>
-            <p className="text-base sm:text-lg lg:text-base xl:text-lg font-light leading-6 mt-4">
-              An integrated network of distinguished advertising service
-              locations capable of providing everything related to outdoor
-              signage work
-            </p>
-            <Button
-              size="lg"
-              className="mt-4 px-4 sm:px-6 py-2 bg-white text-black rounded-full text-sm font-medium hover:bg-gray-100 transition-all duration-300 w-fit cursor-pointer hover:scale-105 hover:shadow-lg active:scale-95 group"
-            >
-              Learn More{" "}
-              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </Button>
-          </div>
-          <div className="h-full w-full bg-[#4D449B] text-white p-6 sm:p-8 aspect-square flex flex-col justify-center overflow-hidden">
-            <h3 className="text-2xl sm:text-3xl lg:text-2xl xl:text-4xl font-medium">
-              Indoor Signage Solutions
-            </h3>
-            <p className="text-base sm:text-lg lg:text-base xl:text-lg font-light leading-6 mt-4">
-              We excel in implementing all forms of indoor signage with the
-              highest quality standards
-            </p>
-            <Button
-              size="lg"
-              className="mt-4 px-4 sm:px-6 py-2 bg-white text-black rounded-full text-sm font-medium hover:bg-gray-100 transition-all duration-300 w-fit cursor-pointer hover:scale-105 hover:shadow-lg active:scale-95 group"
-            >
-              Learn More{" "}
-              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </Button>
-          </div>
+              <h3 className="text-2xl sm:text-3xl lg:text-2xl xl:text-4xl font-medium">
+                {service.title}
+              </h3>
+              <p className="text-base sm:text-lg lg:text-base xl:text-lg font-light leading-6 mt-4">
+                {service.description}
+              </p>
+              <Link href={service.link}>
+                <Button
+                  size="lg"
+                  className="mt-4 px-4 sm:px-6 py-2 bg-white text-black rounded-full text-sm font-medium hover:bg-gray-100 transition-all duration-300 w-fit cursor-pointer hover:scale-105 hover:shadow-lg active:scale-95 group"
+                >
+                  Learn More{" "}
+                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </Button>
+              </Link>
+            </div>
+          ))}
+
           {/* Image spanning from 2nd row 2nd column to 3rd row 2nd column - responsive positioning */}
           <div className="lg:col-start-2 lg:row-start-2 lg:row-span-2 bg-gray-800 overflow-hidden aspect-square lg:aspect-auto">
             <Image
@@ -148,56 +170,30 @@ const ServicesPage = () => {
               className="w-full h-full object-cover"
             />
           </div>
-          <div className="h-full w-full bg-[#FAB91B] text-white p-6 sm:p-8 aspect-square flex flex-col justify-center overflow-hidden">
-            <h3 className="text-2xl sm:text-3xl lg:text-2xl xl:text-4xl font-medium">
-              Exhibitions and Events
-            </h3>
-            <p className="text-base sm:text-lg lg:text-base xl:text-lg font-light leading-6 mt-4">
-              Our expertise extends to implementing exhibition wings, designing
-              display platforms, and various events, providing necessary
-              services for our clients commercial participations
-            </p>
-            <Button
-              size="lg"
-              className="mt-4 px-4 sm:px-6 py-2 bg-white text-black rounded-full text-sm font-medium hover:bg-gray-100 transition-all duration-300 w-fit cursor-pointer hover:scale-105 hover:shadow-lg active:scale-95 group"
+
+          {/* Last 3 service items */}
+          {servicesData.slice(4).map((service) => (
+            <div
+              key={service.id}
+              className={`h-full w-full ${service.bgColor} text-white p-6 sm:p-8 aspect-square flex flex-col justify-center overflow-hidden`}
             >
-              Learn More{" "}
-              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </Button>
-          </div>
-          <div className="h-full w-full bg-[#E17932] text-white p-6 sm:p-8 aspect-square flex flex-col justify-center overflow-hidden">
-            <h3 className="text-2xl sm:text-3xl lg:text-2xl xl:text-4xl font-medium">
-              Point of Sale Product Solutions
-            </h3>
-            <p className="text-base sm:text-lg lg:text-base xl:text-lg font-light leading-6 mt-4">
-              We have extensive experience in designing and implementing
-              high-end promotional models with integrated solutions for product
-              marketing within malls and commercial centers
-            </p>
-            <Button
-              size="lg"
-              className="mt-4 px-4 sm:px-6 py-2 bg-white text-black rounded-full text-sm font-medium hover:bg-gray-100 transition-all duration-300 w-fit cursor-pointer hover:scale-105 hover:shadow-lg active:scale-95 group"
-            >
-              Learn More{" "}
-              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </Button>
-          </div>
-          <div className="h-full w-full bg-[#6E42F2] text-white p-6 sm:p-8 aspect-square flex flex-col justify-center overflow-hidden">
-            <h3 className="text-2xl sm:text-3xl lg:text-2xl xl:text-4xl font-medium">
-              Advertising Campaign Solutions
-            </h3>
-            <p className="text-base sm:text-lg lg:text-base xl:text-lg font-light leading-6 mt-4">
-              Organization and booking of outdoor advertising campaigns with
-              strategic locations to ensure maximum spread and effectiveness
-            </p>
-            <Button
-              size="lg"
-              className="mt-4 px-4 sm:px-6 py-2 bg-white text-black rounded-full text-sm font-medium hover:bg-gray-100 transition-all duration-300 w-fit cursor-pointer hover:scale-105 hover:shadow-lg active:scale-95 group"
-            >
-              Learn More{" "}
-              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </Button>
-          </div>
+              <h3 className="text-2xl sm:text-3xl lg:text-2xl xl:text-4xl font-medium">
+                {service.title}
+              </h3>
+              <p className="text-base sm:text-lg lg:text-base xl:text-lg font-light leading-6 mt-4">
+                {service.description}
+              </p>
+              <Link href={service.link}>
+                <Button
+                  size="lg"
+                  className="mt-4 px-4 sm:px-6 py-2 bg-white text-black rounded-full text-sm font-medium hover:bg-gray-100 transition-all duration-300 w-fit cursor-pointer hover:scale-105 hover:shadow-lg active:scale-95 group"
+                >
+                  Learn More{" "}
+                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </Button>
+              </Link>
+            </div>
+          ))}
         </div>
       </div>
     </section>
