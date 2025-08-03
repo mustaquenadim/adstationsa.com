@@ -17,9 +17,9 @@ import {
 
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
-  { href: "#", label: "Home", active: true },
-  { href: "#", label: "About Us" },
-  { href: "#", label: "Our Services" },
+  { href: "/", label: "Home", active: true },
+  { href: "/about", label: "About Us" },
+  { href: "/services", label: "Our Services" },
   { href: "#", label: "Why AdStation?" },
   { href: "#", label: "Become Our Partner" },
 ];
@@ -85,7 +85,7 @@ export default function Header() {
                 : "text-white hover:text-primary hover:bg-white/10"
             }`}
           >
-            <a href="#">Sign In</a>
+            <a href="#">English</a>
           </Button>
           <Button asChild size="sm" className="text-sm">
             <a href="#">Request a Quote</a>

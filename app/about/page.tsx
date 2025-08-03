@@ -1,8 +1,6 @@
 import Image from "next/image";
 import * as motion from "motion/react-client";
 import { Be_Vietnam_Pro } from "next/font/google";
-
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
