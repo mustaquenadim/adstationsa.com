@@ -4,20 +4,20 @@ import { Button } from "@/components/ui/button";
 
 const Hero = () => {
   return (
-    <section className="relative w-full h-screen flex items-center justify-start overflow-hidden bg-gray-900">
+    <section className="relative w-full h-screen flex sm:items-center items-end justify-start overflow-hidden bg-gray-900 py-20">
       {/* Spotlight */}
       <Spotlight
         className="h-full hidden lg:block -top-40 left-0 md:bottom-0 md:left-[28rem] rotate-250"
         fill="white"
       />
       {/* Logo */}
-      <div className="absolute top-20 right-20 z-20">
+      <div className="absolute top-36 right-4 lg:top-40 lg:right-60 z-20">
         <Image
           src="/hero-logo.svg"
           alt="Adstation Logo"
-          width={200}
-          height={80}
-          className="drop-shadow-lg"
+          width={150}
+          height={150}
+          className="drop-shadow-lg lg:w-[250px] lg:h-[250px]"
           priority
         />
       </div>
