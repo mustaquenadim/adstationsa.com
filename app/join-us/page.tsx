@@ -1,3 +1,4 @@
+import PartnerRegistrationForm from "@/components/forms/partner-registration-form";
 import Image from "next/image";
 import React from "react";
 
@@ -129,6 +130,32 @@ const JoinUsPage = () => {
               growing your business today.
             </p>
           </div>
+        </div>
+      </section>
+
+      <section className="relative mx-auto overflow-hidden">
+        {/* Partner Registration Banner */}
+        <div className="relative mb-8 overflow-hidden">
+          {/* Background with gradient and angle */}
+          <div className="relative h-48 bg-gradient-to-r from-blue-400 to-green-400">
+            {/* Content container */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="text-center text-white px-6">
+                <h2 className="text-3xl md:text-4xl font-medium capitalize tracking-wide mb-2">
+                  Partner Registration Form
+                </h2>
+                <div className="w-16 h-0.5 bg-white mx-auto mb-3"></div>
+                <p className="text-sm md:text-base opacity-90">
+                  Complete your partner application with detailed information
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* <h2 className="text-2xl font-medium mb-6">Partner Registration</h2> */}
+        <div className="max-w-lg mx-auto rounded-lg p-8 shadow-lg my-10">
+          <PartnerRegistrationForm />
         </div>
       </section>
     </>
