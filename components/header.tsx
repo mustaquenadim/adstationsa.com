@@ -14,6 +14,15 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import RequestQuoteForm from "@/components/forms/request-quote-form";
 
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
@@ -26,6 +35,7 @@ const navigationLinks = [
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isQuoteDialogOpen, setIsQuoteDialogOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -87,9 +97,32 @@ export default function Header() {
           >
             <a href="#">English</a>
           </Button>
-          <Button asChild size="sm" className="text-sm">
-            <a href="#">Request a Quote</a>
-          </Button>
+
+          {/* Request Quote Dialog */}
+          <Dialog open={isQuoteDialogOpen} onOpenChange={setIsQuoteDialogOpen}>
+            <DialogTrigger asChild>
+              <Button size="lg" className="rounded-full">
+                Request a Quote
+              </Button>
+            </DialogTrigger>
+            <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-bold text-center">
+                  Request a Quote
+                </DialogTitle>
+                <DialogDescription className="text-center">
+                  Fill out the form below and we'll get back to you with a
+                  customized quote for your advertising needs.
+                </DialogDescription>
+              </DialogHeader>
+              <div className="mt-6">
+                <RequestQuoteForm
+                  onSuccess={() => setIsQuoteDialogOpen(false)}
+                />
+              </div>
+            </DialogContent>
+          </Dialog>
+
           <div className="flex items-center md:hidden">
             {/* Mobile menu trigger */}
             <Popover>
