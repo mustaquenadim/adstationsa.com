@@ -68,8 +68,8 @@ const PointOfSalePage = () => {
                 adstation
               </span>{" "}
               We strive to provide unique point-of-sale product display
-              solutions, aimed at enhancing the presence of your brand's
-              products in the customer's shopping experience and increasing
+              solutions, aimed at enhancing the presence of your brand&apos;s
+              products in the customer&apos;s shopping experience and increasing
               sales. From interior design and visual creativity to creating an
               attractive shopping environment, we save you a lot of time
               searching for specialized suppliers who can make a difference in

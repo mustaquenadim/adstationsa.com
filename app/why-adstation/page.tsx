@@ -1,8 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { Be_Vietnam_Pro } from "next/font/google";
-import * as motion from "motion/react-client";
 
 const beVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin"],

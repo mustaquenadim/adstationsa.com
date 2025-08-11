@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import * as motion from "motion/react-client";
 import Image from "next/image";
 import Link from "next/link";

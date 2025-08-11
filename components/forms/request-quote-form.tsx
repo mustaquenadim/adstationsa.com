@@ -78,14 +78,14 @@ const CheckboxGroup = ({
   label,
 }: {
   name: keyof FormData;
-  control: any;
+  control: ReturnType<typeof useForm<FormData>>["control"];
   options: { id: string; label: string }[];
   label: string;
 }) => (
   <FormField
     control={control}
     name={name}
-    render={({ field }) => (
+    render={() => (
       <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
         <FormLabel className="flex shrink-0">{label}</FormLabel>
         <div className="w-full">
@@ -104,14 +104,14 @@ const CheckboxGroup = ({
                           onCheckedChange={(checked) => {
                             return checked
                               ? OptionField.onChange([
-                                  ...(OptionField.value || []),
-                                  option.id,
-                                ])
+                                ...(OptionField.value || []),
+                                option.id,
+                              ])
                               : OptionField.onChange(
-                                  (OptionField.value as string[])?.filter(
-                                    (value: string) => value !== option.id
-                                  ) || []
-                                );
+                                (OptionField.value as string[])?.filter(
+                                  (value: string) => value !== option.id
+                                ) || []
+                              );
                           }}
                         />
                       </FormControl>

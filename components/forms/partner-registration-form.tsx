@@ -289,7 +289,7 @@ export default function PartnerRegistrationForm() {
           <FormField
             control={form.control}
             name="offered-services"
-            render={({ field }) => (
+            render={() => (
               <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
                 <FormLabel className="flex shrink-0">
                   Services Offered
@@ -317,17 +317,17 @@ export default function PartnerRegistrationForm() {
                                     onCheckedChange={(checked) => {
                                       return checked
                                         ? OptionField.onChange([
-                                            ...(OptionField.value || []),
-                                            service.value,
-                                          ])
+                                          ...(OptionField.value || []),
+                                          service.value,
+                                        ])
                                         : OptionField.onChange(
-                                            (
-                                              OptionField.value as string[]
-                                            )?.filter(
-                                              (value: string) =>
-                                                value !== service.value
-                                            ) || []
-                                          );
+                                          (
+                                            OptionField.value as string[]
+                                          )?.filter(
+                                            (value: string) =>
+                                              value !== service.value
+                                          ) || []
+                                        );
                                     }}
                                   />
                                 </FormControl>

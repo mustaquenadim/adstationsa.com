@@ -124,7 +124,7 @@ export default function Header() {
                   Request a Quote
                 </DialogTitle>
                 <DialogDescription className="text-center">
-                  Fill out the form below and we'll get back to you with a
+                  Fill out the form below and we&apos;ll get back to you with a
                   customized quote for your advertising needs.
                 </DialogDescription>
               </DialogHeader>

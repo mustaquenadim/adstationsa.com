@@ -7,7 +7,6 @@ import {
   CardHeader,
   CardDescription,
   CardTitle,
-  CardFooter,
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
@@ -76,7 +75,7 @@ export default function AboutPage() {
             <span className="text-black">ad</span>station
           </h2>
           <p className="text-xl font-normal leading-relaxed max-w-3xl mx-auto px-8">
-            It's your smart choice for managing and implementing everything
+            It&apos;s your smart choice for managing and implementing everything
             related to traditional advertising—from logo design to achieving
             widespread distribution across all applications and advertising and
             promotion solutions with high quality, ease, and greater
@@ -104,7 +103,7 @@ export default function AboutPage() {
             Adstation Story
           </h2>
           <p className="text-lg md:text-xl font-light mb-6 drop-shadow leading-relaxed">
-            At the heart of the Kingdom's evolving business environment, among
+            At the heart of the Kingdom&apos;s evolving business environment, among
             the challenges facing many business owners, marketing and
             advertising managers is the difficulty in obtaining reliable
             traditional advertising services that support their business growth.
@@ -168,7 +167,7 @@ export default function AboutPage() {
                 <div className="flex items-start gap-2">
                   <span>
                     <strong>Client-centric:</strong> We design our services
-                    based on our clients' needs, enabling them to achieve their
+                    based on our clients&apos; needs, enabling them to achieve their
                     advertising goals.
                   </span>
                 </div>
