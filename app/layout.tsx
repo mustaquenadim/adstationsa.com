@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
+import { QuoteDialogProvider } from "@/contexts/quote-dialog-context";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -77,9 +78,11 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} ${montserratArabic.variable} antialiased font-arabic`}
       >
-        <Header />
-        <main className="">{children}</main>
-        <Footer />
+        <QuoteDialogProvider>
+          <Header />
+          <main className="">{children}</main>
+          <Footer />
+        </QuoteDialogProvider>
       </body>
     </html>
   );

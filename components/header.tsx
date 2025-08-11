@@ -1,7 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 import Logo from "@/components/logo";
+import { useQuoteDialog } from "@/contexts/quote-dialog-context";
 import { Button } from "@/components/ui/button";
 import {
   NavigationMenu,
@@ -23,10 +26,12 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import RequestQuoteForm from "@/components/forms/request-quote-form";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
+import { Languages } from "lucide-react";
 
 // Navigation links array to be used in both desktop and mobile menus
 const navigationLinks = [
-  { href: "/", label: "Home", active: true },
+  { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
   { href: "/services", label: "Our Services" },
   { href: "/why-adstation", label: "Why AdStation?" },
@@ -35,7 +40,12 @@ const navigationLinks = [
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isQuoteDialogOpen, setIsQuoteDialogOpen] = useState(false);
+  const [language, setLanguage] = useState('ar'); // Default to Arabic
+  const pathname = usePathname();
+  const { isOpen: isQuoteDialogOpen, openDialog, closeDialog } = useQuoteDialog();
+
+  // Show default logo only on home page, white logo everywhere else
+  const logoVariant = pathname === '/' ? 'default' : 'white';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,18 +59,17 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 px-4 md:px-6 transition-all duration-300 ${
-        isScrolled ? "bg-black backdrop-blur-sm text-white" : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 px-4 md:px-6 transition-all duration-300 ${isScrolled ? "bg-black backdrop-blur-sm text-white" : "bg-transparent"
+        }`}
     >
       <div className="flex h-20 justify-between gap-4">
         {/* Left side */}
         <div className="flex gap-2">
           {/* Main nav */}
           <div className="flex items-center gap-6">
-            <a href="#" className="text-primary hover:text-primary/90">
-              <Logo />
-            </a>
+            <Link href="/" className="text-primary hover:text-primary/90">
+              <Logo variant={logoVariant} />
+            </Link>
           </div>
         </div>
         {/* Right side */}
@@ -71,35 +80,39 @@ export default function Header() {
               {navigationLinks.map((link, index) => (
                 <NavigationMenuItem key={index} className="h-full">
                   <NavigationMenuLink
-                    active={link.active}
-                    href={link.href}
-                    className={`h-full justify-center rounded-none border-y-2 border-transparent py-1.5 font-medium hover:bg-transparent data-[active]:bg-transparent! transition-colors duration-300 ${
-                      isScrolled
-                        ? "text-gray-300 hover:text-white hover:border-b-white data-[active]:border-b-primary data-[active]:text-primary"
-                        : "text-white hover:text-primary hover:border-b-primary data-[active]:border-b-primary data-[active]:text-primary"
-                    }`}
+                    active={pathname === link.href}
+                    asChild
+                    className={`h-full justify-center rounded-none border-y-2 border-transparent py-1.5 font-medium hover:bg-transparent data-[active]:bg-transparent! transition-colors duration-300 ${isScrolled
+                      ? "text-gray-300 hover:text-white hover:border-b-white data-[active]:border-b-primary data-[active]:text-primary"
+                      : "text-white hover:text-white hover:border-b-white data-[active]:border-b-white data-[active]:text-white"
+                      }`}
                   >
-                    {link.label}
+                    <Link href={link.href}>
+                      {link.label}
+                    </Link>
                   </NavigationMenuLink>
                 </NavigationMenuItem>
               ))}
             </NavigationMenuList>
           </NavigationMenu>
-          <Button
-            asChild
-            variant="ghost"
-            size="sm"
-            className={`text-sm transition-colors duration-300 ${
-              isScrolled
+          <Select value={language} onValueChange={setLanguage}>
+            <SelectTrigger
+              className={`cursor-pointer rounded-full w-auto border-none bg-transparent text-sm transition-colors duration-300 flex items-center gap-2 ${isScrolled
                 ? "text-gray-300 hover:text-white hover:bg-gray-800"
                 : "text-white hover:text-primary hover:bg-white/10"
-            }`}
-          >
-            <a href="#">English</a>
-          </Button>
+                }`}
+            >
+              <Languages className="text-white" />
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="ar">العربية</SelectItem>
+              <SelectItem value="en">English</SelectItem>
+            </SelectContent>
+          </Select>
 
           {/* Request Quote Dialog */}
-          <Dialog open={isQuoteDialogOpen} onOpenChange={setIsQuoteDialogOpen}>
+          <Dialog open={isQuoteDialogOpen} onOpenChange={(open) => open ? openDialog() : closeDialog()}>
             <DialogTrigger asChild>
               <Button size="lg" className="rounded-full">
                 Request a Quote
@@ -117,7 +130,7 @@ export default function Header() {
               </DialogHeader>
               <div className="mt-6">
                 <RequestQuoteForm
-                  onSuccess={() => setIsQuoteDialogOpen(false)}
+                  onSuccess={closeDialog}
                 />
               </div>
             </DialogContent>
@@ -165,11 +178,13 @@ export default function Header() {
                     {navigationLinks.map((link, index) => (
                       <NavigationMenuItem key={index} className="w-full">
                         <NavigationMenuLink
-                          href={link.href}
+                          asChild
                           className="py-1.5"
-                          active={link.active}
+                          active={pathname === link.href}
                         >
-                          {link.label}
+                          <Link href={link.href}>
+                            {link.label}
+                          </Link>
                         </NavigationMenuLink>
                       </NavigationMenuItem>
                     ))}

@@ -1,8 +1,9 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
 import * as motion from "motion/react-client";
 import Image from "next/image";
-import Link from "next/link";
+import { useQuoteDialog } from "@/contexts/quote-dialog-context";
 
 // Point of sale services data structure
 const pointOfSaleServicesData = [
@@ -49,6 +50,8 @@ const pointOfSaleServicesData = [
 ];
 
 const PointOfSalePage = () => {
+  const { openDialog } = useQuoteDialog();
+
   return (
     <section className="relative w-full min-h-screen bg-[#E17932] text-white overflow-hidden">
       {/* Main Content */}
@@ -115,6 +118,7 @@ const PointOfSalePage = () => {
               </p>
               <Button
                 size="lg"
+                onClick={openDialog}
                 className="mt-4 px-4 sm:px-6 py-2 bg-white text-black rounded-full text-sm font-medium hover:bg-gray-100 transition-all duration-300 w-fit cursor-pointer hover:scale-105 hover:shadow-lg active:scale-95 group"
               >
                 Request a Quote
@@ -147,6 +151,7 @@ const PointOfSalePage = () => {
               </p>
               <Button
                 size="lg"
+                onClick={openDialog}
                 className="mt-4 px-4 sm:px-6 py-2 bg-white text-black rounded-full text-sm font-medium hover:bg-gray-100 transition-all duration-300 w-fit cursor-pointer hover:scale-105 hover:shadow-lg active:scale-95 group"
               >
                 Request a Quote

@@ -66,7 +66,7 @@ const advertisingCampaignsServicesData = [
 
 const AdvertisingCampaignsPage = () => {
   return (
-    <section className="relative w-full min-h-screen bg-[#6E42F2] text-white overflow-hidden">
+    <section className="relative w-full min-h-screen bg-[#8dc73f] text-white overflow-hidden">
       {/* Main Content */}
       <div className="relative z-20 grid grid-cols-1 md:grid-cols-2 h-screen px-10">
         <div className="flex items-center justify-center order-2 md:order-1">
@@ -104,66 +104,21 @@ const AdvertisingCampaignsPage = () => {
         </div>
       </div>
 
-      <div className="pt-20">
+      <div className="h-screen pt-20">
         <div className="max-w-3xl mx-auto text-white text-center text-md font-normal mb-20">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium">
-            Our Advertising Campaign Services
+            Every day...more services, stronger partnerships To help you grow
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-          {/* First 4 service items */}
-          {advertisingCampaignsServicesData.slice(0, 4).map((service) => (
-            <div
-              key={service.id}
-              className={`h-full w-full ${service.bgColor} text-white p-6 sm:p-8 aspect-square flex flex-col justify-center overflow-hidden`}
-            >
-              <h3 className="text-2xl sm:text-3xl lg:text-2xl xl:text-4xl font-medium">
-                {service.title}
-              </h3>
-              <p className="text-base sm:text-lg lg:text-base xl:text-lg font-light leading-6 mt-4">
-                {service.description}
-              </p>
-              <Button
-                size="lg"
-                className="mt-4 px-4 sm:px-6 py-2 bg-white text-black rounded-full text-sm font-medium hover:bg-gray-100 transition-all duration-300 w-fit cursor-pointer hover:scale-105 hover:shadow-lg active:scale-95 group"
-              >
-                Request a Quote
-              </Button>
-            </div>
-          ))}
-
-          {/* Image spanning from 2nd row 2nd column to 3rd row 2nd column - responsive positioning */}
-          <div className="lg:col-start-2 lg:row-start-2 lg:row-span-2 bg-gray-800 overflow-hidden aspect-square lg:aspect-auto">
-            <Image
-              src="/advertising-campaigns-service.png"
-              alt="Advertising Campaigns Services Image"
-              width={400}
-              height={800}
-              className="w-full h-full object-cover"
-            />
-          </div>
-
-          {/* Last 3 service items */}
-          {advertisingCampaignsServicesData.slice(4).map((service) => (
-            <div
-              key={service.id}
-              className={`h-full w-full ${service.bgColor} text-white p-6 sm:p-8 aspect-square flex flex-col justify-center overflow-hidden`}
-            >
-              <h3 className="text-2xl sm:text-3xl lg:text-2xl xl:text-4xl font-medium">
-                {service.title}
-              </h3>
-              <p className="text-base sm:text-lg lg:text-base xl:text-lg font-light leading-6 mt-4">
-                {service.description}
-              </p>
-              <Button
-                size="lg"
-                className="mt-4 px-4 sm:px-6 py-2 bg-white text-black rounded-full text-sm font-medium hover:bg-gray-100 transition-all duration-300 w-fit cursor-pointer hover:scale-105 hover:shadow-lg active:scale-95 group"
-              >
-                Request a Quote
-              </Button>
-            </div>
-          ))}
+        <div className="flex items-center justify-center mb-20">
+          <Image
+            src="/loading.png"
+            alt="Advertising Campaign Services Loading"
+            width={800}
+            height={800}
+            className="object-contain w-full h-auto max-w-md md:max-w-lg lg:max-w-2xl"
+          />
         </div>
       </div>
     </section>

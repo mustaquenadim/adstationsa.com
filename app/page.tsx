@@ -17,9 +17,9 @@ export default function HomePage() {
 
 const Two = () => {
   return (
-    <section className="relative w-full h-screen flex items-center justify-start overflow-hidden bg-[#8dc73f]">
+    <section className="relative w-full h-screen flex items-start md:items-center justify-start overflow-hidden bg-[#8dc73f]">
       {/* Watermark Image */}
-      <div className="absolute -top-10 -right-10 z-10">
+      <div className="absolute -bottom-10 md:-top-10 -right-10 z-10">
         <Image
           src="/watermark-logo.svg"
           alt="Logo Watermark"
@@ -31,11 +31,11 @@ const Two = () => {
       </div>
 
       {/* Content */}
-      <div className="relative max-w-2xl text-left z-20 px-8">
+      <div className="relative max-w-2xl text-left z-20 p-8">
         <h2 className="text-4xl md:text-6xl font-medium text-white mb-6">
           Your advertising partner that saves you time, effort and cost
         </h2>
-        <p className="text-xl text-blue-100 mb-8">
+        <p className="text-xl text-white mb-8">
           Adstation helps business owners and marketing and advertising managers
           get all their advertising and publicity work done, from logo design to
           designing and implementing all types of billboards, product stands,
@@ -54,7 +54,7 @@ const Two = () => {
 
 const Three = () => {
   return (
-    <section className="relative w-full h-screen flex items-center justify-start overflow-hidden bg-[#8dc73f]">
+    <section className="relative w-full h-screen flex items-end md:items-center justify-start overflow-hidden bg-[#8dc73f]">
       {/* Background Image */}
       <Image
         src="/bg-three.png"
@@ -67,7 +67,7 @@ const Three = () => {
       />
 
       {/* Content */}
-      <div className="relative z-20 text-left text-white px-8 max-w-2xl">
+      <div className="relative z-20 text-left text-white p-8 max-w-2xl">
         <h2 className="text-4xl md:text-6xl font-medium mb-4 drop-shadow-lg">
           Explore over 70 advertising services waiting for you
         </h2>
@@ -89,7 +89,7 @@ const Three = () => {
 
 const Four = () => {
   return (
-    <section className="relative w-full h-screen flex items-center justify-start overflow-hidden bg-[#967b60]">
+    <section className="relative w-full h-screen flex items-start md:items-center justify-start overflow-hidden bg-[#967b60]">
       {/* Background Image */}
       <Image
         src="/bg-four-en.png"
@@ -102,11 +102,11 @@ const Four = () => {
       />
 
       {/* Content */}
-      <div className="relative z-20 text-left text-white px-8 max-w-2xl">
+      <div className="relative z-20 text-left text-white p-8 max-w-2xl">
         <h2 className="text-4xl md:text-6xl font-medium mb-4 drop-shadow-lg">
           Product and application logo design services
         </h2>
-        <p className="text-lg md:text-2xl font-light mb-6 drop-shadow">
+        <p className="text-lg md:text-2xl mb-6 drop-shadow">
           Adstation provides factories and importers with specialized solutions
           in product design and its various applications, from logo to
           distribution. Experienced agencies.
@@ -124,7 +124,7 @@ const Four = () => {
 
 const Five = () => {
   return (
-    <section className="relative w-full h-screen flex items-center justify-start overflow-hidden bg-[#027dc3]">
+    <section className="relative w-full h-screen flex items-start md:items-center justify-start overflow-hidden bg-[#027dc3]">
       {/* Background Image */}
       <Image
         src="/bg-five-en.png"
@@ -137,7 +137,7 @@ const Five = () => {
       />
 
       {/* Content */}
-      <div className="relative z-20 text-left text-white px-8 max-w-2xl">
+      <div className="relative z-20 text-left text-white p-8 max-w-2xl">
         <h2 className="text-4xl md:text-6xl font-medium mb-4 drop-shadow-lg">
           Point of Sale Product Display Solutions
         </h2>
@@ -160,7 +160,7 @@ const Five = () => {
 
 const Six = () => {
   return (
-    <section className="relative w-full h-screen flex items-center justify-start overflow-hidden bg-[#fff]">
+    <section className="relative w-full h-screen flex items-start md:items-center justify-start overflow-hidden bg-[#fff]">
       {/* Background Image */}
       <Image
         src="/bg-six.png"
@@ -173,7 +173,7 @@ const Six = () => {
       />
 
       {/* Content */}
-      <div className="relative z-20 text-left text-dark px-8 max-w-2xl space-y-8">
+      <div className="relative z-20 text-left text-dark p-8 max-w-2xl space-y-8">
         <h2 className="text-4xl md:text-6xl font-medium mb-4 drop-shadow-lg">
           Billboards: All types of outdoor advertising and promotional panels
         </h2>

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
   Facebook,
   Instagram,
@@ -16,52 +17,52 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Navigation Links */}
         <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-8 mb-6 rtl:sm:space-x-reverse">
-          <a
-            href="#"
+          <Link
+            href="/about"
             className="text-white hover:text-gray-300 transition-colors text-center sm:text-left"
           >
             About Us
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="/services"
             className="text-white hover:text-gray-300 transition-colors text-center sm:text-left"
           >
             Services
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="/why-adstation"
             className="text-white hover:text-gray-300 transition-colors text-center sm:text-left"
           >
             Why Adstation
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="/blog"
             className="text-white hover:text-gray-300 transition-colors text-center sm:text-left"
           >
             Blog
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="/contact"
             className="text-white hover:text-gray-300 transition-colors text-center sm:text-left"
           >
             Contact Us
-          </a>
+          </Link>
         </div>
 
         {/* Calls to Action */}
         <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-8 rtl:sm:space-x-reverse">
-          <a
-            href="#"
+          <Link
+            href="/join-us"
             className="text-white hover:text-gray-300 transition-colors text-center sm:text-left"
           >
             Become a Partner
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            href="/quote"
             className="text-white hover:text-gray-300 transition-colors text-center sm:text-left"
           >
             Get a Quote
-          </a>
+          </Link>
         </div>
 
         {/* Social Media Icons */}

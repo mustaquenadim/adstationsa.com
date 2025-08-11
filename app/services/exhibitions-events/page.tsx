@@ -1,8 +1,9 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ArrowUpRight } from "lucide-react";
 import * as motion from "motion/react-client";
 import Image from "next/image";
-import Link from "next/link";
+import { useQuoteDialog } from "@/contexts/quote-dialog-context";
 
 // Exhibitions and events services data structure
 const exhibitionsEventsServicesData = [
@@ -49,6 +50,8 @@ const exhibitionsEventsServicesData = [
 ];
 
 const ExhibitionsEventsPage = () => {
+  const { openDialog } = useQuoteDialog();
+
   return (
     <section className="relative w-full min-h-screen bg-[#FAB91B] text-white overflow-hidden">
       {/* Main Content */}
@@ -111,6 +114,7 @@ const ExhibitionsEventsPage = () => {
               </p>
               <Button
                 size="lg"
+                onClick={openDialog}
                 className="mt-4 px-4 sm:px-6 py-2 bg-white text-black rounded-full text-sm font-medium hover:bg-gray-100 transition-all duration-300 w-fit cursor-pointer hover:scale-105 hover:shadow-lg active:scale-95 group"
               >
                 Request a Quote
@@ -143,6 +147,7 @@ const ExhibitionsEventsPage = () => {
               </p>
               <Button
                 size="lg"
+                onClick={openDialog}
                 className="mt-4 px-4 sm:px-6 py-2 bg-white text-black rounded-full text-sm font-medium hover:bg-gray-100 transition-all duration-300 w-fit cursor-pointer hover:scale-105 hover:shadow-lg active:scale-95 group"
               >
                 Request a Quote
