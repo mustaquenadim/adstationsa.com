@@ -5,15 +5,14 @@ import React from "react";
 const JoinUsPage = () => {
   return (
     <>
-      <section className="relative w-full min-h-screen bg-[#8DC63F] text-black overflow-hidden flex items-center justify-center">
-        <div className="relative z-20 grid grid-cols-1 md:grid-cols-2 px-10">
-          <div className="text-left text-white max-w-2xl flex flex-col justify-center h-full">
-            <div className="text-2xl font-medium mb-6">Join Our Partners</div>
-            <div>adstation</div>
-            <h1 className="text-4xl mb-6 text-white">
+      <section className="relative w-full min-h-screen bg-[#8DC63F] text-black overflow-hidden flex items-center justify-center py-10 md:py-0">
+        <div className="container relative z-20 grid grid-cols-1 lg:grid-cols-2 gap-8 px-4 sm:px-6 md:px-0 mx-auto">
+          <div className="text-left text-white flex flex-col justify-center h-full order-2 lg:order-1">
+            <div className="text-xl sm:text-2xl font-medium mb-4 md:mb-6">Join Our Partners</div>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-6 text-white leading-tight">
               Your smart partner for digital growth
             </h1>
-            <p className="text-base sm:text-lg leading-relaxed text-white">
+            <p className="text-sm sm:text-base md:text-lg leading-relaxed text-white">
               Adstation, the first digital platform that connects advertising
               service providers with their clients, aims to provide integrated
               services to businesses and organizations. With an ambitious
@@ -24,12 +23,13 @@ const JoinUsPage = () => {
             </p>
           </div>
 
-          <div className="flex items-center justify-center">
+          <div className="flex items-center justify-center order-1 lg:order-2">
             <Image
               src="/handshake.svg"
               alt="Join Us"
               width={500}
               height={500}
+              className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg h-auto"
             />
           </div>
         </div>
