@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
 import Logo from "@/components/logo";
 import { useQuoteDialog } from "@/contexts/quote-dialog-context";
@@ -29,20 +30,28 @@ import RequestQuoteForm from "@/components/forms/request-quote-form";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./ui/select";
 import { Languages } from "lucide-react";
 
-// Navigation links array to be used in both desktop and mobile menus
-const navigationLinks = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About Us" },
-  { href: "/services", label: "Our Services" },
-  { href: "/why-adstation", label: "Why AdStation?" },
-  { href: "/join-us", label: "Become Our Partner" },
-];
-
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [language, setLanguage] = useState('ar'); // Default to Arabic
   const pathname = usePathname();
+  const router = useRouter();
+  const locale = useLocale();
   const { isOpen: isQuoteDialogOpen, openDialog, closeDialog } = useQuoteDialog();
+  const t = useTranslations('header');
+
+  const handleLanguageChange = (newLocale: string) => {
+    // Set cookie and refresh page to apply new locale
+    document.cookie = `locale=${newLocale}; path=/; max-age=31536000`; // 1 year
+    router.refresh();
+  };
+
+  // Navigation links array using translations
+  const navigationLinks = [
+    { href: "/", label: t('navigation.home') },
+    { href: "/about", label: t('navigation.about') },
+    { href: "/services", label: t('navigation.services') },
+    { href: "/why-adstation", label: t('navigation.whyAdstation') },
+    { href: "/join-us", label: t('navigation.joinUs') },
+  ];
 
   // Show default logo only on home page, white logo everywhere else
   const logoVariant = pathname === '/' ? 'default' : 'white';
@@ -95,7 +104,7 @@ export default function Header() {
               ))}
             </NavigationMenuList>
           </NavigationMenu>
-          <Select value={language} onValueChange={setLanguage}>
+          <Select value={locale} onValueChange={handleLanguageChange}>
             <SelectTrigger
               className={`cursor-pointer rounded-full w-auto border-none bg-transparent text-sm transition-colors duration-300 flex items-center gap-2 ${isScrolled
                 ? "text-gray-300 hover:text-white hover:bg-gray-800"
@@ -106,8 +115,8 @@ export default function Header() {
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="ar">العربية</SelectItem>
-              <SelectItem value="en">English</SelectItem>
+              <SelectItem value="ar">{t('language.arabic')}</SelectItem>
+              <SelectItem value="en">{t('language.english')}</SelectItem>
             </SelectContent>
           </Select>
 
@@ -115,17 +124,16 @@ export default function Header() {
           <Dialog open={isQuoteDialogOpen} onOpenChange={(open) => open ? openDialog() : closeDialog()}>
             <DialogTrigger asChild>
               <Button size="lg" className="rounded-full">
-                Request a Quote
+                {t('requestQuote')}
               </Button>
             </DialogTrigger>
             <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
               <DialogHeader>
                 <DialogTitle className="text-2xl font-bold text-center">
-                  Request a Quote
+                  {t('requestQuoteDialog.title')}
                 </DialogTitle>
                 <DialogDescription className="text-center">
-                  Fill out the form below and we&apos;ll get back to you with a
-                  customized quote for your advertising needs.
+                  {t('requestQuoteDialog.description')}
                 </DialogDescription>
               </DialogHeader>
               <div className="mt-6">

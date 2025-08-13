@@ -5,6 +5,8 @@ import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { QuoteDialogProvider } from "@/contexts/quote-dialog-context";
+import { NextIntlClientProvider } from 'next-intl';
+import { getLocale, getMessages } from "next-intl/server";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -68,20 +70,26 @@ export const metadata: Metadata = {
   description: "Adstation",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+  const messages = await getMessages();
+  const isRTL = locale === 'ar';
+
   return (
-    <html lang="en">
+    <html lang={locale} dir={isRTL ? 'rtl' : 'ltr'}>
       <body
         className={`${montserrat.variable} ${montserratArabic.variable} antialiased font-arabic`}
       >
         <QuoteDialogProvider>
-          <Header />
-          <main className="">{children}</main>
-          <Footer />
+          <NextIntlClientProvider locale={locale} messages={messages}>
+            <Header />
+            <main className="">{children}</main>
+            <Footer />
+          </NextIntlClientProvider>
         </QuoteDialogProvider>
       </body>
     </html>

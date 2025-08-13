@@ -1,0 +1,20 @@
+{
+    "header": {
+        "navigation": {
+            "home": "الرئيسية",
+            "about": "من نحن",
+            "services": "خدماتنا",
+            "whyAdstation": "لماذا أدستيشن؟",
+            "joinUs": "كن شريكنا"
+        },
+        "requestQuote": "طلب عرض سعر",
+        "requestQuoteDialog": {
+            "title": "طلب عرض سعر",
+            "description": "املأ النموذج أدناه وسنعود إليك بعرض سعر مخصص لاحتياجاتك الإعلانية."
+        },
+        "language": {
+            "arabic": "العربية",
+            "english": "English"
+        }
+    }
+}
