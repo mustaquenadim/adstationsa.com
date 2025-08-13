@@ -329,6 +329,57 @@
             "sectionTitle": "Every day...more services, stronger partnerships To help you grow"
         }
     },
+    "whyAdstation": {
+        "hero": {
+            "title": "We are more than just a platform.. We are your partner for",
+            "smartAdvertising": "Smart Advertising",
+            "subtitle": "Why Adstation?",
+            "description": "In the world of traditional advertising, many marketing managers waste time and effort searching for the ideal advertising partner."
+        },
+        "advantages": {
+            "title": "Advantages",
+            "brand": "adstation",
+            "subtitle": "Competitiveness"
+        },
+        "features": {
+            "localLeadership": {
+                "title": "Local Leadership",
+                "description": "The first specialized Saudi platform that integrates traditional advertising services with digital solutions to keep pace with market development."
+            },
+            "diverseExpertise": {
+                "title": "Diverse Expertise",
+                "description": "A diverse team of experts in advertising and marketing, and sales managers for local and global brands."
+            },
+            "smartSolutions": {
+                "title": "Smart Solutions",
+                "description": "We combine the power of traditional advertising with the efficiency of digital technology to give you the best return on investment."
+            },
+            "fullTransparency": {
+                "title": "Full Transparency",
+                "description": "Clear prices, real evaluations for providers, and continuous follow-up from order to completion."
+            },
+            "spendingEfficiency": {
+                "title": "Spending Efficiency",
+                "description": "Our experts negotiate on your behalf to achieve the best prices from trusted providers, with maximum value for investment."
+            },
+            "betterOptions": {
+                "title": "Better Options",
+                "description": "We submit your request to more than 5 providers in each category, so you can choose from multiple offers and ideas that achieve superior results for you."
+            },
+            "savingTimeAndEffort": {
+                "title": "Saving Time and Effort",
+                "description": "Our team follows up on your requests step by step, ensuring fast completion without you bearing the burdens of communication and coordination."
+            },
+            "diverseAndIntegratedServices": {
+                "title": "Diverse and Integrated Services",
+                "description": "We cover more than 50 traditional advertising services, and continuously expand through new partnerships with specialized service providers."
+            },
+            "wideGeographicalCoverage": {
+                "title": "Wide Geographical Coverage",
+                "description": "Our services reach all cities in the Kingdom and ensure fast completion of your projects and advertising campaigns at the lowest cost, with speed and high reliability through a wide network of advertising service providers."
+            }
+        }
+    },
     "footer": {
         "navigation": {
             "about": "About Us",
