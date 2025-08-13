@@ -4,71 +4,33 @@ import { Button } from "@/components/ui/button";
 import * as motion from "motion/react-client";
 import Image from "next/image";
 import { useQuoteDialog } from "@/contexts/quote-dialog-context";
-
-// Exhibitions and events services data structure
-const exhibitionsEventsServicesData = [
-  {
-    id: 1,
-    title: "Renting all kinds of advertising stands",
-    description:
-      "ADSTATION, in collaboration with its partners, seeks to offer pop-up and roll-up stand rental services with printing, aiming to provide economical and effective solutions for clients attending small or limited-capacity events.",
-    bgColor: "bg-black",
-    link: "/services/exhibitions-events",
-  },
-  {
-    id: 2,
-    title: "Rental of screens and interactive devices",
-    description:
-      "At ADSTATION, we aim to facilitate our clients' access to professional advertising screen booking and installation services, as well as interactive devices with audiences, from specialized providers, to ensure a comprehensive service for your event.",
-    bgColor: "bg-[#11ABC4]",
-    link: "/services/exhibitions-events",
-  },
-  {
-    id: 3,
-    title: "Design and implementation of Suites and booths",
-    description:
-      "According to your budgets and marketing goals, our partners transform them into designs specific to you with innovative options, and we negotiate with them to provide a comprehensive service with minimal effort.",
-    bgColor: "bg-[#118D8B]",
-    link: "/services/exhibitions-events",
-  },
-  {
-    id: 4,
-    title: "Event and conference theatre design",
-    description:
-      "We provide experts and specialists in designing and equipping theaters and facades for events and activities according to the type and purpose of the event.",
-    bgColor: "bg-[#4D449B]",
-    link: "/services/exhibitions-events",
-  },
-  {
-    id: 5,
-    title: "Photographing and documenting events",
-    description:
-      "Through our partners, we guarantee that you will receive professional photography and editing of events and activities.",
-    bgColor: "bg-[#FAB91B]",
-    link: "/services/exhibitions-events",
-  },
-];
+import { useTranslations } from "next-intl";
 
 const ExhibitionsEventsPage = () => {
   const { openDialog } = useQuoteDialog();
+  const t = useTranslations('services');
+
+  // Services color configuration
+  const servicesConfig = [
+    "bg-black",
+    "bg-[#11ABC4]",
+    "bg-[#118D8B]",
+    "bg-[#4D449B]",
+    "bg-[#FAB91B]",
+  ];
 
   return (
     <section className="relative w-full min-h-screen bg-[#FAB91B] text-white overflow-hidden">
       {/* Main Content */}
       <div className="relative z-20 grid grid-cols-1 md:grid-cols-2 h-screen px-10">
         <div className="flex items-center justify-center order-2 md:order-1">
-          <div className="text-left text-white max-w-2xl">
-            <h1 className="text-2xl mb-6">Our Services</h1>
+          <div className="text-left rtl:text-right text-white max-w-2xl">
+            <h1 className="text-2xl mb-6">{t('main.title')}</h1>
             <div className="text-3xl md:text-4xl lg:text-6xl font-normal text-white">
-              Exhibition and Event Services and Solutions
+              {t('exhibitionsEvents.title')}
             </div>
             <p className="mt-6 text-base md:text-lg lg:text-xl font-light leading-6 text-white">
-              Professional partners from freelancers and agencies in{" "}
-              <span className="block font-medium text-4xl md:text-5xl lg:text-6xl py-2">
-                adstation
-              </span>{" "}
-              We are ready to provide quality event services that achieve your
-              goals with unforgettable participation and make an impact.
+              {t('exhibitionsEvents.description')}
             </p>
           </div>
         </div>
@@ -94,30 +56,29 @@ const ExhibitionsEventsPage = () => {
       <div className="pt-20">
         <div className="max-w-3xl mx-auto text-white text-center text-md font-normal mb-20">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium">
-            Our list of services and solutions for exhibitions and events
-            includes
+            {t('exhibitionsEvents.sectionTitle')}
           </h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {/* First 4 service items */}
-          {exhibitionsEventsServicesData.slice(0, 4).map((service) => (
+          {servicesConfig.slice(0, 4).map((bgColor, index) => (
             <div
-              key={service.id}
-              className={`h-full w-full ${service.bgColor} text-white p-6 sm:p-8 aspect-square flex flex-col justify-center overflow-hidden`}
+              key={index}
+              className={`h-full w-full ${bgColor} text-white p-6 sm:p-8 aspect-square flex flex-col justify-center overflow-hidden`}
             >
               <h3 className="text-2xl sm:text-3xl lg:text-2xl xl:text-4xl font-medium">
-                {service.title}
+                {t(`exhibitionsEvents.services.${index}.title`)}
               </h3>
               <p className="text-base sm:text-lg lg:text-base xl:text-lg font-light leading-6 mt-4">
-                {service.description}
+                {t(`exhibitionsEvents.services.${index}.description`)}
               </p>
               <Button
                 size="lg"
                 onClick={openDialog}
                 className="mt-4 px-4 sm:px-6 py-2 bg-white text-black rounded-full text-sm font-medium hover:bg-gray-100 transition-all duration-300 w-fit cursor-pointer hover:scale-105 hover:shadow-lg active:scale-95 group"
               >
-                Request a Quote
+                {t('exhibitionsEvents.requestQuote')}
               </Button>
             </div>
           ))}
@@ -133,24 +94,24 @@ const ExhibitionsEventsPage = () => {
             />
           </div>
 
-          {/* Last 3 service items */}
-          {exhibitionsEventsServicesData.slice(4).map((service) => (
+          {/* Last service item */}
+          {servicesConfig.slice(4).map((bgColor, index) => (
             <div
-              key={service.id}
-              className={`h-full w-full ${service.bgColor} text-white p-6 sm:p-8 aspect-square flex flex-col justify-center overflow-hidden`}
+              key={index + 4}
+              className={`h-full w-full ${bgColor} text-white p-6 sm:p-8 aspect-square flex flex-col justify-center overflow-hidden`}
             >
               <h3 className="text-2xl sm:text-3xl lg:text-2xl xl:text-4xl font-medium">
-                {service.title}
+                {t(`exhibitionsEvents.services.${index + 4}.title`)}
               </h3>
               <p className="text-base sm:text-lg lg:text-base xl:text-lg font-light leading-6 mt-4">
-                {service.description}
+                {t(`exhibitionsEvents.services.${index + 4}.description`)}
               </p>
               <Button
                 size="lg"
                 onClick={openDialog}
                 className="mt-4 px-4 sm:px-6 py-2 bg-white text-black rounded-full text-sm font-medium hover:bg-gray-100 transition-all duration-300 w-fit cursor-pointer hover:scale-105 hover:shadow-lg active:scale-95 group"
               >
-                Request a Quote
+                {t('exhibitionsEvents.requestQuote')}
               </Button>
             </div>
           ))}
