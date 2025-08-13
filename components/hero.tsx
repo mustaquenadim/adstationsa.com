@@ -11,7 +11,7 @@ const Hero = () => {
         fill="white"
       />
       {/* Logo */}
-      <div className="absolute top-36 right-4 lg:top-40 lg:right-60 z-20">
+      <div className="absolute top-28 right-4 lg:top-40 lg:right-60 z-20">
         <Image
           src="/hero-logo.svg"
           alt="Adstation Logo"
@@ -37,12 +37,10 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-20 text-left text-white px-8 max-w-2xl">
         <h1 className="text-4xl md:text-6xl font-medium mb-4 drop-shadow-lg">
-          The first Saudi platform for advertising and advertising services
+          The first Saudi platform for advertising services
         </h1>
         <p className="text-lg md:text-2xl mb-6 drop-shadow">
-          Adstation is an integrated platform specializing in advertising
-          requests, bringing together the largest group of advertising agencies
-          and companies, all in one place, according to professional standards.
+          Adstation is a unified platform connecting top advertising agencies and companies to handle ad requests professionally.
         </p>
         <Button
           size="xl"

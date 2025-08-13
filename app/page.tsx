@@ -54,7 +54,7 @@ const Two = () => {
 
 const Three = () => {
   return (
-    <section className="relative w-full h-screen flex items-end md:items-center justify-start overflow-hidden bg-[#8dc73f]">
+    <section className="relative w-full h-screen flex items-end md:items-center justify-start overflow-hidden bg-[#8dc73f] py-16">
       {/* Background Image */}
       <Image
         src="/bg-three.png"
@@ -62,7 +62,7 @@ const Three = () => {
         layout="fill"
         objectFit="cover"
         quality={90}
-        className="z-0"
+        className="z-0 object-cover"
         priority
       />
 
@@ -89,9 +89,9 @@ const Three = () => {
 
 const Four = () => {
   return (
-    <section className="relative w-full h-screen flex items-start md:items-center justify-start overflow-hidden bg-[#967b60]">
+    <section className="relative w-full min-h-screen sm:max-h-screen flex items-start md:items-center justify-start overflow-hidden bg-[#967b60] py-10 sm:py-0">
       {/* Background Image */}
-      <Image
+      {/* <Image
         src="/bg-four-en.png"
         alt="Hero Background"
         layout="fill"
@@ -99,7 +99,31 @@ const Four = () => {
         quality={90}
         className="z-0"
         priority
-      />
+      /> */}
+      {/* Mobile Background Image */}
+      <div className="block md:hidden absolute bottom-10 right-0 w-3/4 h-1/2 z-0">
+        <Image
+          src="/bg-four-mobile.png"
+          alt="Hero Background Mobile"
+          layout="fill"
+          objectFit="cover"
+          objectPosition="left bottom"
+          quality={90}
+          priority
+        />
+      </div>
+
+      {/* Desktop Background Image */}
+      <div className="hidden md:block absolute inset-0 z-0">
+        <Image
+          src="/bg-four-en.png"
+          alt="Hero Background Desktop"
+          layout="fill"
+          objectFit="cover"
+          quality={90}
+          priority
+        />
+      </div>
 
       {/* Content */}
       <div className="relative z-20 text-left text-white p-8 max-w-2xl">
@@ -124,7 +148,7 @@ const Four = () => {
 
 const Five = () => {
   return (
-    <section className="relative w-full h-screen flex items-start md:items-center justify-start overflow-hidden bg-[#027dc3]">
+    <section className="relative w-full h-screen flex items-start md:items-center justify-start overflow-hidden bg-[#027dc3] py-10 sm:py-0">
       {/* Background Image */}
       <Image
         src="/bg-five-en.png"
@@ -137,15 +161,12 @@ const Five = () => {
       />
 
       {/* Content */}
-      <div className="relative z-20 text-left text-white p-8 max-w-2xl">
+      <div className="relative z-20 text-left text-white p-8 max-w-sm sm:max-w-2xl">
         <h2 className="text-4xl md:text-6xl font-medium mb-4 drop-shadow-lg">
-          Point of Sale Product Display Solutions
+          Point of Sale Production Display Solutions
         </h2>
         <p className="text-lg md:text-2xl mb-6 drop-shadow">
-          Adstation has partnerships with companies, factories, and professional
-          designers specializing in display system applications and solutions
-          that distinguish your products at points of sale in grocery stores,
-          supermarkets, and other stores.
+          Adstation partners with companies, factories, and designers to deliver display solutions that showcase your products in grocery stores, supermarkets, and other retail outlets.
         </p>
         <Button
           size="xl"
@@ -173,7 +194,7 @@ const Six = () => {
       />
 
       {/* Content */}
-      <div className="relative z-20 text-left text-dark p-8 max-w-2xl space-y-8">
+      <div className="relative z-20 text-left text-dark p-8 max-w-xl space-y-8">
         <h2 className="text-4xl md:text-6xl font-medium mb-4 drop-shadow-lg">
           Billboards: All types of outdoor advertising and promotional panels
         </h2>
