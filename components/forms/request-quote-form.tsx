@@ -22,122 +22,126 @@ import {
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-
-// Form schema with validation
-const formSchema = z.object({
-  companyName: z.string().min(1, "Company name is required"),
-  responsiblePerson: z.string().min(1, "Responsible person is required"),
-  email: z.string().email("Please enter a valid email address"),
-  mobileNumber: z.string().min(1, "Mobile number is required"),
-  state: z.string().min(1, "Please select a state"),
-  targetCity: z.string().min(1, "Target city/area is required"),
-  selectedServices: z
-    .array(z.string())
-    .min(1, "Please select at least one service"),
-  orderDetails: z.string().min(1, "Order details are required"),
-  contactPreference: z
-    .array(z.string())
-    .min(1, "Please select a contact preference"),
-  uploadedFiles: z.string().optional(),
-});
-
-type FormData = z.infer<typeof formSchema>;
-
-// Service options
-const serviceOptions = [
-  { id: "outdoor-advertising", label: "Outdoor Advertising" },
-  { id: "indoor-signage", label: "Indoor Signage" },
-  { id: "creative-design", label: "Creative Design" },
-  { id: "printing", label: "Printing Services" },
-  { id: "exhibitions-events", label: "Exhibitions & Events" },
-  { id: "point-of-sale", label: "Point of Sale" },
-];
-
-// Contact preference options
-const contactOptions = [
-  { id: "email", label: "Email" },
-  { id: "phone", label: "Phone Call" },
-  { id: "whatsapp", label: "WhatsApp" },
-];
-
-// State options
-const stateOptions = [
-  { value: "riyadh", label: "Riyadh" },
-  { value: "jeddah", label: "Jeddah" },
-  { value: "dammam", label: "Dammam" },
-  { value: "makkah", label: "Makkah" },
-  { value: "medina", label: "Medina" },
-  { value: "other", label: "Other" },
-];
-
-// Checkbox group component
-const CheckboxGroup = ({
-  name,
-  control,
-  options,
-  label,
-}: {
-  name: keyof FormData;
-  control: ReturnType<typeof useForm<FormData>>["control"];
-  options: { id: string; label: string }[];
-  label: string;
-}) => (
-  <FormField
-    control={control}
-    name={name}
-    render={() => (
-      <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
-        <FormLabel className="flex shrink-0">{label}</FormLabel>
-        <div className="w-full">
-          <FormControl>
-            <div className="grid w-full gap-2">
-              {options.map((option) => (
-                <FormField
-                  key={option.id}
-                  name={name}
-                  control={control}
-                  render={({ field: OptionField }) => (
-                    <FormItem className="border-0 p-0 flex items-start">
-                      <FormControl>
-                        <Checkbox
-                          checked={OptionField.value?.includes(option.id)}
-                          onCheckedChange={(checked) => {
-                            return checked
-                              ? OptionField.onChange([
-                                ...(OptionField.value || []),
-                                option.id,
-                              ])
-                              : OptionField.onChange(
-                                (OptionField.value as string[])?.filter(
-                                  (value: string) => value !== option.id
-                                ) || []
-                              );
-                          }}
-                        />
-                      </FormControl>
-                      <div className="grid gap-2 leading-none">
-                        <FormLabel className="font-normal">
-                          {option.label}
-                        </FormLabel>
-                      </div>
-                    </FormItem>
-                  )}
-                />
-              ))}
-            </div>
-          </FormControl>
-          <FormMessage />
-        </div>
-      </FormItem>
-    )}
-  />
-);
+import { useTranslations } from "next-intl";
 
 interface RequestQuoteFormProps {
   onSuccess?: () => void;
 }
 
 export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
+  const t = useTranslations("header.requestQuoteForm");
+
+  // Form schema with validation using translations
+  const formSchema = z.object({
+    companyName: z.string().min(1, t("validation.companyNameRequired")),
+    responsiblePerson: z
+      .string()
+      .min(1, t("validation.responsiblePersonRequired")),
+    email: z.string().email(t("validation.invalidEmail")),
+    mobileNumber: z.string().min(1, t("validation.mobileNumberRequired")),
+    state: z.string().min(1, t("validation.stateRequired")),
+    targetCity: z.string().min(1, t("validation.targetCityRequired")),
+    selectedServices: z
+      .array(z.string())
+      .min(1, t("validation.servicesRequired")),
+    orderDetails: z.string().min(1, t("validation.orderDetailsRequired")),
+    contactPreference: z
+      .array(z.string())
+      .min(1, t("validation.contactPreferenceRequired")),
+    uploadedFiles: z.string().optional(),
+  });
+
+  type FormData = z.infer<typeof formSchema>;
+
+  // Service options using translations
+  const serviceOptions = [
+    { id: "outdoor-advertising", label: t("services.outdoorAdvertising") },
+    { id: "indoor-signage", label: t("services.indoorSignage") },
+    { id: "creative-design", label: t("services.creativeDesign") },
+    { id: "printing", label: t("services.printing") },
+    { id: "exhibitions-events", label: t("services.exhibitionsEvents") },
+    { id: "point-of-sale", label: t("services.pointOfSale") },
+  ];
+
+  // Contact preference options using translations
+  const contactOptions = [
+    { id: "email", label: t("contactOptions.email") },
+    { id: "phone", label: t("contactOptions.phone") },
+    { id: "whatsapp", label: t("contactOptions.whatsapp") },
+  ];
+
+  // State options using translations
+  const stateOptions = [
+    { value: "riyadh", label: t("states.riyadh") },
+    { value: "jeddah", label: t("states.jeddah") },
+    { value: "dammam", label: t("states.dammam") },
+    { value: "makkah", label: t("states.makkah") },
+    { value: "medina", label: t("states.medina") },
+    { value: "other", label: t("states.other") },
+  ];
+
+  // Checkbox group component
+  const CheckboxGroup = ({
+    name,
+    control,
+    options,
+    label,
+  }: {
+    name: keyof FormData;
+    control: ReturnType<typeof useForm<FormData>>["control"];
+    options: { id: string; label: string }[];
+    label: string;
+  }) => (
+    <FormField
+      control={control}
+      name={name}
+      render={() => (
+        <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
+          <FormLabel className="flex shrink-0">{label}</FormLabel>
+          <div className="w-full">
+            <FormControl>
+              <div className="grid w-full gap-2">
+                {options.map((option) => (
+                  <FormField
+                    key={option.id}
+                    name={name}
+                    control={control}
+                    render={({ field: OptionField }) => (
+                      <FormItem className="border-0 p-0 flex items-start">
+                        <FormControl>
+                          <Checkbox
+                            checked={OptionField.value?.includes(option.id)}
+                            onCheckedChange={(checked) => {
+                              return checked
+                                ? OptionField.onChange([
+                                    ...(OptionField.value || []),
+                                    option.id,
+                                  ])
+                                : OptionField.onChange(
+                                    (OptionField.value as string[])?.filter(
+                                      (value: string) => value !== option.id
+                                    ) || []
+                                  );
+                            }}
+                          />
+                        </FormControl>
+                        <div className="grid gap-2 leading-none">
+                          <FormLabel className="font-normal">
+                            {option.label}
+                          </FormLabel>
+                        </div>
+                      </FormItem>
+                    )}
+                  />
+                ))}
+              </div>
+            </FormControl>
+            <FormMessage />
+          </div>
+        </FormItem>
+      )}
+    />
+  );
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -160,9 +164,7 @@ export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
     // You can add API call here to submit the form data
 
     // Show success message or handle success
-    alert(
-      "Thank you! Your quote request has been submitted successfully. We'll get back to you soon."
-    );
+    alert(t("successMessage"));
 
     // Call onSuccess callback if provided (to close dialog)
     if (onSuccess) {
@@ -189,11 +191,13 @@ export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
             name="companyName"
             render={({ field }) => (
               <FormItem className="col-span-12 @3xl:col-span-6 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
-                <FormLabel className="flex shrink-0">Company Name</FormLabel>
+                <FormLabel className="flex shrink-0">
+                  {t("companyName")}
+                </FormLabel>
                 <div className="w-full">
                   <FormControl>
                     <Input
-                      placeholder="Enter your company name"
+                      placeholder={t("placeholders.companyName")}
                       type="text"
                       id="companyName"
                       className=""
@@ -213,12 +217,12 @@ export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
             render={({ field }) => (
               <FormItem className="col-span-12 @3xl:col-span-6 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
                 <FormLabel className="flex shrink-0">
-                  Responsible Person
+                  {t("responsiblePerson")}
                 </FormLabel>
                 <div className="w-full">
                   <FormControl>
                     <Input
-                      placeholder="Enter responsible person name"
+                      placeholder={t("placeholders.responsiblePerson")}
                       type="text"
                       id="responsiblePerson"
                       className=""
@@ -237,11 +241,11 @@ export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
             name="email"
             render={({ field }) => (
               <FormItem className="col-span-12 @3xl:col-span-6 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
-                <FormLabel className="flex shrink-0">Email</FormLabel>
+                <FormLabel className="flex shrink-0">{t("email")}</FormLabel>
                 <div className="w-full">
                   <FormControl>
                     <Input
-                      placeholder="Enter your email address"
+                      placeholder={t("placeholders.email")}
                       type="email"
                       id="email"
                       className=""
@@ -260,11 +264,13 @@ export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
             name="mobileNumber"
             render={({ field }) => (
               <FormItem className="col-span-12 @3xl:col-span-6 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
-                <FormLabel className="flex shrink-0">Mobile Number</FormLabel>
+                <FormLabel className="flex shrink-0">
+                  {t("mobileNumber")}
+                </FormLabel>
                 <div className="w-full">
                   <FormControl>
                     <Input
-                      placeholder="Enter your mobile number"
+                      placeholder={t("placeholders.mobileNumber")}
                       type="tel"
                       id="mobileNumber"
                       className=""
@@ -283,12 +289,14 @@ export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
             name="state"
             render={({ field }) => (
               <FormItem className="col-span-12 @3xl:col-span-6 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
-                <FormLabel className="flex shrink-0">State</FormLabel>
+                <FormLabel className="flex shrink-0">{t("state")}</FormLabel>
                 <div className="w-full">
                   <FormControl>
                     <Select value={field.value} onValueChange={field.onChange}>
                       <SelectTrigger className="w-full">
-                        <SelectValue placeholder="Select State" />
+                        <SelectValue
+                          placeholder={t("placeholders.selectState")}
+                        />
                       </SelectTrigger>
                       <SelectContent>
                         {stateOptions.map((state) => (
@@ -312,12 +320,12 @@ export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
             render={({ field }) => (
               <FormItem className="col-span-12 @3xl:col-span-6 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
                 <FormLabel className="flex shrink-0">
-                  Target City/Area
+                  {t("targetCity")}
                 </FormLabel>
                 <div className="w-full">
                   <FormControl>
                     <Input
-                      placeholder="Enter target city or area"
+                      placeholder={t("placeholders.targetCity")}
                       type="text"
                       id="targetCity"
                       className=""
@@ -335,7 +343,7 @@ export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
             name="selectedServices"
             control={form.control}
             options={serviceOptions}
-            label="Select Services"
+            label={t("selectServices")}
           />
 
           {/* Order Details */}
@@ -344,11 +352,13 @@ export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
             name="orderDetails"
             render={({ field }) => (
               <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
-                <FormLabel className="flex shrink-0">Order Details</FormLabel>
+                <FormLabel className="flex shrink-0">
+                  {t("orderDetails")}
+                </FormLabel>
                 <div className="w-full">
                   <FormControl>
                     <Textarea
-                      placeholder="Please describe your order requirements..."
+                      placeholder={t("placeholders.orderDetails")}
                       id="orderDetails"
                       className="min-h-[120px]"
                       {...field}
@@ -365,7 +375,7 @@ export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
             name="contactPreference"
             control={form.control}
             options={contactOptions}
-            label="Contact Preference"
+            label={t("contactPreference")}
           />
 
           {/* Upload File */}
@@ -374,7 +384,9 @@ export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
             name="uploadedFiles"
             render={({ field }) => (
               <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
-                <FormLabel className="flex shrink-0">Upload File</FormLabel>
+                <FormLabel className="flex shrink-0">
+                  {t("uploadFile")}
+                </FormLabel>
                 <div className="w-full">
                   <FormControl>
                     <Input
@@ -386,7 +398,7 @@ export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
                     />
                   </FormControl>
                   <FormDescription>
-                    You can upload multiple files. Maximum file size: 5MB
+                    {t("uploadFileDescription")}
                   </FormDescription>
                   <FormMessage />
                 </div>
@@ -398,7 +410,7 @@ export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
           <div className="col-span-12 @3xl:col-span-6 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
             <div className="w-full">
               <Button type="reset" variant="outline" className="w-full">
-                Reset
+                {t("resetButton")}
               </Button>
             </div>
           </div>
@@ -407,7 +419,7 @@ export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
           <div className="col-span-12 @3xl:col-span-6 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
             <div className="w-full">
               <Button type="submit" variant="default" className="w-full">
-                Submit Request
+                {t("submitButton")}
               </Button>
             </div>
           </div>

@@ -12,6 +12,63 @@
             "title": "طلب عرض سعر",
             "description": "املأ النموذج أدناه وسنعود إليك بعرض سعر مخصص لاحتياجاتك الإعلانية."
         },
+        "requestQuoteForm": {
+            "companyName": "اسم الشركة",
+            "responsiblePerson": "الشخص المسؤول",
+            "email": "البريد الإلكتروني",
+            "mobileNumber": "رقم الجوال",
+            "state": "المنطقة",
+            "targetCity": "المدينة/المنطقة المستهدفة",
+            "selectServices": "اختر الخدمات",
+            "orderDetails": "تفاصيل الطلب",
+            "contactPreference": "طريقة التواصل المفضلة",
+            "uploadFile": "رفع ملف",
+            "uploadFileDescription": "يمكنك رفع عدة ملفات. الحد الأقصى لحجم الملف: 5 ميجابايت",
+            "resetButton": "إعادة تعيين",
+            "submitButton": "إرسال الطلب",
+            "placeholders": {
+                "companyName": "أدخل اسم شركتك",
+                "responsiblePerson": "أدخل اسم الشخص المسؤول",
+                "email": "أدخل عنوان بريدك الإلكتروني",
+                "mobileNumber": "أدخل رقم جوالك",
+                "selectState": "اختر المنطقة",
+                "targetCity": "أدخل المدينة أو المنطقة المستهدفة",
+                "orderDetails": "يرجى وصف متطلبات طلبك..."
+            },
+            "states": {
+                "riyadh": "الرياض",
+                "jeddah": "جدة",
+                "dammam": "الدمام",
+                "makkah": "مكة المكرمة",
+                "medina": "المدينة المنورة",
+                "other": "أخرى"
+            },
+            "services": {
+                "outdoorAdvertising": "الإعلان الخارجي",
+                "indoorSignage": "اللافتات الداخلية",
+                "creativeDesign": "التصميم الإبداعي",
+                "printing": "خدمات الطباعة",
+                "exhibitionsEvents": "المعارض والفعاليات",
+                "pointOfSale": "نقطة البيع"
+            },
+            "contactOptions": {
+                "email": "البريد الإلكتروني",
+                "phone": "مكالمة هاتفية",
+                "whatsapp": "واتساب"
+            },
+            "validation": {
+                "companyNameRequired": "اسم الشركة مطلوب",
+                "responsiblePersonRequired": "الشخص المسؤول مطلوب",
+                "invalidEmail": "يرجى إدخال عنوان بريد إلكتروني صحيح",
+                "mobileNumberRequired": "رقم الجوال مطلوب",
+                "stateRequired": "يرجى اختيار المنطقة",
+                "targetCityRequired": "المدينة/المنطقة المستهدفة مطلوبة",
+                "servicesRequired": "يرجى اختيار خدمة واحدة على الأقل",
+                "orderDetailsRequired": "تفاصيل الطلب مطلوبة",
+                "contactPreferenceRequired": "يرجى اختيار طريقة التواصل المفضلة"
+            },
+            "successMessage": "شكراً لك! تم إرسال طلب عرض السعر بنجاح. سنتواصل معك قريباً."
+        },
         "language": {
             "arabic": "العربية",
             "english": "English"

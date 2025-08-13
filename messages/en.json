@@ -12,6 +12,63 @@
             "title": "Request a Quote",
             "description": "Fill out the form below and we'll get back to you with a customized quote for your advertising needs."
         },
+        "requestQuoteForm": {
+            "companyName": "Company Name",
+            "responsiblePerson": "Responsible Person",
+            "email": "Email",
+            "mobileNumber": "Mobile Number",
+            "state": "State",
+            "targetCity": "Target City/Area",
+            "selectServices": "Select Services",
+            "orderDetails": "Order Details",
+            "contactPreference": "Contact Preference",
+            "uploadFile": "Upload File",
+            "uploadFileDescription": "You can upload multiple files. Maximum file size: 5MB",
+            "resetButton": "Reset",
+            "submitButton": "Submit Request",
+            "placeholders": {
+                "companyName": "Enter your company name",
+                "responsiblePerson": "Enter responsible person name",
+                "email": "Enter your email address",
+                "mobileNumber": "Enter your mobile number",
+                "selectState": "Select State",
+                "targetCity": "Enter target city or area",
+                "orderDetails": "Please describe your order requirements..."
+            },
+            "states": {
+                "riyadh": "Riyadh",
+                "jeddah": "Jeddah",
+                "dammam": "Dammam",
+                "makkah": "Makkah",
+                "medina": "Medina",
+                "other": "Other"
+            },
+            "services": {
+                "outdoorAdvertising": "Outdoor Advertising",
+                "indoorSignage": "Indoor Signage",
+                "creativeDesign": "Creative Design",
+                "printing": "Printing Services",
+                "exhibitionsEvents": "Exhibitions & Events",
+                "pointOfSale": "Point of Sale"
+            },
+            "contactOptions": {
+                "email": "Email",
+                "phone": "Phone Call",
+                "whatsapp": "WhatsApp"
+            },
+            "validation": {
+                "companyNameRequired": "Company name is required",
+                "responsiblePersonRequired": "Responsible person is required",
+                "invalidEmail": "Please enter a valid email address",
+                "mobileNumberRequired": "Mobile number is required",
+                "stateRequired": "Please select a state",
+                "targetCityRequired": "Target city/area is required",
+                "servicesRequired": "Please select at least one service",
+                "orderDetailsRequired": "Order details are required",
+                "contactPreferenceRequired": "Please select a contact preference"
+            },
+            "successMessage": "Thank you! Your quote request has been submitted successfully. We'll get back to you soon."
+        },
         "language": {
             "arabic": "العربية",
             "english": "English"
