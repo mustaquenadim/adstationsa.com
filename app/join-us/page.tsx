@@ -1,25 +1,23 @@
 import PartnerRegistrationForm from "@/components/forms/partner-registration-form";
 import Image from "next/image";
 import React from "react";
+import { useTranslations } from "next-intl";
 
 const JoinUsPage = () => {
+  const t = useTranslations("joinUs");
   return (
     <>
       <section className="relative w-full min-h-screen bg-[#8DC63F] text-black overflow-hidden flex items-center justify-center py-10 md:py-0">
         <div className="container relative z-20 grid grid-cols-1 lg:grid-cols-2 gap-8 px-4 sm:px-6 md:px-0 mx-auto">
-          <div className="text-left text-white flex flex-col justify-center h-full order-2 lg:order-1">
-            <div className="text-xl sm:text-2xl font-medium mb-4 md:mb-6">Join Our Partners</div>
+          <div className="text-left rtl:text-right text-white flex flex-col justify-center h-full order-2 lg:order-1">
+            <div className="text-xl sm:text-2xl font-medium mb-4 md:mb-6">
+              {t("hero.title")}
+            </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 md:mb-6 text-white leading-tight">
-              Your smart partner for digital growth
+              {t("hero.subtitle")}
             </h1>
             <p className="text-sm sm:text-base md:text-lg leading-relaxed text-white">
-              Adstation, the first digital platform that connects advertising
-              service providers with their clients, aims to provide integrated
-              services to businesses and organizations. With an ambitious
-              vision, we seek to facilitate access to advertising services
-              through smart partnerships, achieving shared goals that align with
-              digital transformation and create greater opportunities for
-              success for the advertising sector.
+              {t("hero.description")}
             </p>
           </div>
 
@@ -43,15 +41,15 @@ const JoinUsPage = () => {
           layout="fill"
           objectFit="cover"
           quality={100}
-          className="z-0 scale-x-[-1]"
+          className="z-0 ltr:scale-x-[-1] rtl:scale-x-100"
           priority
         />
 
         <div className="container mx-auto py-20 z-20 relative h-full">
           {/* Content */}
-          <div className="h-full relative text-left text-white flex flex-col justify-between gap-4">
+          <div className="h-full relative text-left rtl:text-right text-white flex flex-col justify-between gap-4">
             <h2 className="text-4xl md:text-5xl font-medium mb-4 drop-shadow-lg">
-              Why Adstation?
+              {t("whySection.title")}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
               <div className="p-4 rounded-lg flex flex-col items-center gap-8">
@@ -63,9 +61,7 @@ const JoinUsPage = () => {
                   className="object-contain filter brightness-0 invert"
                 />
                 <p className="text-base sm:text-lg leading-relaxed text-white text-center">
-                  Additional digital sales channel: We showcase your services to
-                  thousands of targeted customers through our digital platform,
-                  increasing your revenue.
+                  {t("whySection.benefits.0.description")}
                 </p>
               </div>
 
@@ -78,9 +74,7 @@ const JoinUsPage = () => {
                   className="object-contain filter brightness-0 invert"
                 />
                 <p className="text-base sm:text-lg leading-relaxed text-white text-center">
-                  Free promotion with no upfront costs: We cover the costs of
-                  marketing your services, without any financial obligations
-                  from you.
+                  {t("whySection.benefits.1.description")}
                 </p>
               </div>
 
@@ -93,9 +87,7 @@ const JoinUsPage = () => {
                   className="object-contain filter brightness-0 invert"
                 />
                 <p className="text-base sm:text-lg leading-relaxed text-white text-center">
-                  Service Promotion Campaigns: We design marketing offers and
-                  campaigns tailored to your audience, enhancing the appeal of
-                  your services and increasing demand.
+                  {t("whySection.benefits.2.description")}
                 </p>
               </div>
             </div>
@@ -122,12 +114,10 @@ const JoinUsPage = () => {
         <div className="absolute inset-0 z-20 flex items-center justify-center">
           <div className="text-center text-white px-6 space-y-7">
             <h3 className="text-3xl md:text-4xl font-medium drop-shadow-lg capitalize">
-              Join Our Partner Network!
+              {t("ctaSection.title")}
             </h3>
             <p className="text-lg md:text-xl max-w-2xl mx-auto drop-shadow-lg">
-              Make your advertising services accessible to thousands of
-              customers! Register your data and information with us and start
-              growing your business today.
+              {t("ctaSection.description")}
             </p>
           </div>
         </div>
@@ -142,11 +132,11 @@ const JoinUsPage = () => {
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center text-white px-6">
                 <h2 className="text-3xl md:text-4xl font-medium capitalize tracking-wide mb-2">
-                  Partner Registration Form
+                  {t("formSection.title")}
                 </h2>
                 <div className="w-16 h-0.5 bg-white mx-auto mb-3"></div>
                 <p className="text-sm md:text-base opacity-90">
-                  Complete your partner application with detailed information
+                  {t("formSection.subtitle")}
                 </p>
               </div>
             </div>

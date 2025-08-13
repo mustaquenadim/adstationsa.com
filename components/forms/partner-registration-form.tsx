@@ -21,10 +21,12 @@ import {
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
+import { useTranslations } from "next-intl";
 
 export default function PartnerRegistrationForm() {
+  const t = useTranslations("joinUs.form");
   const formSchema = z.object({
-    "partner-name": z.string().min(1, { message: "This field is required" }),
+    "partner-name": z.string().min(1, { message: t("validation.required") }),
     "partner-type": z.string(),
     "partner-logo": z.string(),
     state: z.string(),
@@ -56,10 +58,10 @@ export default function PartnerRegistrationForm() {
 
   // Data arrays for loops
   const partnerTypes = [
-    { value: "committee", label: "Committee" },
-    { value: "firm", label: "Firm" },
-    { value: "power-of-attorney", label: "Power of Attorney" },
-    { value: "company", label: "Company" },
+    { value: "committee", label: t("partnerTypes.committee") },
+    { value: "firm", label: t("partnerTypes.firm") },
+    { value: "power-of-attorney", label: t("partnerTypes.powerOfAttorney") },
+    { value: "company", label: t("partnerTypes.company") },
   ];
 
   const locationOptions = [
@@ -70,14 +72,20 @@ export default function PartnerRegistrationForm() {
   const offeredServices = [
     {
       value: "manage-advertising-campaigns",
-      label: "Manage Advertising Campaigns",
+      label: t("services.manageAdvertisingCampaigns"),
     },
-    { value: "managing-promotion-teams", label: "Managing Promotion Teams" },
-    { value: "products-and-pos", label: "Products & POS" },
-    { value: "exhibitions-and-events", label: "Exhibitions & Events" },
-    { value: "interior-panels", label: "Interior Panels" },
-    { value: "printing-of-all-kinds", label: "Printing of All Kinds" },
-    { value: "creative-designs", label: "Creative Designs" },
+    {
+      value: "managing-promotion-teams",
+      label: t("services.managingPromotionTeams"),
+    },
+    { value: "products-and-pos", label: t("services.productsAndPos") },
+    {
+      value: "exhibitions-and-events",
+      label: t("services.exhibitionsAndEvents"),
+    },
+    { value: "interior-panels", label: t("services.interiorPanels") },
+    { value: "printing-of-all-kinds", label: t("services.printingOfAllKinds") },
+    { value: "creative-designs", label: t("services.creativeDesigns") },
   ];
 
   function onSubmit(values: z.infer<typeof formSchema>) {
@@ -102,7 +110,9 @@ export default function PartnerRegistrationForm() {
             name="partner-name"
             render={({ field }) => (
               <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
-                <FormLabel className="flex shrink-0">Partner Name</FormLabel>
+                <FormLabel className="flex shrink-0">
+                  {t("partnerName")}
+                </FormLabel>
 
                 <div className="w-full">
                   <FormControl>
@@ -128,13 +138,17 @@ export default function PartnerRegistrationForm() {
             name="partner-type"
             render={({ field }) => (
               <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
-                <FormLabel className="flex shrink-0">Partner Type</FormLabel>
+                <FormLabel className="flex shrink-0">
+                  {t("partnerType")}
+                </FormLabel>
 
                 <div className="w-full">
                   <FormControl>
                     <Select {...field} onValueChange={field.onChange}>
                       <SelectTrigger className="w-full">
-                        <SelectValue placeholder="Select Partner Type" />
+                        <SelectValue
+                          placeholder={t("placeholders.selectPartnerType")}
+                        />
                       </SelectTrigger>
                       <SelectContent>
                         {partnerTypes.map((option) => (
@@ -155,7 +169,9 @@ export default function PartnerRegistrationForm() {
             name="partner-logo"
             render={({ field }) => (
               <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
-                <FormLabel className="flex shrink-0">Official Logo</FormLabel>
+                <FormLabel className="flex shrink-0">
+                  {t("officialLogo")}
+                </FormLabel>
 
                 <div className="w-full">
                   <FormControl>
@@ -170,9 +186,7 @@ export default function PartnerRegistrationForm() {
                       />
                     </div>
                   </FormControl>
-                  <FormDescription>
-                    Upload company logo (PDF, JPG, PNG) Max file size 5MB.
-                  </FormDescription>
+                  <FormDescription>{t("logoDescription")}</FormDescription>
                   <FormMessage />
                 </div>
               </FormItem>
@@ -183,13 +197,15 @@ export default function PartnerRegistrationForm() {
             name="state"
             render={({ field }) => (
               <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
-                <FormLabel className="flex shrink-0">State</FormLabel>
+                <FormLabel className="flex shrink-0">{t("state")}</FormLabel>
 
                 <div className="w-full">
                   <FormControl>
                     <Select {...field} onValueChange={field.onChange}>
                       <SelectTrigger className="w-full">
-                        <SelectValue placeholder="Select a State" />
+                        <SelectValue
+                          placeholder={t("placeholders.selectState")}
+                        />
                       </SelectTrigger>
                       <SelectContent>
                         {locationOptions.map((option) => (
@@ -211,13 +227,15 @@ export default function PartnerRegistrationForm() {
             name="city"
             render={({ field }) => (
               <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
-                <FormLabel className="flex shrink-0">City</FormLabel>
+                <FormLabel className="flex shrink-0">{t("city")}</FormLabel>
 
                 <div className="w-full">
                   <FormControl>
                     <Select {...field} onValueChange={field.onChange}>
                       <SelectTrigger className="w-full">
-                        <SelectValue placeholder="Select a City" />
+                        <SelectValue
+                          placeholder={t("placeholders.selectCity")}
+                        />
                       </SelectTrigger>
                       <SelectContent>
                         {locationOptions.map((option) => (
@@ -239,14 +257,16 @@ export default function PartnerRegistrationForm() {
             name="neighborhood"
             render={({ field }) => (
               <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
-                <FormLabel className="flex shrink-0">Neighborhood</FormLabel>
+                <FormLabel className="flex shrink-0">
+                  {t("neighborhood")}
+                </FormLabel>
 
                 <div className="w-full">
                   <FormControl>
                     <div className="relative w-full">
                       <Input
                         key="text-input-1"
-                        placeholder="Enter neighborhood"
+                        placeholder={t("placeholders.enterNeighborhood")}
                         type="text"
                         id="neighborhood"
                         className=""
@@ -265,14 +285,14 @@ export default function PartnerRegistrationForm() {
             name="street"
             render={({ field }) => (
               <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
-                <FormLabel className="flex shrink-0">Enter Street</FormLabel>
+                <FormLabel className="flex shrink-0">{t("street")}</FormLabel>
 
                 <div className="w-full">
                   <FormControl>
                     <div className="relative w-full">
                       <Input
                         key="text-input-2"
-                        placeholder="Enter street"
+                        placeholder={t("placeholders.enterStreet")}
                         type="text"
                         id="street"
                         className=""
@@ -292,7 +312,7 @@ export default function PartnerRegistrationForm() {
             render={() => (
               <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
                 <FormLabel className="flex shrink-0">
-                  Services Offered
+                  {t("servicesOffered")}
                 </FormLabel>
 
                 <div className="w-full">
@@ -317,17 +337,17 @@ export default function PartnerRegistrationForm() {
                                     onCheckedChange={(checked) => {
                                       return checked
                                         ? OptionField.onChange([
-                                          ...(OptionField.value || []),
-                                          service.value,
-                                        ])
+                                            ...(OptionField.value || []),
+                                            service.value,
+                                          ])
                                         : OptionField.onChange(
-                                          (
-                                            OptionField.value as string[]
-                                          )?.filter(
-                                            (value: string) =>
-                                              value !== service.value
-                                          ) || []
-                                        );
+                                            (
+                                              OptionField.value as string[]
+                                            )?.filter(
+                                              (value: string) =>
+                                                value !== service.value
+                                            ) || []
+                                          );
                                     }}
                                   />
                                 </FormControl>
@@ -355,7 +375,7 @@ export default function PartnerRegistrationForm() {
             render={({ field }) => (
               <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
                 <FormLabel className="flex shrink-0">
-                  Previous Work Samples
+                  {t("workSamples")}
                 </FormLabel>
 
                 <div className="w-full">
@@ -372,8 +392,7 @@ export default function PartnerRegistrationForm() {
                     </div>
                   </FormControl>
                   <FormDescription>
-                    Upload multiple work samples (PDF, JPG, PNG). Max 5 files,
-                    10MB each.
+                    {t("workSamplesDescription")}
                   </FormDescription>
                   <FormMessage />
                 </div>
@@ -386,7 +405,7 @@ export default function PartnerRegistrationForm() {
             render={({ field }) => (
               <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
                 <FormLabel className="flex shrink-0">
-                  Responsible Person Name
+                  {t("responsiblePersonName")}
                 </FormLabel>
 
                 <div className="w-full">
@@ -413,7 +432,9 @@ export default function PartnerRegistrationForm() {
             name="contact-number"
             render={({ field }) => (
               <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
-                <FormLabel className="flex shrink-0">Contact Number</FormLabel>
+                <FormLabel className="flex shrink-0">
+                  {t("contactNumber")}
+                </FormLabel>
 
                 <div className="w-full">
                   <FormControl>
@@ -444,7 +465,7 @@ export default function PartnerRegistrationForm() {
                 type="submit"
                 variant="default"
               >
-                Submit Partner Application
+                {t("submitButton")}
               </Button>
             </div>
           </div>
@@ -458,7 +479,7 @@ export default function PartnerRegistrationForm() {
                 type="reset"
                 variant="outline"
               >
-                Reset
+                {t("resetButton")}
               </Button>
             </div>
           </div>

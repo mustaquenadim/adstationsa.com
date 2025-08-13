@@ -380,6 +380,80 @@
             }
         }
     },
+    "joinUs": {
+        "hero": {
+            "title": "Join Our Partners",
+            "subtitle": "Your smart partner for digital growth",
+            "description": "Adstation, the first digital platform that connects advertising service providers with their clients, aims to provide integrated services to businesses and organizations. With an ambitious vision, we seek to facilitate access to advertising services through smart partnerships, achieving shared goals that align with digital transformation and create greater opportunities for success for the advertising sector."
+        },
+        "whySection": {
+            "title": "Why Adstation?",
+            "benefits": [
+                {
+                    "title": "Additional Digital Sales Channel",
+                    "description": "We showcase your services to thousands of targeted customers through our digital platform, increasing your revenue."
+                },
+                {
+                    "title": "Free Promotion with No Upfront Costs",
+                    "description": "We cover the costs of marketing your services, without any financial obligations from you."
+                },
+                {
+                    "title": "Service Promotion Campaigns",
+                    "description": "We design marketing offers and campaigns tailored to your audience, enhancing the appeal of your services and increasing demand."
+                }
+            ]
+        },
+        "ctaSection": {
+            "title": "Join Our Partner Network!",
+            "description": "Make your advertising services accessible to thousands of customers! Register your data and information with us and start growing your business today."
+        },
+        "formSection": {
+            "title": "Partner Registration Form",
+            "subtitle": "Complete your partner application with detailed information"
+        },
+        "form": {
+            "partnerName": "Partner Name",
+            "partnerType": "Partner Type",
+            "officialLogo": "Official Logo",
+            "logoDescription": "Upload company logo (PDF, JPG, PNG) Max file size 5MB.",
+            "state": "State",
+            "city": "City",
+            "neighborhood": "Neighborhood",
+            "street": "Enter Street",
+            "servicesOffered": "Services Offered",
+            "workSamples": "Previous Work Samples",
+            "workSamplesDescription": "Upload multiple work samples (PDF, JPG, PNG). Max 5 files, 10MB each.",
+            "responsiblePersonName": "Responsible Person Name",
+            "contactNumber": "Contact Number",
+            "submitButton": "Submit Partner Application",
+            "resetButton": "Reset",
+            "placeholders": {
+                "selectPartnerType": "Select Partner Type",
+                "selectState": "Select a State",
+                "selectCity": "Select a City",
+                "enterNeighborhood": "Enter neighborhood",
+                "enterStreet": "Enter street"
+            },
+            "partnerTypes": {
+                "committee": "Committee",
+                "firm": "Firm",
+                "powerOfAttorney": "Power of Attorney",
+                "company": "Company"
+            },
+            "services": {
+                "manageAdvertisingCampaigns": "Manage Advertising Campaigns",
+                "managingPromotionTeams": "Managing Promotion Teams",
+                "productsAndPos": "Products & POS",
+                "exhibitionsAndEvents": "Exhibitions & Events",
+                "interiorPanels": "Interior Panels",
+                "printingOfAllKinds": "Printing of All Kinds",
+                "creativeDesigns": "Creative Designs"
+            },
+            "validation": {
+                "required": "This field is required"
+            }
+        }
+    },
     "footer": {
         "navigation": {
             "about": "About Us",
