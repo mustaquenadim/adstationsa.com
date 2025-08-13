@@ -16,5 +16,50 @@
             "arabic": "العربية",
             "english": "English"
         }
+    },
+    "home": {
+        "hero": {
+            "title": "The first Saudi platform for advertising services",
+            "description": "Adstation is a unified platform connecting top advertising agencies and companies to handle ad requests professionally.",
+            "cta": "Get Started"
+        },
+        "section2": {
+            "title": "Your advertising partner that saves you time, effort and cost",
+            "description": "Adstation helps business owners and marketing and advertising managers get all their advertising and publicity work done, from logo design to designing and implementing all types of billboards, product stands, and everything else they need...",
+            "cta": "See Our Work"
+        },
+        "section3": {
+            "title": "Explore over 70 advertising services waiting for you",
+            "description": "Adstation is an integrated platform specializing in advertising requests, bringing together the largest group of advertising agencies and companies, all in one place, according to professional standards.",
+            "cta": "Explore Services"
+        },
+        "section4": {
+            "title": "Product and application logo design services",
+            "description": "Adstation provides factories and importers with specialized solutions in product design and its various applications, from logo to distribution. Experienced agencies.",
+            "cta": "Explore Services"
+        },
+        "section5": {
+            "title": "Point of Sale Production Display Solutions",
+            "description": "Adstation partners with companies, factories, and designers to deliver display solutions that showcase your products in grocery stores, supermarkets, and other retail outlets.",
+            "cta": "Get it Now"
+        },
+        "section6": {
+            "title": "Billboards: All types of outdoor advertising and promotional panels",
+            "description": "At Adstation, you will find the best producers of project fencing panels, unipolar panels, wall panels, facade panels, and building roof panels.",
+            "cta": "Contact Us"
+        }
+    },
+    "footer": {
+        "navigation": {
+            "about": "About Us",
+            "services": "Services",
+            "whyAdstation": "Why Adstation",
+            "blog": "Blog",
+            "contact": "Contact Us"
+        },
+        "cta": {
+            "becomePartner": "Become a Partner",
+            "getQuote": "Get a Quote"
+        }
     }
 }

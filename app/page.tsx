@@ -1,25 +1,37 @@
+"use client";
+
 import Hero from "@/components/hero";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { useTranslations, useLocale } from "next-intl";
 
 export default function HomePage() {
+  const locale = useLocale();
+  const isRTL = locale === 'ar';
+
   return (
     <>
       <Hero />
-      <Two />
-      <Three />
-      <Four />
-      <Five />
-      <Six />
+      <Two isRTL={isRTL} />
+      <Three isRTL={isRTL} />
+      <Four isRTL={isRTL} />
+      <Five isRTL={isRTL} />
+      <Six isRTL={isRTL} />
     </>
   );
 }
 
-const Two = () => {
+interface SectionProps {
+  isRTL: boolean;
+}
+
+const Two = ({ isRTL }: SectionProps) => {
+  const t = useTranslations('home.section2');
+
   return (
     <section className="relative w-full h-screen flex items-start md:items-center justify-start overflow-hidden bg-[#8dc73f]">
-      {/* Watermark Image */}
-      <div className="absolute -bottom-10 md:-top-10 -right-10 z-10">
+      {/* Watermark Logo */}
+      <div className={`absolute -bottom-10 md:-top-10 z-10 ${isRTL ? '-left-10' : '-right-10'}`}>
         <Image
           src="/watermark-logo.svg"
           alt="Logo Watermark"
@@ -31,28 +43,27 @@ const Two = () => {
       </div>
 
       {/* Content */}
-      <div className="relative max-w-2xl text-left z-20 p-8">
+      <div className="relative max-w-2xl text-left rtl:text-right z-20 p-8">
         <h2 className="text-4xl md:text-6xl font-medium text-white mb-6">
-          Your advertising partner that saves you time, effort and cost
+          {t('title')}
         </h2>
         <p className="text-xl text-white mb-8">
-          Adstation helps business owners and marketing and advertising managers
-          get all their advertising and publicity work done, from logo design to
-          designing and implementing all types of billboards, product stands,
-          and everything else they need...
+          {t('description')}
         </p>
         <Button
           size="xl"
           className="rounded-full bg-white hover:bg-primary/80 text-black font-semibold py-3 px-8 shadow-lg transition"
         >
-          See Our Work
+          {t('cta')}
         </Button>
       </div>
     </section>
   );
 };
 
-const Three = () => {
+const Three = ({ isRTL }: SectionProps) => {
+  const t = useTranslations('home.section3');
+
   return (
     <section className="relative w-full h-screen flex items-end md:items-center justify-start overflow-hidden bg-[#8dc73f] py-16">
       {/* Background Image */}
@@ -62,44 +73,34 @@ const Three = () => {
         layout="fill"
         objectFit="cover"
         quality={90}
-        className="z-0 object-cover"
+        className={`z-0 object-cover ${isRTL ? 'scale-x-[-1]' : ''}`}
         priority
       />
 
       {/* Content */}
-      <div className="relative z-20 text-left text-white p-8 max-w-2xl">
+      <div className="relative z-20 text-left rtl:text-right text-white p-8 max-w-2xl">
         <h2 className="text-4xl md:text-6xl font-medium mb-4 drop-shadow-lg">
-          Explore over 70 advertising services waiting for you
+          {t('title')}
         </h2>
         <p className="text-lg md:text-2xl mb-6 drop-shadow">
-          Adstation is an integrated platform specializing in advertising
-          requests, bringing together the largest group of advertising agencies
-          and companies, all in one place, according to professional standards.
+          {t('description')}
         </p>
         <Button
           size="xl"
           className="rounded-full bg-white hover:bg-primary/80 text-black font-semibold py-3 px-8 shadow-lg transition"
         >
-          Explore Services
+          {t('cta')}
         </Button>
       </div>
     </section>
   );
 };
 
-const Four = () => {
+const Four = ({ isRTL }: SectionProps) => {
+  const t = useTranslations('home.section4');
+
   return (
     <section className="relative w-full min-h-screen sm:max-h-screen flex items-start md:items-center justify-start overflow-hidden bg-[#967b60] py-10 sm:py-0">
-      {/* Background Image */}
-      {/* <Image
-        src="/bg-four-en.png"
-        alt="Hero Background"
-        layout="fill"
-        objectFit="cover"
-        quality={90}
-        className="z-0"
-        priority
-      /> */}
       {/* Mobile Background Image */}
       <div className="block md:hidden absolute bottom-10 right-0 w-3/4 h-1/2 z-0">
         <Image
@@ -116,7 +117,7 @@ const Four = () => {
       {/* Desktop Background Image */}
       <div className="hidden md:block absolute inset-0 z-0">
         <Image
-          src="/bg-four-en.png"
+          src={isRTL ? "/bg-four-ar.png" : "/bg-four-en.png"}
           alt="Hero Background Desktop"
           layout="fill"
           objectFit="cover"
@@ -126,32 +127,32 @@ const Four = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-20 text-left text-white p-8 max-w-2xl">
+      <div className="relative z-20 text-left rtl:text-right text-white p-8 max-w-2xl">
         <h2 className="text-4xl md:text-6xl font-medium mb-4 drop-shadow-lg">
-          Product and application logo design services
+          {t('title')}
         </h2>
         <p className="text-lg md:text-2xl mb-6 drop-shadow">
-          Adstation provides factories and importers with specialized solutions
-          in product design and its various applications, from logo to
-          distribution. Experienced agencies.
+          {t('description')}
         </p>
         <Button
           size="xl"
           className="rounded-full bg-white hover:bg-primary/80 text-black font-semibold py-3 px-8 shadow-lg transition"
         >
-          Explore Services
+          {t('cta')}
         </Button>
       </div>
     </section>
   );
 };
 
-const Five = () => {
+const Five = ({ isRTL }: SectionProps) => {
+  const t = useTranslations('home.section5');
+
   return (
     <section className="relative w-full h-screen flex items-start md:items-center justify-start overflow-hidden bg-[#027dc3] py-10 sm:py-0">
       {/* Background Image */}
       <Image
-        src="/bg-five-en.png"
+        src={isRTL ? "/bg-five-ar.png" : "/bg-five-en.png"}
         alt="Hero Background"
         layout="fill"
         objectFit="cover"
@@ -161,30 +162,32 @@ const Five = () => {
       />
 
       {/* Content */}
-      <div className="relative z-20 text-left text-white p-8 max-w-sm sm:max-w-2xl">
+      <div className="relative z-20 text-left rtl:text-right text-white p-8 max-w-sm sm:max-w-2xl">
         <h2 className="text-4xl md:text-6xl font-medium mb-4 drop-shadow-lg">
-          Point of Sale Production Display Solutions
+          {t('title')}
         </h2>
         <p className="text-lg md:text-2xl mb-6 drop-shadow">
-          Adstation partners with companies, factories, and designers to deliver display solutions that showcase your products in grocery stores, supermarkets, and other retail outlets.
+          {t('description')}
         </p>
         <Button
           size="xl"
           className="rounded-full bg-white hover:bg-primary/80 text-black font-semibold py-3 px-8 shadow-lg transition"
         >
-          Get it Now
+          {t('cta')}
         </Button>
       </div>
     </section>
   );
 };
 
-const Six = () => {
+const Six = ({ isRTL }: SectionProps) => {
+  const t = useTranslations('home.section6');
+
   return (
     <section className="relative w-full h-screen flex items-start md:items-center justify-start overflow-hidden bg-[#fff]">
       {/* Background Image */}
       <Image
-        src="/bg-six.png"
+        src={isRTL ? "/bg-six-ar.png" : "/bg-six-en.png"}
         alt="Hero Background"
         layout="fill"
         objectFit="cover"
@@ -194,20 +197,18 @@ const Six = () => {
       />
 
       {/* Content */}
-      <div className="relative z-20 text-left text-dark p-8 max-w-xl space-y-8">
+      <div className="relative z-20 text-left rtl:text-right text-dark p-8 max-w-xl space-y-8">
         <h2 className="text-4xl md:text-6xl font-medium mb-4 drop-shadow-lg">
-          Billboards: All types of outdoor advertising and promotional panels
+          {t('title')}
         </h2>
         <p className="text-lg md:text-2xl mb-6 drop-shadow">
-          At Adstation, you will find the best producers of project fencing
-          panels, unipolar panels, wall panels, facade panels, and building roof
-          panels.
+          {t('description')}
         </p>
         <Button
           size="xl"
           className="rounded-full bg-primary hover:bg-primary/80 text-white font-semibold py-3 px-8 shadow-lg transition"
         >
-          Contact Us
+          {t('cta')}
         </Button>
       </div>
     </section>

@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   Facebook,
   Instagram,
@@ -11,62 +14,60 @@ import {
 } from "./icons";
 
 const Footer = () => {
+  const t = useTranslations('footer');
+
   return (
     <footer className="bg-black text-white">
       {/* Navigation and Calls to Action */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Navigation Links */}
-        <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-8 mb-6 rtl:sm:space-x-reverse">
+        <div className="max-w-lg mx-auto flex flex-wrap flex-col sm:flex-row justify-center items-center gap-4 sm:gap-x-8 sm:gap-y-4 mb-6 rtl:sm:space-x-reverse">
           <Link
             href="/about"
             className="text-white hover:text-gray-300 transition-colors text-center sm:text-left"
           >
-            About Us
+            {t('navigation.about')}
           </Link>
           <Link
             href="/services"
             className="text-white hover:text-gray-300 transition-colors text-center sm:text-left"
           >
-            Services
+            {t('navigation.services')}
           </Link>
           <Link
             href="/why-adstation"
             className="text-white hover:text-gray-300 transition-colors text-center sm:text-left"
           >
-            Why Adstation
+            {t('navigation.whyAdstation')}
           </Link>
           <Link
             href="/blog"
             className="text-white hover:text-gray-300 transition-colors text-center sm:text-left"
           >
-            Blog
+            {t('navigation.blog')}
           </Link>
           <Link
             href="/contact"
             className="text-white hover:text-gray-300 transition-colors text-center sm:text-left"
           >
-            Contact Us
+            {t('navigation.contact')}
           </Link>
-        </div>
-
-        {/* Calls to Action */}
-        <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-8 rtl:sm:space-x-reverse">
           <Link
             href="/join-us"
             className="text-white hover:text-gray-300 transition-colors text-center sm:text-left"
           >
-            Become a Partner
+            {t('cta.becomePartner')}
           </Link>
           <Link
             href="/quote"
             className="text-white hover:text-gray-300 transition-colors text-center sm:text-left"
           >
-            Get a Quote
+            {t('cta.getQuote')}
           </Link>
         </div>
 
         {/* Social Media Icons */}
-        <div className="flex justify-center space-x-4 sm:space-x-6 mb-8 sm:mb-12 rtl:space-x-reverse">
+        <div className="flex justify-center gap-x-4 sm:gap-x-6 mb-8 sm:mb-12 mt-12 rtl:space-x-reverse">
           <a
             href="#"
             className="text-white hover:text-gray-300 transition-colors"
@@ -106,7 +107,7 @@ const Footer = () => {
         </div>
 
         {/* Business Logos */}
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-10 pt-6 sm:pt-8">
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-10">
           {/* Saudi Business Center Logo */}
           <SaudiBusinessCenter
             size="80"
