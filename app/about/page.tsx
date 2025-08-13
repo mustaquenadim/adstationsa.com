@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import * as motion from "motion/react-client";
 import { Be_Vietnam_Pro } from "next/font/google";
@@ -9,6 +11,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import { useTranslations, useLocale } from "next-intl";
 
 const beVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin"],
@@ -16,12 +19,15 @@ const beVietnamPro = Be_Vietnam_Pro({
 });
 
 export default function AboutPage() {
+  const t = useTranslations('about');
+  const locale = useLocale();
+  const isRTL = locale === 'ar';
   return (
     <>
       {/* Top Section - Green Background */}
       <section className="relative w-full min-h-screen bg-[#8dc73f] overflow-hidden">
         {/* Large Text Overlay */}
-        <div className="hidden md:block absolute right-10 top-40">
+        <div className={`hidden md:block absolute top-40 ${isRTL ? 'left-10' : 'right-10'}`}>
           <Image
             src="/adstation-watermark.svg"
             alt="About Hero"
@@ -33,13 +39,13 @@ export default function AboutPage() {
         </div>
 
         {/* Main Content */}
-        <div className="relative z-20 flex items-center justify-start h-screen pl-16">
-          <div className="text-left text-white max-w-2xl">
-            <h1 className="text-4xl mb-6">Who We Are</h1>
+        <div className={`relative z-20 flex items-center justify-start h-screen ${isRTL ? 'pr-16' : 'pl-16'}`}>
+          <div className={`${isRTL ? 'text-right' : 'text-left'} text-white max-w-2xl`}>
+            <h1 className="text-4xl mb-6">{t('hero.title')}</h1>
             <div className="text-6xl font-normal text-black">
-              The smart future of{" "}
+              {t('hero.subtitle')}{" "}
               <span className="relative">
-                traditional
+                {isRTL ? 'التقليدي' : 'traditional'}
                 <svg
                   viewBox="0 0 286 73"
                   fill="none"
@@ -57,13 +63,10 @@ export default function AboutPage() {
                     strokeWidth="3"
                   />
                 </svg>
-              </span>{" "}
-              advertising
+              </span>
             </div>
             <p className="mt-8 text-xl font-normal leading-relaxed text-black">
-              The first Saudi platform to bring together the best traditional
-              advertising service providers under one digital roof, making your
-              advertising experience simpler and faster.
+              {t('hero.description')}
             </p>
           </div>
         </div>
@@ -75,11 +78,7 @@ export default function AboutPage() {
             <span className="text-black">ad</span>station
           </h2>
           <p className="text-xl font-normal leading-relaxed max-w-3xl mx-auto px-8">
-            It&apos;s your smart choice for managing and implementing everything
-            related to traditional advertising—from logo design to achieving
-            widespread distribution across all applications and advertising and
-            promotion solutions with high quality, ease, and greater
-            professionalism.
+            {t('brandSection.description')}
           </p>
         </div>
       </section>
@@ -93,24 +92,17 @@ export default function AboutPage() {
           layout="fill"
           objectFit="cover"
           quality={90}
-          className="z-0 scale-x-[-1]"
+          className={`z-0 ${isRTL ? '' : 'scale-x-[-1]'}`}
           priority
         />
 
         {/* Content */}
-        <div className="relative z-20 text-left text-white px-8 max-w-2xl">
+        <div className={`relative z-20 ${isRTL ? 'text-right' : 'text-left'} text-white px-8 max-w-2xl`}>
           <h2 className="text-4xl md:text-5xl font-medium mb-8 drop-shadow-lg">
-            Adstation Story
+            {t('storySection.title')}
           </h2>
           <p className="text-lg md:text-xl font-light mb-6 drop-shadow leading-relaxed">
-            At the heart of the Kingdom&apos;s evolving business environment, among
-            the challenges facing many business owners, marketing and
-            advertising managers is the difficulty in obtaining reliable
-            traditional advertising services that support their business growth.
-            AdStation was born: a platform that combines expertise,
-            professionalism, and technical solutions, providing easy access to
-            the best traditional advertising providers in all cities of the
-            Kingdom.
+            {t('storySection.description')}
           </p>
         </div>
       </section>
@@ -120,61 +112,58 @@ export default function AboutPage() {
           {/* Vision */}
           <AboutCard
             imageSrc="/hands-together.jpg"
-            imageAlt="Doesn't Know the Impossible"
-            overlayText="Doesn't Know the Impossible"
-            title="Our Vision"
-            description="Our vision is to be the leading platform for traditional advertising solutions in the Kingdom within the next four years, expanding from the Gulf to the world."
+            imageAlt={t('cards.vision.overlayText')}
+            overlayText={t('cards.vision.overlayText')}
+            title={t('cards.vision.title')}
+            description={t('cards.vision.description')}
             overlayColor="#4a8f6b"
             titleColor="#4a8f6b"
+            isRTL={isRTL}
           />
           {/* Mission */}
           <AboutCard
             imageSrc="/teamwork.jpg"
-            imageAlt="Changing the Future of Advertising"
-            overlayText="Changing the Future of Advertising"
-            title="Our Mission"
-            description="Our mission is to enable small and medium-sized companies to reach their audience through well-planned, high-quality traditional advertisements at fair prices, with simple digital execution."
+            imageAlt={t('cards.mission.overlayText')}
+            overlayText={t('cards.mission.overlayText')}
+            title={t('cards.mission.title')}
+            description={t('cards.mission.description')}
             overlayColor="#c1423d"
             titleColor="#c1423d"
+            isRTL={isRTL}
           />
           {/* Values */}
           <AboutCard
             imageSrc="/paper-boat.jpg"
-            imageAlt="Our Values"
-            overlayText="Our Values"
-            title="Our Values"
+            imageAlt={t('cards.values.overlayText')}
+            overlayText={t('cards.values.overlayText')}
+            title={t('cards.values.title')}
             description={
               <div className="space-y-2">
                 <div className="flex items-start gap-2">
                   <span>
-                    <strong>Experience:</strong> We have a dedicated team that
-                    combines market knowledge and forward-looking vision.
+                    <strong>{t('cards.values.experience').split(':')[0]}:</strong> {t('cards.values.experience').split(':')[1]}
                   </span>
                 </div>
                 <div className="flex items-start gap-2">
                   <span>
-                    <strong>Innovation:</strong> We use technology to create
-                    advanced and accessible advertising solutions.
+                    <strong>{t('cards.values.innovation').split(':')[0]}:</strong> {t('cards.values.innovation').split(':')[1]}
                   </span>
                 </div>
                 <div className="flex items-start gap-2">
                   <span>
-                    <strong>Transparency and Collaboration:</strong> We
-                    guarantee a clear experience, fair prices, and measurable
-                    results.
+                    <strong>{t('cards.values.transparency').split(':')[0]}:</strong> {t('cards.values.transparency').split(':')[1]}
                   </span>
                 </div>
                 <div className="flex items-start gap-2">
                   <span>
-                    <strong>Client-centric:</strong> We design our services
-                    based on our clients&apos; needs, enabling them to achieve their
-                    advertising goals.
+                    <strong>{t('cards.values.clientCentric').split(':')[0]}:</strong> {t('cards.values.clientCentric').split(':')[1]}
                   </span>
                 </div>
               </div>
             }
             overlayColor="#818181"
             titleColor="#818181"
+            isRTL={isRTL}
           />
         </div>
       </section>
@@ -191,6 +180,7 @@ interface AboutCardProps {
   className?: string;
   overlayColor?: string;
   titleColor?: string;
+  isRTL: boolean;
 }
 
 const AboutCard = ({
@@ -202,6 +192,7 @@ const AboutCard = ({
   overlayColor,
   className,
   titleColor,
+  isRTL,
 }: AboutCardProps) => {
   return (
     <Card className={cn("w-full shadow-none border-none pt-0", className)}>
@@ -226,12 +217,12 @@ const AboutCard = ({
       </CardContent>
       <CardHeader className="p-0">
         <CardTitle
-          className={cn("text-2xl font-bold")}
+          className={cn("text-2xl font-bold", isRTL ? "text-right" : "text-left")}
           style={{ color: titleColor }}
         >
           {title}
         </CardTitle>
-        <CardDescription className="text-lg text-black font-light">
+        <CardDescription className={cn("text-lg text-black font-light", isRTL ? "text-right" : "text-left")}>
           {description}
         </CardDescription>
       </CardHeader>

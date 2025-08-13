@@ -49,6 +49,41 @@
             "cta": "Contact Us"
         }
     },
+    "about": {
+        "hero": {
+            "title": "Who We Are",
+            "subtitle": "The smart future of traditional advertising",
+            "description": "The first Saudi platform to bring together the best traditional advertising service providers under one digital roof, making your advertising experience simpler and faster."
+        },
+        "brandSection": {
+            "title": "adstation",
+            "description": "It's your smart choice for managing and implementing everything related to traditional advertising—from logo design to achieving widespread distribution across all applications and advertising and promotion solutions with high quality, ease, and greater professionalism."
+        },
+        "storySection": {
+            "title": "Adstation Story",
+            "description": "At the heart of the Kingdom's evolving business environment, among the challenges facing many business owners, marketing and advertising managers is the difficulty in obtaining reliable traditional advertising services that support their business growth. AdStation was born: a platform that combines expertise, professionalism, and technical solutions, providing easy access to the best traditional advertising providers in all cities of the Kingdom."
+        },
+        "cards": {
+            "vision": {
+                "overlayText": "Doesn't Know the Impossible",
+                "title": "Our Vision",
+                "description": "Our vision is to be the leading platform for traditional advertising solutions in the Kingdom within the next four years, expanding from the Gulf to the world."
+            },
+            "mission": {
+                "overlayText": "Changing the Future of Advertising",
+                "title": "Our Mission",
+                "description": "Our mission is to enable small and medium-sized companies to reach their audience through well-planned, high-quality traditional advertisements at fair prices, with simple digital execution."
+            },
+            "values": {
+                "overlayText": "Our Values",
+                "title": "Our Values",
+                "experience": "Experience: We have a dedicated team that combines market knowledge and forward-looking vision.",
+                "innovation": "Innovation: We use technology to create advanced and accessible advertising solutions.",
+                "transparency": "Transparency and Collaboration: We guarantee a clear experience, fair prices, and measurable results.",
+                "clientCentric": "Client-centric: We design our services based on our clients' needs, enabling them to achieve their advertising goals."
+            }
+        }
+    },
     "footer": {
         "navigation": {
             "about": "About Us",
