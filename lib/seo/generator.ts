@@ -154,6 +154,7 @@ export function generateMetadataFromConfig(
   customUrl?: string
 ): Metadata {
   // Import here to avoid circular dependency
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   const { pageSEOConfigs } = require('./content');
   
   const config = pageSEOConfigs[pageKey];

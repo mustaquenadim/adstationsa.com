@@ -69,8 +69,8 @@ export class SEOValidator {
 
   // Generate SEO audit report for all pages
   static generateSEOAudit(): {
-    english: { [key: string]: any };
-    arabic: { [key: string]: any };
+    english: { [key: string]: unknown };
+    arabic: { [key: string]: unknown };
     summary: {
       totalPages: number;
       validTitles: number;
@@ -79,8 +79,8 @@ export class SEOValidator {
     };
   } {
     const audit = {
-      english: {} as { [key: string]: any },
-      arabic: {} as { [key: string]: any },
+      english: {} as { [key: string]: unknown },
+      arabic: {} as { [key: string]: unknown },
       summary: {
         totalPages: 0,
         validTitles: 0,
@@ -180,7 +180,7 @@ export class SEOValidator {
   // Generate structured data validation
   static validateStructuredData(schemaType: string, schema: object): { isValid: boolean; errors: string[] } {
     const errors: string[] = [];
-    const schemaObj = schema as any;
+    const schemaObj = schema as Record<string, unknown>;
 
     // Basic validation
     if (!schemaObj['@context']) {
@@ -244,5 +244,6 @@ export const validateSEOImplementation = () => {
 
 // Development helper to run SEO validation
 if (typeof window !== 'undefined') {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   (window as any).validateAdStationSEO = validateSEOImplementation;
 }

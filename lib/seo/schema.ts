@@ -120,8 +120,7 @@ export function generateBreadcrumbSchema(
  * Generate FAQ schema markup
  */
 export function generateFAQSchema(
-  faqs: Array<{ question: string; answer: string }>,
-  locale: SupportedLocale = 'en'
+  faqs: Array<{ question: string; answer: string }>
 ) {
   return {
     '@context': 'https://schema.org',

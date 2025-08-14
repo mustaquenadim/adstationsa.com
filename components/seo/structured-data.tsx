@@ -68,7 +68,7 @@ export default function SEOStructuredData({
 
   // Add FAQ schema
   if (faqs && faqs.length > 0) {
-    schemas.push(generateFAQSchema(faqs, locale));
+    schemas.push(generateFAQSchema(faqs));
   }
 
   // Add any custom schemas
@@ -81,7 +81,7 @@ export default function SEOStructuredData({
     <Script
       id="structured-data"
       type="application/ld+json"
-      strategy="beforeInteractive"
+      strategy="afterInteractive"
       dangerouslySetInnerHTML={{
         __html: combinedSchema,
       }}

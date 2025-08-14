@@ -3,8 +3,6 @@
  * Centralized type definitions for SEO functionality
  */
 
-import { Metadata } from 'next';
-
 // Core SEO interfaces
 export interface BaseSEOConfig {
   title: string;

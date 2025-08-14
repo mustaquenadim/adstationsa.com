@@ -133,6 +133,7 @@ export function runMigrationAudit() {
 // Export for easy console usage
 if (typeof window === 'undefined') {
   // Node.js environment
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   (global as any).SEOMigration = {
     findLegacySEOUsage,
     auditAllPages,

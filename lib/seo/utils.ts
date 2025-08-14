@@ -19,7 +19,7 @@ export async function getPageMetadata(
 ): Promise<Metadata> {
   try {
     return generateMetadataFromConfig(pageKey, locale, customUrl);
-  } catch (error) {
+  } catch {
     console.warn(`SEO configuration not found for page: ${pageKey}, using defaults`);
     
     // Fallback to basic metadata
