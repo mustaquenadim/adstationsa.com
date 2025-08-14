@@ -1,25 +1,19 @@
 import { Metadata } from "next";
-import { generateSEO } from "@/lib/seo";
+import { generateMetadataFromConfig } from "@/lib/seo";
 
-export const metadata: Metadata = generateSEO({
-  title: "Advertising Campaigns - Strategic Marketing Solutions",
-  description:
-    "Comprehensive advertising campaign services in Saudi Arabia. Get strategic marketing solutions, campaign planning, and execution from top advertising agencies through AdStation.",
-  keywords: [
-    "advertising campaigns saudi arabia",
-    "marketing campaigns",
-    "advertising strategy",
-    "campaign management",
-    "digital campaigns",
-    "traditional advertising",
-    "marketing strategy",
-    "brand campaigns",
-    "promotional campaigns",
-    "integrated marketing",
-  ],
-  url: "/services/advertising-campaigns",
-  type: "website",
-});
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  return generateMetadataFromConfig(
+    "advertising-campaigns",
+    locale as "en" | "ar",
+    `/${locale}/services/advertising-campaigns`
+  );
+}
 
 export default function AdvertisingCampaignsLayout({
   children,

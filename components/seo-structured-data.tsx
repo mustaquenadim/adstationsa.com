@@ -1,16 +1,70 @@
-"use client";
-
 import { useEffect } from "react";
+import {
+  generateOrganizationSchema,
+  generateWebsiteSchema,
+  generateServiceSchema,
+} from "@/lib/seo";
 
 interface SEOStructuredDataProps {
-  data: object | object[];
+  data?: object | object[];
+  locale?: string;
+  pageType?: "home" | "service" | "about" | "contact";
+  serviceName?: string;
+  serviceDescription?: string;
+  serviceUrl?: string;
 }
 
-export default function SEOStructuredData({ data }: SEOStructuredDataProps) {
+export default function SEOStructuredData({
+  data,
+  locale = "en",
+  pageType = "home",
+  serviceName,
+  serviceDescription,
+  serviceUrl,
+}: SEOStructuredDataProps) {
   useEffect(() => {
-    const scripts = Array.isArray(data) ? data : [data];
+    // Clear any existing structured data
+    const existingScripts = document.querySelectorAll(
+      'script[id^="structured-data-"]'
+    );
+    existingScripts.forEach((script) => script.remove());
 
-    scripts.forEach((schema, index) => {
+    let schemas: object[] = [];
+
+    if (data) {
+      // Use provided data
+      schemas = Array.isArray(data) ? data : [data];
+    } else {
+      // Generate default schemas based on locale and page type
+      const supportedLocale = (locale === "ar" ? "ar" : "en") as "en" | "ar";
+
+      // Organization schema
+      const orgSchema = generateOrganizationSchema(supportedLocale);
+      schemas.push(orgSchema);
+
+      // Website schema
+      const webSchema = generateWebsiteSchema(supportedLocale);
+      schemas.push(webSchema);
+
+      // Service schema if applicable
+      if (
+        pageType === "service" &&
+        serviceName &&
+        serviceDescription &&
+        serviceUrl
+      ) {
+        const serviceSchema = generateServiceSchema(
+          serviceName,
+          serviceDescription,
+          serviceUrl,
+          supportedLocale
+        );
+        schemas.push(serviceSchema);
+      }
+    }
+
+    // Add schemas to document head
+    schemas.forEach((schema, index) => {
       const script = document.createElement("script");
       script.type = "application/ld+json";
       script.text = JSON.stringify(schema);
@@ -19,14 +73,14 @@ export default function SEOStructuredData({ data }: SEOStructuredDataProps) {
     });
 
     return () => {
-      scripts.forEach((_, index) => {
+      schemas.forEach((_, index) => {
         const script = document.getElementById(`structured-data-${index}`);
         if (script) {
           document.head.removeChild(script);
         }
       });
     };
-  }, [data]);
+  }, [data, locale, pageType, serviceName, serviceDescription, serviceUrl]);
 
   return null;
 }

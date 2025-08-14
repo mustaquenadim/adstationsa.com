@@ -1,5 +1,3 @@
-"use client";
-
 import { Button } from "@/components/ui/button";
 import * as motion from "motion/react-client";
 import Image from "next/image";
@@ -8,7 +6,7 @@ import { useTranslations } from "next-intl";
 
 const PointOfSalePage = () => {
   const { openDialog } = useQuoteDialog();
-  const t = useTranslations('services');
+  const t = useTranslations("services");
 
   // Services color configuration
   const servicesConfig = [
@@ -17,7 +15,7 @@ const PointOfSalePage = () => {
     "bg-[#118D8B]",
     "bg-[#4D449B]",
     "bg-[#FAB91B]",
-    "bg-transparent"
+    "bg-transparent",
   ];
 
   return (
@@ -26,12 +24,12 @@ const PointOfSalePage = () => {
       <div className="relative z-20 grid grid-cols-1 md:grid-cols-2 h-screen px-10">
         <div className="flex items-center justify-center order-2 md:order-1">
           <div className="text-left rtl:text-right text-white max-w-2xl">
-            <h1 className="text-2xl mb-6">{t('main.title')}</h1>
+            <h1 className="text-2xl mb-6">{t("main.title")}</h1>
             <div className="text-3xl md:text-4xl lg:text-6xl font-normal text-white">
-              {t('pointOfSale.title')}
+              {t("pointOfSale.title")}
             </div>
             <p className="mt-6 text-base md:text-lg lg:text-xl font-light leading-6 text-white">
-              {t('pointOfSale.description')}
+              {t("pointOfSale.description")}
             </p>
           </div>
         </div>
@@ -57,7 +55,7 @@ const PointOfSalePage = () => {
       <div className="pt-20">
         <div className="max-w-3xl mx-auto text-white text-center text-md font-normal mb-20">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium">
-            {t('pointOfSale.sectionTitle')}
+            {t("pointOfSale.sectionTitle")}
           </h2>
         </div>
 
@@ -79,7 +77,7 @@ const PointOfSalePage = () => {
                 onClick={openDialog}
                 className="mt-4 px-4 sm:px-6 py-2 bg-white text-black rounded-full text-sm font-medium hover:bg-gray-100 transition-all duration-300 w-fit cursor-pointer hover:scale-105 hover:shadow-lg active:scale-95 group"
               >
-                {t('pointOfSale.requestQuote')}
+                {t("pointOfSale.requestQuote")}
               </Button>
             </div>
           ))}
@@ -126,7 +124,7 @@ const PointOfSalePage = () => {
                   onClick={openDialog}
                   className="mt-4 px-4 sm:px-6 py-2 bg-white text-black rounded-full text-sm font-medium hover:bg-gray-100 transition-all duration-300 w-fit cursor-pointer hover:scale-105 hover:shadow-lg active:scale-95 group"
                 >
-                  {t('pointOfSale.requestQuote')}
+                  {t("pointOfSale.requestQuote")}
                 </Button>
               </div>
             );

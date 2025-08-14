@@ -1,24 +1,40 @@
+/**
+ * Legacy Page Metadata (Backward Compatibility)
+ * This file maintains backward compatibility while using the new modular structure
+ */
+
 import { Metadata } from 'next';
 import { getLocale } from 'next-intl/server';
-import { getLocalizedMetadata, arabicSEOContent } from './arabic-seo';
+import { generatePageMetadata } from './seo/metadata';
+import type { SupportedLocale } from './seo/types';
 
 interface PageMetadataConfig {
   englishTitle: string;
   englishDescription: string;
   englishKeywords: string[];
-  arabicPageKey: keyof typeof arabicSEOContent;
+  arabicPageKey: string; // This will be mapped to the new system
   url: string;
 }
 
-export async function generatePageMetadata(config: PageMetadataConfig): Promise<Metadata> {
-  const locale = await getLocale();
+/**
+ * @deprecated Use generatePageMetadata from @/lib/seo/metadata instead
+ */
+export async function generatePageMetadata_Legacy(config: PageMetadataConfig): Promise<Metadata> {
+  const locale = await getLocale() as SupportedLocale;
   
-  return getLocalizedMetadata(
-    config.englishTitle,
-    config.englishDescription,
-    config.englishKeywords,
-    config.arabicPageKey,
-    config.url,
-    locale
-  );
+  try {
+    // Try to use the new system with the page key
+    return await generatePageMetadata(config.arabicPageKey, locale, config.url);
+  } catch {
+    // Fallback to manual generation
+    const { generateSEO } = await import('./seo');
+    
+    return generateSEO({
+      title: locale === 'en' ? config.englishTitle : config.englishTitle, // Fallback to English
+      description: locale === 'en' ? config.englishDescription : config.englishDescription,
+      keywords: config.englishKeywords,
+      url: config.url,
+      locale
+    });
+  }
 }

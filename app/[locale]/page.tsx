@@ -1,9 +1,21 @@
-"use client";
-
 import Hero from "@/components/hero";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
+import { Metadata } from "next";
+import { generatePageMetadata } from "@/lib/seo/metadata";
+import type { SupportedLocale } from "@/lib/seo/types";
+
+// Generate metadata for the home page
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  return await generatePageMetadata("home", locale as SupportedLocale);
+}
 
 export default function HomePage() {
   const locale = useLocale();

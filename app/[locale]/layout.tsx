@@ -5,7 +5,11 @@ import { routing } from "@/i18n/routing";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { QuoteDialogProvider } from "@/contexts/quote-dialog-context";
-import { generateOrganizationSchema, generateWebsiteSchema } from "@/lib/seo";
+import {
+  combineSchemas,
+  generateOrganizationSchema,
+  generateWebsiteSchema,
+} from "@/lib/seo";
 import { Montserrat } from "next/font/google";
 import localFont from "next/font/local";
 import "../globals.css";
@@ -88,8 +92,11 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages();
   const isRTL = locale === "ar";
 
-  const organizationSchema = generateOrganizationSchema(locale);
-  const websiteSchema = generateWebsiteSchema(locale);
+  const organizationSchema = generateOrganizationSchema(locale as "en" | "ar");
+  const websiteSchema = generateWebsiteSchema(locale as "en" | "ar");
+
+  // Combine schemas for better performance
+  const combinedSchema = combineSchemas([organizationSchema, websiteSchema]);
 
   return (
     <html lang={locale} dir={isRTL ? "rtl" : "ltr"} suppressHydrationWarning>
@@ -102,14 +109,7 @@ export default async function LocaleLayout({ children, params }: Props) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationSchema),
-          }}
-          suppressHydrationWarning
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(websiteSchema),
+            __html: combinedSchema,
           }}
           suppressHydrationWarning
         />
