@@ -123,6 +123,8 @@ export default function PartnerRegistrationForm() {
                         type="text"
                         id="partner-name"
                         className=""
+                        spellCheck={false}
+                        data-ms-editor="false"
                         {...field}
                       />
                     </div>
@@ -270,6 +272,8 @@ export default function PartnerRegistrationForm() {
                         type="text"
                         id="neighborhood"
                         className=""
+                        spellCheck={false}
+                        data-ms-editor="false"
                         {...field}
                       />
                     </div>
@@ -296,6 +300,8 @@ export default function PartnerRegistrationForm() {
                         type="text"
                         id="street"
                         className=""
+                        spellCheck={false}
+                        data-ms-editor="false"
                         {...field}
                       />
                     </div>
@@ -417,6 +423,8 @@ export default function PartnerRegistrationForm() {
                         type="text"
                         id="responsible-person-name"
                         className=""
+                        spellCheck={false}
+                        data-ms-editor="false"
                         {...field}
                       />
                     </div>
@@ -445,6 +453,8 @@ export default function PartnerRegistrationForm() {
                         type="tel"
                         id="contact-number"
                         className=""
+                        spellCheck={false}
+                        data-ms-editor="false"
                         {...field}
                       />
                     </div>

@@ -201,6 +201,8 @@ export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
                       type="text"
                       id="companyName"
                       className=""
+                      spellCheck={false}
+                      data-ms-editor="false"
                       {...field}
                     />
                   </FormControl>
@@ -226,6 +228,8 @@ export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
                       type="text"
                       id="responsiblePerson"
                       className=""
+                      spellCheck={false}
+                      data-ms-editor="false"
                       {...field}
                     />
                   </FormControl>
@@ -249,6 +253,8 @@ export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
                       type="email"
                       id="email"
                       className=""
+                      spellCheck={false}
+                      data-ms-editor="false"
                       {...field}
                     />
                   </FormControl>
@@ -274,6 +280,8 @@ export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
                       type="tel"
                       id="mobileNumber"
                       className=""
+                      spellCheck={false}
+                      data-ms-editor="false"
                       {...field}
                     />
                   </FormControl>
@@ -329,6 +337,8 @@ export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
                       type="text"
                       id="targetCity"
                       className=""
+                      spellCheck={false}
+                      data-ms-editor="false"
                       {...field}
                     />
                   </FormControl>
@@ -361,6 +371,8 @@ export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
                       placeholder={t("placeholders.orderDetails")}
                       id="orderDetails"
                       className="min-h-[120px]"
+                      spellCheck={false}
+                      data-ms-editor="false"
                       {...field}
                     />
                   </FormControl>
@@ -406,20 +418,20 @@ export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
             )}
           />
 
-          {/* Reset Button */}
-          <div className="col-span-12 @3xl:col-span-6 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
-            <div className="w-full">
-              <Button type="reset" variant="outline" className="w-full">
-                {t("resetButton")}
-              </Button>
-            </div>
-          </div>
-
           {/* Submit Button */}
           <div className="col-span-12 @3xl:col-span-6 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
             <div className="w-full">
               <Button type="submit" variant="default" className="w-full">
                 {t("submitButton")}
+              </Button>
+            </div>
+          </div>
+
+          {/* Reset Button */}
+          <div className="col-span-12 @3xl:col-span-6 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
+            <div className="w-full">
+              <Button type="reset" variant="outline" className="w-full">
+                {t("resetButton")}
               </Button>
             </div>
           </div>
