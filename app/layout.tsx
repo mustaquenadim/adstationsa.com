@@ -5,8 +5,13 @@ import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { QuoteDialogProvider } from "@/contexts/quote-dialog-context";
-import { NextIntlClientProvider } from 'next-intl';
+import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getMessages } from "next-intl/server";
+import {
+  generateSEO,
+  generateOrganizationSchema,
+  generateWebsiteSchema,
+} from "@/lib/seo";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -65,10 +70,27 @@ const montserratArabic = localFont({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  title: "Adstation",
-  description: "Adstation",
-};
+export const metadata: Metadata = generateSEO({
+  title: "The First Saudi Platform for Advertising Services",
+  description:
+    "AdStation is a unified platform connecting top advertising agencies and companies in Saudi Arabia. Get professional advertising services including outdoor advertising, creative design, printing, exhibitions, and more.",
+  keywords: [
+    "advertising services saudi arabia",
+    "saudi advertising platform",
+    "outdoor advertising",
+    "creative design services",
+    "printing services",
+    "exhibition services",
+    "point of sale advertising",
+    "billboard advertising saudi",
+    "advertising agencies saudi arabia",
+    "marketing services riyadh",
+    "advertising solutions",
+    "promotional services",
+  ],
+  url: "/",
+  type: "website",
+});
 
 export default async function RootLayout({
   children,
@@ -77,10 +99,31 @@ export default async function RootLayout({
 }>) {
   const locale = await getLocale();
   const messages = await getMessages();
-  const isRTL = locale === 'ar';
+  const isRTL = locale === "ar";
+
+  const organizationSchema = generateOrganizationSchema();
+  const websiteSchema = generateWebsiteSchema();
 
   return (
-    <html lang={locale} dir={isRTL ? 'rtl' : 'ltr'}>
+    <html lang={locale} dir={isRTL ? "rtl" : "ltr"}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema),
+          }}
+        />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/logo.png" />
+        <meta name="theme-color" content="#8dc73f" />
+        <meta name="msapplication-TileColor" content="#8dc73f" />
+      </head>
       <body
         className={`${montserrat.variable} ${montserratArabic.variable} antialiased font-arabic`}
       >

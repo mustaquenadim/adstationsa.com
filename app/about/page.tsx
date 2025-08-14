@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { useTranslations, useLocale } from "next-intl";
+import { generateOrganizationSchema } from "@/lib/seo";
 
 const beVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin"],
@@ -19,15 +20,19 @@ const beVietnamPro = Be_Vietnam_Pro({
 });
 
 export default function AboutPage() {
-  const t = useTranslations('about');
+  const t = useTranslations("about");
   const locale = useLocale();
-  const isRTL = locale === 'ar';
+  const isRTL = locale === "ar";
   return (
     <>
       {/* Top Section - Green Background */}
       <section className="relative w-full min-h-screen bg-[#8dc73f] overflow-hidden">
         {/* Large Text Overlay */}
-        <div className={`hidden md:block absolute top-40 ${isRTL ? 'left-10' : 'right-10'}`}>
+        <div
+          className={`hidden md:block absolute top-40 ${
+            isRTL ? "left-10" : "right-10"
+          }`}
+        >
           <Image
             src="/adstation-watermark.svg"
             alt="About Hero"
@@ -39,13 +44,21 @@ export default function AboutPage() {
         </div>
 
         {/* Main Content */}
-        <div className={`relative z-20 flex items-center justify-start h-screen ${isRTL ? 'pr-16' : 'pl-16'}`}>
-          <div className={`${isRTL ? 'text-right' : 'text-left'} text-white max-w-2xl`}>
-            <h1 className="text-4xl mb-6">{t('hero.title')}</h1>
+        <div
+          className={`relative z-20 flex items-center justify-start h-screen ${
+            isRTL ? "pr-16" : "pl-16"
+          }`}
+        >
+          <div
+            className={`${
+              isRTL ? "text-right" : "text-left"
+            } text-white max-w-2xl`}
+          >
+            <h1 className="text-4xl mb-6">{t("hero.title")}</h1>
             <div className="text-6xl font-normal text-black">
-              {t('hero.subtitle')}{" "}
+              {t("hero.subtitle")}{" "}
               <span className="relative">
-                {isRTL ? 'التقليدي' : 'traditional'}
+                {isRTL ? "التقليدي" : "traditional"}
                 <svg
                   viewBox="0 0 286 73"
                   fill="none"
@@ -66,7 +79,7 @@ export default function AboutPage() {
               </span>
             </div>
             <p className="mt-8 text-xl font-normal leading-relaxed text-black">
-              {t('hero.description')}
+              {t("hero.description")}
             </p>
           </div>
         </div>
@@ -78,7 +91,7 @@ export default function AboutPage() {
             <span className="text-black">ad</span>station
           </h2>
           <p className="text-xl font-normal leading-relaxed max-w-3xl mx-auto px-8">
-            {t('brandSection.description')}
+            {t("brandSection.description")}
           </p>
         </div>
       </section>
@@ -92,17 +105,21 @@ export default function AboutPage() {
           layout="fill"
           objectFit="cover"
           quality={90}
-          className={`z-0 ${isRTL ? '' : 'scale-x-[-1]'}`}
+          className={`z-0 ${isRTL ? "" : "scale-x-[-1]"}`}
           priority
         />
 
         {/* Content */}
-        <div className={`relative z-20 ${isRTL ? 'text-right' : 'text-left'} text-white px-8 max-w-2xl`}>
+        <div
+          className={`relative z-20 ${
+            isRTL ? "text-right" : "text-left"
+          } text-white px-8 max-w-2xl`}
+        >
           <h2 className="text-4xl md:text-5xl font-medium mb-8 drop-shadow-lg">
-            {t('storySection.title')}
+            {t("storySection.title")}
           </h2>
           <p className="text-lg md:text-xl font-light mb-6 drop-shadow leading-relaxed">
-            {t('storySection.description')}
+            {t("storySection.description")}
           </p>
         </div>
       </section>
@@ -112,10 +129,10 @@ export default function AboutPage() {
           {/* Vision */}
           <AboutCard
             imageSrc="/hands-together.jpg"
-            imageAlt={t('cards.vision.overlayText')}
-            overlayText={t('cards.vision.overlayText')}
-            title={t('cards.vision.title')}
-            description={t('cards.vision.description')}
+            imageAlt={t("cards.vision.overlayText")}
+            overlayText={t("cards.vision.overlayText")}
+            title={t("cards.vision.title")}
+            description={t("cards.vision.description")}
             overlayColor="#4a8f6b"
             titleColor="#4a8f6b"
             isRTL={isRTL}
@@ -123,10 +140,10 @@ export default function AboutPage() {
           {/* Mission */}
           <AboutCard
             imageSrc="/teamwork.jpg"
-            imageAlt={t('cards.mission.overlayText')}
-            overlayText={t('cards.mission.overlayText')}
-            title={t('cards.mission.title')}
-            description={t('cards.mission.description')}
+            imageAlt={t("cards.mission.overlayText")}
+            overlayText={t("cards.mission.overlayText")}
+            title={t("cards.mission.title")}
+            description={t("cards.mission.description")}
             overlayColor="#c1423d"
             titleColor="#c1423d"
             isRTL={isRTL}
@@ -134,29 +151,41 @@ export default function AboutPage() {
           {/* Values */}
           <AboutCard
             imageSrc="/paper-boat.jpg"
-            imageAlt={t('cards.values.overlayText')}
-            overlayText={t('cards.values.overlayText')}
-            title={t('cards.values.title')}
+            imageAlt={t("cards.values.overlayText")}
+            overlayText={t("cards.values.overlayText")}
+            title={t("cards.values.title")}
             description={
               <div className="space-y-2">
                 <div className="flex items-start gap-2">
                   <span>
-                    <strong>{t('cards.values.experience').split(':')[0]}:</strong> {t('cards.values.experience').split(':')[1]}
+                    <strong>
+                      {t("cards.values.experience").split(":")[0]}:
+                    </strong>{" "}
+                    {t("cards.values.experience").split(":")[1]}
                   </span>
                 </div>
                 <div className="flex items-start gap-2">
                   <span>
-                    <strong>{t('cards.values.innovation').split(':')[0]}:</strong> {t('cards.values.innovation').split(':')[1]}
+                    <strong>
+                      {t("cards.values.innovation").split(":")[0]}:
+                    </strong>{" "}
+                    {t("cards.values.innovation").split(":")[1]}
                   </span>
                 </div>
                 <div className="flex items-start gap-2">
                   <span>
-                    <strong>{t('cards.values.transparency').split(':')[0]}:</strong> {t('cards.values.transparency').split(':')[1]}
+                    <strong>
+                      {t("cards.values.transparency").split(":")[0]}:
+                    </strong>{" "}
+                    {t("cards.values.transparency").split(":")[1]}
                   </span>
                 </div>
                 <div className="flex items-start gap-2">
                   <span>
-                    <strong>{t('cards.values.clientCentric').split(':')[0]}:</strong> {t('cards.values.clientCentric').split(':')[1]}
+                    <strong>
+                      {t("cards.values.clientCentric").split(":")[0]}:
+                    </strong>{" "}
+                    {t("cards.values.clientCentric").split(":")[1]}
                   </span>
                 </div>
               </div>
@@ -217,12 +246,20 @@ const AboutCard = ({
       </CardContent>
       <CardHeader className="p-0">
         <CardTitle
-          className={cn("text-2xl font-bold", isRTL ? "text-right" : "text-left")}
+          className={cn(
+            "text-2xl font-bold",
+            isRTL ? "text-right" : "text-left"
+          )}
           style={{ color: titleColor }}
         >
           {title}
         </CardTitle>
-        <CardDescription className={cn("text-lg text-black font-light", isRTL ? "text-right" : "text-left")}>
+        <CardDescription
+          className={cn(
+            "text-lg text-black font-light",
+            isRTL ? "text-right" : "text-left"
+          )}
+        >
           {description}
         </CardDescription>
       </CardHeader>
