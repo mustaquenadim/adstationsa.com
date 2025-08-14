@@ -6,9 +6,9 @@ import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
 
 const ServicesPage = () => {
-  const t = useTranslations('services');
+  const t = useTranslations("services");
   const locale = useLocale();
-  const isArabic = locale === 'ar';
+  const isRTL = locale === "ar";
 
   // Services data structure with color and link info
   const servicesConfig = [
@@ -64,19 +64,23 @@ const ServicesPage = () => {
       {/* Main Content */}
       <div className="relative z-20 flex items-center justify-start h-auto min-h-[60vh] md:h-screen px-10">
         <div className="text-left rtl:text-right text-white max-w-2xl">
-          <h1 className="text-4xl mb-6">{t('main.title')}</h1>
+          <h1 className="text-4xl mb-6">{t("main.title")}</h1>
           <div className="text-6xl font-normal text-white">
-            {t('main.heroTitle')}{" "}
+            {t("main.heroTitle")}{" "}
           </div>
           <p className="mt-8 text-xl font-light leading-relaxed text-white">
-            {t('main.heroDescription')}
+            {t("main.heroDescription")}
           </p>
         </div>
 
         {/* Background Image */}
-        <div className={`absolute ${isArabic ? 'left-10' : 'right-10'} top-40 hidden md:block`}>
+        <div
+          className={`absolute ${
+            isRTL ? "left-10" : "right-10"
+          } top-40 hidden md:block`}
+        >
           <motion.div
-            initial={{ opacity: 0, x: isArabic ? -100 : 100 }}
+            initial={{ opacity: 0, x: isRTL ? -100 : 100 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
           >
@@ -93,14 +97,14 @@ const ServicesPage = () => {
 
       <div className="flex items-center justify-center">
         <p className="max-w-2xl text-white text-center text-md font-normal">
-          {t('main.description')}
+          {t("main.description")}
         </p>
       </div>
 
       <div className="py-20">
         <div className="max-w-3xl mx-auto text-white text-center text-md font-normal mb-20">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium">
-            {t('main.sectionTitle')}
+            {t("main.sectionTitle")}
           </h2>
         </div>
 
@@ -122,8 +126,14 @@ const ServicesPage = () => {
                   size="lg"
                   className="mt-4 px-4 sm:px-6 py-2 bg-white text-black rounded-full text-sm font-medium hover:bg-gray-100 transition-all duration-300 w-fit cursor-pointer hover:scale-105 hover:shadow-lg active:scale-95 group"
                 >
-                  {t('main.learnMore')}{" "}
-                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  {t("main.learnMore")}{" "}
+                  <ArrowRight
+                    className={`w-4 h-4 transition-transform duration-300 ${
+                      isRTL
+                        ? "rotate-180 group-hover:-translate-x-1"
+                        : "group-hover:translate-x-1"
+                    }`}
+                  />
                 </Button>
               </Link>
             </div>
@@ -157,8 +167,14 @@ const ServicesPage = () => {
                   size="lg"
                   className="mt-4 px-4 sm:px-6 py-2 bg-white text-black rounded-full text-sm font-medium hover:bg-gray-100 transition-all duration-300 w-fit cursor-pointer hover:scale-105 hover:shadow-lg active:scale-95 group"
                 >
-                  {t('main.learnMore')}{" "}
-                  <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  {t("main.learnMore")}{" "}
+                  <ArrowRight
+                    className={`w-4 h-4 transition-transform duration-300 ${
+                      isRTL
+                        ? "rotate-180 group-hover:-translate-x-1"
+                        : "group-hover:translate-x-1"
+                    }`}
+                  />
                 </Button>
               </Link>
             </div>
