@@ -24,9 +24,36 @@ export function generateSEO({
   alternates = {}
 }: SEOProps = {}): Metadata {
   const siteName = 'AdStation';
-  const defaultTitle = 'AdStation - The First Saudi Platform for Advertising Services';
-  const defaultDescription = 'AdStation is a unified platform connecting top advertising agencies and companies in Saudi Arabia. Get professional advertising services including outdoor advertising, creative design, printing, exhibitions, and more.';
-  const defaultKeywords = [
+  const defaultTitle = locale === 'ar' 
+    ? 'أدستيشن - أول منصة سعودية لخدمات الإعلان'
+    : 'AdStation - The First Saudi Platform for Advertising Services';
+  
+  const defaultDescription = locale === 'ar'
+    ? 'أدستيشن هي منصة موحدة تربط أفضل وكالات الإعلان والشركات في المملكة العربية السعودية. احصل على خدمات إعلانية احترافية تشمل الإعلان الخارجي والتصميم الإبداعي والطباعة والمعارض والمزيد.'
+    : 'AdStation is a unified platform connecting top advertising agencies and companies in Saudi Arabia. Get professional advertising services including outdoor advertising, creative design, printing, exhibitions, and more.';
+  
+  const defaultKeywords = locale === 'ar' ? [
+    'خدمات الإعلان',
+    'الإعلان في السعودية',
+    'الإعلان الخارجي',
+    'التصميم الإبداعي',
+    'خدمات الطباعة',
+    'المعارض والفعاليات',
+    'نقطة البيع',
+    'وكالات الإعلان',
+    'إعلانات اللوحات',
+    'الإعلان الرقمي',
+    'خدمات التسويق',
+    'منصة الإعلان',
+    'شركات الإعلان السعودية',
+    'حلول الإعلان',
+    'الخدمات الترويجية',
+    'أدستيشن',
+    'إعلانات الرياض',
+    'إعلانات جدة',
+    'إعلانات الدمام',
+    'التسويق السعودي'
+  ] : [
     'advertising services',
     'saudi arabia advertising',
     'outdoor advertising',
@@ -47,8 +74,8 @@ export function generateSEO({
   const seoTitle = title ? `${title} | ${siteName}` : defaultTitle;
   const seoDescription = description || defaultDescription;
   const seoKeywords = [...keywords, ...defaultKeywords];
-  const seoImage = image.startsWith('http') ? image : `https://adstation.sa${image}`;
-  const seoUrl = url ? `https://adstation.sa${url}` : 'https://adstation.sa';
+  const seoImage = image.startsWith('http') ? image : `https://adstationsa.com${image}`;
+  const seoUrl = url ? `https://adstationsa.com${url}` : 'https://adstationsa.com';
 
   const metadata: Metadata = {
     title: seoTitle,
@@ -62,7 +89,7 @@ export function generateSEO({
       address: false,
       telephone: false,
     },
-    metadataBase: new URL('https://adstation.sa'),
+    metadataBase: new URL('https://adstationsa.com'),
     alternates: {
       canonical: seoUrl,
       languages: {
@@ -116,22 +143,26 @@ export function generateSEO({
 }
 
 // JSON-LD structured data generators
-export function generateOrganizationSchema() {
+export function generateOrganizationSchema(locale: string = 'en') {
+  const isArabic = locale === 'ar';
+  
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    name: 'AdStation',
-    url: 'https://adstation.sa',
-    logo: 'https://adstation.sa/logo.png',
-    description: 'The first Saudi platform for advertising services, connecting businesses with top advertising agencies.',
+    name: isArabic ? 'أدستيشن' : 'AdStation',
+    url: 'https://adstationsa.com',
+    logo: 'https://adstationsa.com/logo.png',
+    description: isArabic 
+      ? 'أول منصة سعودية لخدمات الإعلان، تربط الشركات بأفضل وكالات الإعلان.'
+      : 'The first Saudi platform for advertising services, connecting businesses with top advertising agencies.',
     address: {
       '@type': 'PostalAddress',
       addressCountry: 'SA',
-      addressRegion: 'Saudi Arabia'
+      addressRegion: isArabic ? 'المملكة العربية السعودية' : 'Saudi Arabia'
     },
     contactPoint: {
       '@type': 'ContactPoint',
-      contactType: 'customer service',
+      contactType: isArabic ? 'خدمة العملاء' : 'customer service',
       availableLanguage: ['English', 'Arabic']
     },
     sameAs: [
@@ -143,41 +174,47 @@ export function generateOrganizationSchema() {
   };
 }
 
-export function generateWebsiteSchema() {
+export function generateWebsiteSchema(locale: string = 'en') {
+  const isArabic = locale === 'ar';
+  
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'AdStation',
-    url: 'https://adstation.sa',
-    description: 'The first Saudi platform for advertising services',
+    name: isArabic ? 'أدستيشن' : 'AdStation',
+    url: 'https://adstationsa.com',
+    description: isArabic 
+      ? 'أول منصة سعودية لخدمات الإعلان'
+      : 'The first Saudi platform for advertising services',
     publisher: {
       '@type': 'Organization',
-      name: 'AdStation'
+      name: isArabic ? 'أدستيشن' : 'AdStation'
     },
     potentialAction: {
       '@type': 'SearchAction',
-      target: 'https://adstation.sa/search?q={search_term_string}',
+      target: 'https://adstationsa.com/search?q={search_term_string}',
       'query-input': 'required name=search_term_string'
     },
     inLanguage: ['en', 'ar']
   };
 }
 
-export function generateServiceSchema(serviceName: string, serviceDescription: string, serviceUrl: string) {
+export function generateServiceSchema(serviceName: string, serviceDescription: string, serviceUrl: string, locale: string = 'en') {
+  const isArabic = locale === 'ar';
+  
   return {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: serviceName,
     description: serviceDescription,
-    url: `https://adstation.sa${serviceUrl}`,
+    url: `https://adstationsa.com${serviceUrl}`,
     provider: {
       '@type': 'Organization',
-      name: 'AdStation',
-      url: 'https://adstation.sa'
+      name: isArabic ? 'أدستيشن' : 'AdStation',
+      url: 'https://adstationsa.com'
     },
     areaServed: {
       '@type': 'Country',
-      name: 'Saudi Arabia'
+      name: isArabic ? 'المملكة العربية السعودية' : 'Saudi Arabia'
     },
     availableLanguage: ['English', 'Arabic']
   };
@@ -191,7 +228,7 @@ export function generateBreadcrumbSchema(items: Array<{ name: string; url: strin
       '@type': 'ListItem',
       position: index + 1,
       name: item.name,
-      item: `https://adstation.sa${item.url}`
+      item: `https://adstationsa.com${item.url}`
     }))
   };
 }

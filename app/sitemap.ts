@@ -1,7 +1,8 @@
 import { MetadataRoute } from 'next'
+import {routing} from '@/i18n/routing';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://adstation.sa'
+  const baseUrl = 'https://adstationsa.com'
   
   const routes = [
     '',
@@ -18,22 +19,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/join-us'
   ]
 
-  const locales = ['en', 'ar']
-  
   const sitemap: MetadataRoute.Sitemap = []
 
-  // Add routes for each locale
-  locales.forEach(locale => {
+  // Add routes for each locale with proper Arabic SEO considerations
+  routing.locales.forEach(locale => {
     routes.forEach(route => {
+      const url = `${baseUrl}/${locale}${route}`;
+      const priority = route === '' ? 1 : route.includes('/services/') ? 0.8 : 0.9;
+      const changeFrequency = route === '' ? 'daily' : 'weekly';
+      
       sitemap.push({
-        url: `${baseUrl}/${locale}${route}`,
+        url,
         lastModified: new Date(),
-        changeFrequency: route === '' ? 'daily' : 'weekly',
-        priority: route === '' ? 1 : route.includes('/services/') ? 0.8 : 0.9,
+        changeFrequency,
+        priority,
         alternates: {
           languages: {
             'en': `${baseUrl}/en${route}`,
             'ar': `${baseUrl}/ar${route}`,
+            'x-default': `${baseUrl}/en${route}` // Default to English for international users
           }
         }
       })

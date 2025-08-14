@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/private/', '/admin/', '/api/'],
     },
-    sitemap: 'https://adstation.sa/sitemap.xml',
+    sitemap: 'https://adstationsa.com/sitemap.xml',
   }
 }

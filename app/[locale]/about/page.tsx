@@ -12,7 +12,6 @@ import {
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 import { useTranslations, useLocale } from "next-intl";
-import { generateOrganizationSchema } from "@/lib/seo";
 
 const beVietnamPro = Be_Vietnam_Pro({
   subsets: ["latin"],

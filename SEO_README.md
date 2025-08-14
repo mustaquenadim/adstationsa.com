@@ -126,7 +126,7 @@ cp .env.example .env.local
 
 1. Add your site to Google Search Console
 2. Add the verification code to `GOOGLE_SITE_VERIFICATION`
-3. Submit your sitemap: `https://adstation.sa/sitemap.xml`
+3. Submit your sitemap: `https://adstationsa.com/sitemap.xml`
 
 ### 3. Google Analytics
 
