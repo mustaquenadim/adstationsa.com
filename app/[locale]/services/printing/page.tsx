@@ -24,7 +24,7 @@ const PrintingPage = () => {
       {/* Main Content */}
       <div className="relative z-20 grid grid-cols-1 md:grid-cols-2 h-screen px-10">
         <div className="flex items-center justify-center order-2 md:order-1">
-          <div className="text-left rtl:text-right rtl:text-right text-white max-w-2xl">
+          <div className="text-left rtl:text-right text-white max-w-2xl">
             <h1 className="text-2xl mb-6">{t("main.title")}</h1>
             <div className="text-3xl md:text-4xl lg:text-6xl font-normal text-white">
               {t("printing.title")}
