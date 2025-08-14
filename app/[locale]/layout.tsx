@@ -93,7 +93,7 @@ export default async function LocaleLayout({ children, params }: Props) {
 
   return (
     <html lang={locale} dir={isRTL ? "rtl" : "ltr"} suppressHydrationWarning>
-      <head>
+      <head suppressHydrationWarning>
         <link rel="icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/logo.png" />
         <meta name="theme-color" content="#8dc73f" />
@@ -104,12 +104,14 @@ export default async function LocaleLayout({ children, params }: Props) {
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(organizationSchema),
           }}
+          suppressHydrationWarning
         />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(websiteSchema),
           }}
+          suppressHydrationWarning
         />
 
         {/* Arabic SEO specific meta tags */}
