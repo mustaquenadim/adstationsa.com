@@ -1,22 +1,22 @@
 import Image from "next/image";
 
 interface LogoProps {
-  variant?: 'default' | 'white';
+  variant?: 'default' | 'white' | 'green-black';
   className?: string;
 }
 
 export default function Logo({ variant = 'default', className = '' }: LogoProps) {
   const filterClass = variant === 'white' ? 'brightness-0 invert' : '';
+  const logoSrc = variant === 'green-black' ? '/logo-android-green-and-black.png' : '/logo.png';
 
   return (
     <Image
-      src="/logo.png"
+      src={logoSrc}
       alt="Logo"
       width={272}
       height={146}
-      className={`w-auto h-auto max-w-full ${className} ${filterClass}`}
+      className={`w-auto h-auto max-w-full ${filterClass} ${className}`}
       style={{
-        width: '100%',
         height: 'auto',
       }}
     />

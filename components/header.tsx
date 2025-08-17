@@ -14,17 +14,16 @@ import {
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import {
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
 import RequestQuoteForm from "@/components/forms/request-quote-form";
 import {
@@ -77,9 +76,8 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 px-4 md:px-6 transition-all duration-300 ${
-        isScrolled ? "bg-black backdrop-blur-sm text-white" : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 px-4 md:px-6 transition-all duration-300 ${isScrolled ? "bg-black backdrop-blur-sm text-white" : "bg-transparent"
+        }`}
     >
       <div className="flex h-20 justify-between gap-4">
         {/* Left side */}
@@ -101,11 +99,10 @@ export default function Header() {
                   <NavigationMenuLink
                     active={pathname === link.href}
                     asChild
-                    className={`h-full justify-center rounded-none border-y-2 border-transparent py-1.5 font-medium hover:bg-transparent data-[active]:bg-transparent! transition-colors duration-300 ${
-                      isScrolled
-                        ? "text-gray-300 hover:text-white hover:border-b-white data-[active]:border-b-primary data-[active]:text-primary"
-                        : "text-white hover:text-white hover:border-b-white data-[active]:border-b-white data-[active]:text-white"
-                    }`}
+                    className={`h-full justify-center rounded-none border-y-2 border-transparent py-1.5 font-medium hover:bg-transparent data-[active]:bg-transparent! transition-colors duration-300 ${isScrolled
+                      ? "text-gray-300 hover:text-white hover:border-b-white data-[active]:border-b-primary data-[active]:text-primary"
+                      : "text-white hover:text-white hover:border-b-white data-[active]:border-b-white data-[active]:text-white"
+                      }`}
                   >
                     <Link href={link.href}>{link.label}</Link>
                   </NavigationMenuLink>
@@ -115,11 +112,10 @@ export default function Header() {
           </NavigationMenu>
           <Select value={locale} onValueChange={handleLanguageChange}>
             <SelectTrigger
-              className={`cursor-pointer rounded-full w-auto border-none bg-transparent text-sm transition-colors duration-300 flex items-center gap-2 ${
-                isScrolled
-                  ? "text-gray-300 hover:text-white hover:bg-gray-800"
-                  : "text-white hover:text-primary hover:bg-white/10"
-              }`}
+              className={`cursor-pointer rounded-full w-auto border-none bg-transparent text-sm transition-colors duration-300 flex items-center gap-2 max-md:hidden ${isScrolled
+                ? "text-gray-300 hover:text-white hover:bg-gray-800"
+                : "text-white hover:text-primary hover:bg-white/10"
+                }`}
             >
               <Languages className="text-white" />
               <SelectValue />
@@ -130,35 +126,19 @@ export default function Header() {
             </SelectContent>
           </Select>
 
-          {/* Request Quote Dialog */}
-          <Dialog
-            open={isQuoteDialogOpen}
-            onOpenChange={(open) => (open ? openDialog() : closeDialog())}
+          {/* Request Quote Button - Desktop */}
+          <Button
+            size="lg"
+            className="rounded-full max-md:hidden"
+            onClick={openDialog}
           >
-            <DialogTrigger asChild>
-              <Button size="lg" className="rounded-full">
-                {t("requestQuote")}
-              </Button>
-            </DialogTrigger>
-            <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
-              <DialogHeader>
-                <DialogTitle className="text-2xl font-bold text-center">
-                  {t("requestQuoteDialog.title")}
-                </DialogTitle>
-                <DialogDescription className="text-center">
-                  {t("requestQuoteDialog.description")}
-                </DialogDescription>
-              </DialogHeader>
-              <div className="mt-6">
-                <RequestQuoteForm onSuccess={closeDialog} />
-              </div>
-            </DialogContent>
-          </Dialog>
+            {t("requestQuote")}
+          </Button>
 
           <div className="flex items-center md:hidden">
             {/* Mobile menu trigger */}
-            <Popover>
-              <PopoverTrigger asChild>
+            <Sheet>
+              <SheetTrigger asChild>
                 <Button
                   className="group size-8 text-white"
                   variant="ghost"
@@ -190,28 +170,86 @@ export default function Header() {
                     />
                   </svg>
                 </Button>
-              </PopoverTrigger>
-              <PopoverContent align="start" className="w-36 p-1 md:hidden">
-                <NavigationMenu className="max-w-none *:w-full">
-                  <NavigationMenuList className="flex-col items-start gap-0 md:gap-2">
-                    {navigationLinks.map((link, index) => (
-                      <NavigationMenuItem key={index} className="w-full">
-                        <NavigationMenuLink
-                          asChild
-                          className="py-1.5"
-                          active={pathname === link.href}
-                        >
-                          <Link href={link.href}>{link.label}</Link>
-                        </NavigationMenuLink>
-                      </NavigationMenuItem>
-                    ))}
-                  </NavigationMenuList>
-                </NavigationMenu>
-              </PopoverContent>
-            </Popover>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-80 p-6">
+                <div className="flex flex-col h-full">
+                  {/* Logo */}
+                  <div className="mb-8">
+                    <Link href="/" className="text-primary hover:text-primary/90">
+                      <Logo variant="green-black" className="!w-32 max-w-32" />
+                    </Link>
+                  </div>
+
+                  {/* Navigation Links */}
+                  <nav className="flex-1">
+                    <ul className="space-y-4">
+                      {navigationLinks.map((link, index) => (
+                        <li key={index}>
+                          <Link
+                            href={link.href}
+                            className={`block py-3 px-4 rounded-lg text-lg font-medium transition-colors ${pathname === link.href
+                              ? "bg-primary text-white"
+                              : "text-gray-700 hover:bg-gray-100"
+                              }`}
+                          >
+                            {link.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </nav>
+
+                  {/* Language Selector */}
+                  <div className="mb-6">
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      {t("language.label")}
+                    </label>
+                    <Select value={locale} onValueChange={handleLanguageChange}>
+                      <SelectTrigger className="w-full">
+                        <Languages className="w-4 h-4 mr-2" />
+                        <SelectValue />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="ar">{t("language.arabic")}</SelectItem>
+                        <SelectItem value="en">{t("language.english")}</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  {/* Request Quote Button - Mobile */}
+                  <Button
+                    size="lg"
+                    className="w-full rounded-full"
+                    onClick={openDialog}
+                  >
+                    {t("requestQuote")}
+                  </Button>
+                </div>
+              </SheetContent>
+            </Sheet>
           </div>
         </div>
       </div>
+
+      {/* Shared Request Quote Dialog */}
+      <Dialog
+        open={isQuoteDialogOpen}
+        onOpenChange={(open) => (open ? openDialog() : closeDialog())}
+      >
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold text-center">
+              {t("requestQuoteDialog.title")}
+            </DialogTitle>
+            <DialogDescription className="text-center">
+              {t("requestQuoteDialog.description")}
+            </DialogDescription>
+          </DialogHeader>
+          <div className="mt-6">
+            <RequestQuoteForm onSuccess={closeDialog} />
+          </div>
+        </DialogContent>
+      </Dialog>
     </header>
   );
 }

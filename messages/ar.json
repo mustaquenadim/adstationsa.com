@@ -70,6 +70,7 @@
             "successMessage": "شكراً لك! تم إرسال طلب عرض السعر بنجاح. سنتواصل معك قريباً."
         },
         "language": {
+            "label": "اللغة",
             "arabic": "العربية",
             "english": "English"
         }

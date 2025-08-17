@@ -70,6 +70,7 @@
             "successMessage": "Thank you! Your quote request has been submitted successfully. We'll get back to you soon."
         },
         "language": {
+            "label": "Language",
             "arabic": "العربية",
             "english": "English"
         }
