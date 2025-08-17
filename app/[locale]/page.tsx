@@ -171,7 +171,7 @@ const Five = ({ isRTL }: SectionProps) => {
   return (
     <section className="relative w-full min-h-screen md:h-screen flex flex-col md:flex-row items-center md:justify-between overflow-hidden bg-[#027dc3] py-10 md:py-0">
       {/* Content */}
-      <div className={`relative z-20 text-left rtl:text-right text-white p-8 max-w-sm sm:max-w-2xl md:${isRTL ? 'order-2' : 'order-1'}`}>
+      <div className={`relative z-20 text-left rtl:text-right text-white p-8 max-w-sm sm:max-w-2xl`}>
         <h2 className="text-4xl md:text-6xl font-medium mb-4 drop-shadow-lg capitalize">
           {t("title")}
         </h2>
@@ -189,7 +189,7 @@ const Five = ({ isRTL }: SectionProps) => {
       </div>
 
       {/* Image */}
-      <div className={`m-auto relative w-full h-[32rem] sm:h-[36rem] md:flex-1 md:h-full md:max-w-lg md:${isRTL ? 'order-1' : 'order-2'}`}>
+      <div className={`m-auto relative w-full h-[32rem] sm:h-[36rem] md:flex-1 md:h-full md:max-w-lg`}>
         <Image
           src='/point-of-sale.png'
           alt='Point of Sale Image'
