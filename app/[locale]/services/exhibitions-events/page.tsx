@@ -45,8 +45,8 @@ const ExhibitionsEventsPage = () => {
             <Image
               src="/exhibitions-events.svg"
               alt="Exhibitions and Events Hero"
-              width={350}
-              height={350}
+              width={500}
+              height={500}
               className="object-contain max-w-full max-h-full"
             />
           </motion.div>
