@@ -35,7 +35,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "./ui/select";
-import { Languages } from "lucide-react";
+import { Languages, Menu } from "lucide-react";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -78,16 +78,16 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 px-4 md:px-6 transition-all duration-300 ${isScrolled ? "bg-black backdrop-blur-sm text-white" : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 px-4 md:px-6 pt-4 pb-4 transition-all duration-300 ${isScrolled ? "bg-black backdrop-blur-sm text-white" : "bg-transparent"
         }`}
     >
-      <div className="flex h-20 justify-between gap-4">
+      <div className="flex h-20 justify-between gap-4 relative">
         {/* Left side */}
         <div className="flex gap-2">
           {/* Main nav */}
           <div className="flex items-center gap-6">
             <Link href="/" className="text-primary hover:text-primary/90">
-              <Logo variant={logoVariant} />
+              <Logo variant={logoVariant} className="!w-40 max-w-40" />
             </Link>
           </div>
         </div>
@@ -142,35 +142,11 @@ export default function Header() {
             <Sheet>
               <SheetTrigger asChild>
                 <Button
-                  className="group size-8 text-white"
+                  className="group size-12 text-white"
                   variant="ghost"
                   size="icon"
                 >
-                  <svg
-                    className="pointer-events-none"
-                    width={16}
-                    height={16}
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M4 12L20 12"
-                      className="origin-center -translate-y-[7px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-x-0 group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[315deg]"
-                    />
-                    <path
-                      d="M4 12H20"
-                      className="origin-center transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.8)] group-aria-expanded:rotate-45"
-                    />
-                    <path
-                      d="M4 12H20"
-                      className="origin-center translate-y-[7px] transition-all duration-300 ease-[cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[135deg]"
-                    />
-                  </svg>
+                  <Menu className="!w-8 !h-8" />
                 </Button>
               </SheetTrigger>
               <SheetContent side={locale === 'ar' ? 'left' : 'right'} className="w-80 p-6">
