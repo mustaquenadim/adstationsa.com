@@ -37,10 +37,9 @@ const Hero = ({ isRTL }: { isRTL?: boolean }) => {
       <Image
         src="/hero-bg.png"
         alt="Hero Background"
-        layout="fill"
-        objectFit="cover"
+        fill
         quality={90}
-        className={`z-0 ${isRTL ? "" : "scale-x-[-1]"}`}
+        className={`z-0 object-cover ${isRTL ? "" : "scale-x-[-1]"}`}
         priority
       />
       {/* Overlay */}
