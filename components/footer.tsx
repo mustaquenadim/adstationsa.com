@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { useTranslations } from "next-intl";
 import {
   Facebook,
@@ -12,6 +11,7 @@ import {
   YouTube,
   SaudiBusinessCenter,
 } from "./icons";
+import { Link } from "@/i18n/routing";
 
 const Footer = () => {
   const t = useTranslations('footer');

@@ -1,5 +1,5 @@
-import {defineRouting} from 'next-intl/routing';
-import {createNavigation} from 'next-intl/navigation';
+import { defineRouting } from 'next-intl/routing';
+import { createNavigation } from 'next-intl/navigation';
 
 export const routing = defineRouting({
   // A list of all locales that are supported
@@ -24,8 +24,11 @@ export const routing = defineRouting({
     '/services/point-of-sale': '/services/point-of-sale',
     '/services/advertising-campaigns': '/services/advertising-campaigns',
     '/why-adstation': '/why-adstation',
-    '/join-us': '/join-us'
+    '/join-us': '/join-us',
+    '/blog': '/blog',
+    '/contact': '/contact',
+    '/quote': '/quote'
   }
 });
 
-export const {Link, redirect, usePathname, useRouter, getPathname} = createNavigation(routing);
+export const { Link, redirect, usePathname, useRouter, getPathname } = createNavigation(routing);
