@@ -116,7 +116,7 @@ const DesktopNavigation = ({
           <NavigationMenuLink
             active={pathname === link.href}
             asChild
-            className={`h-full justify-center rounded-none border-y-2 border-transparent py-1.5 font-medium hover:bg-transparent data-[active]:bg-transparent! transition-colors duration-300 ${styles}`}
+            className={`h-full justify-center rounded-none border-y-2 border-transparent py-1.5 font-medium hover:bg-transparent data-[active]:bg-transparent transition-colors duration-300 ${styles}`}
           >
             <Link href={link.href}>{link.label}</Link>
           </NavigationMenuLink>
@@ -276,7 +276,11 @@ export default function Header() {
   }, [router, pathname]);
 
   const handleQuoteDialogChange = useCallback((open: boolean) => {
-    open ? openDialog() : closeDialog();
+    if (open) {
+      openDialog();
+    } else {
+      closeDialog();
+    }
   }, [openDialog, closeDialog]);
 
   return (

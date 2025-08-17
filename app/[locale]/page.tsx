@@ -20,6 +20,7 @@ export async function generateMetadata({
 
 export default function HomePage() {
   const locale = useLocale();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const isRTL = locale === "ar";
 
   return (

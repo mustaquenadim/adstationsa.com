@@ -14,31 +14,31 @@ const ServicesPage = () => {
   const servicesConfig = [
     {
       bgColor: "bg-[#F3746F]",
-      link: "/services/creative-design",
+      link: "/services/creative-design" as const,
     },
     {
       bgColor: "bg-[#11ABC4]",
-      link: "/services/printing",
+      link: "/services/printing" as const,
     },
     {
       bgColor: "bg-[#118D8B]",
-      link: "/services/outdoor-advertising",
+      link: "/services/outdoor-advertising" as const,
     },
     {
       bgColor: "bg-[#4D449B]",
-      link: "/services/indoor-signage",
+      link: "/services/indoor-signage" as const,
     },
     {
       bgColor: "bg-[#FAB91B]",
-      link: "/services/exhibitions-events",
+      link: "/services/exhibitions-events" as const,
     },
     {
       bgColor: "bg-[#E17932]",
-      link: "/services/point-of-sale",
+      link: "/services/point-of-sale" as const,
     },
     {
       bgColor: "bg-[#6E42F2]",
-      link: "/services/advertising-campaigns",
+      link: "/services/advertising-campaigns" as const,
     },
   ];
   return (
@@ -120,7 +120,7 @@ const ServicesPage = () => {
               <p className="text-base sm:text-lg lg:text-base xl:text-lg font-light leading-6 line-clamp-5 h-30 sm:h-32 lg:h-30 xl:h-40">
                 {t(`list.${index}.description`)}
               </p>
-              <Link href={service.link as any}>
+              <Link href={service.link}>
                 <Button
                   size="xl"
                   className="px-4 sm:px-6 py-2 bg-white text-black rounded-full text-sm font-medium hover:bg-gray-100 transition-all duration-300 w-fit cursor-pointer hover:scale-105 hover:shadow-lg active:scale-95 group"
@@ -160,7 +160,7 @@ const ServicesPage = () => {
               <p className="text-base sm:text-lg lg:text-base xl:text-lg font-light leading-6 line-clamp-5 h-30 sm:h-32 lg:h-30 xl:h-40">
                 {t(`list.${index + 4}.description`)}
               </p>
-              <Link href={service.link as any}>
+              <Link href={service.link}>
                 <Button
                   size="xl"
                   className="px-4 sm:px-6 py-2 bg-white text-black rounded-full text-sm font-medium hover:bg-gray-100 transition-all duration-300 w-fit cursor-pointer hover:scale-105 hover:shadow-lg active:scale-95 group"
