@@ -10,13 +10,14 @@ import {
   generateOrganizationSchema,
   generateWebsiteSchema,
 } from "@/lib/seo";
-import { Montserrat } from "next/font/google";
+import { Be_Vietnam_Pro } from "next/font/google";
 import localFont from "next/font/local";
 import "../globals.css";
 
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
+const beVietnamPro = Be_Vietnam_Pro({
+  variable: "--font-be-vietnam-pro",
   subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
 const montserratArabic = localFont({
@@ -136,7 +137,7 @@ export default async function LocaleLayout({ children, params }: Props) {
       </head>
 
       <body
-        className={`${montserrat.variable} ${montserratArabic.variable} antialiased font-arabic`}
+        className={`${beVietnamPro.variable} ${montserratArabic.variable} antialiased ${isRTL ? 'font-arabic' : 'font-english'}`}
         suppressHydrationWarning
       >
         <QuoteDialogProvider>

@@ -1,6 +1,7 @@
 import Hero from "@/components/hero";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { Link } from "@/i18n/routing";
 import { useTranslations, useLocale } from "next-intl";
 import { Metadata } from "next";
 import { generatePageMetadata } from "@/lib/seo/metadata";
@@ -44,9 +45,8 @@ const Two = ({ isRTL }: SectionProps) => {
     <section className="relative w-full h-screen flex items-start md:items-center justify-start overflow-hidden bg-[#8dc73f]">
       {/* Watermark Logo */}
       <div
-        className={`absolute -bottom-10 md:-top-10 z-10 ${
-          isRTL ? "-left-10" : "-right-10"
-        }`}
+        className={`absolute -bottom-10 md:-top-10 z-10 ${isRTL ? "-left-10" : "-right-10"
+          }`}
       >
         <Image
           src="/watermark-logo.svg"
@@ -60,16 +60,18 @@ const Two = ({ isRTL }: SectionProps) => {
 
       {/* Content */}
       <div className="relative max-w-2xl text-left rtl:text-right z-20 p-8">
-        <h2 className="text-4xl md:text-6xl font-medium text-white mb-6">
+        <h2 className="text-4xl md:text-6xl font-medium text-white mb-6 capitalize">
           {t("title")}
         </h2>
         <p className="text-xl text-white mb-8">{t("description")}</p>
-        <Button
-          size="xl"
-          className="rounded-full bg-white hover:bg-primary/80 text-black font-semibold py-3 px-8 shadow-lg transition"
-        >
-          {t("cta")}
-        </Button>
+        <Link href="/why-adstation">
+          <Button
+            size="xl"
+            className="rounded-full bg-white hover:bg-primary/80 text-black font-semibold py-3 px-8 shadow-lg transition"
+          >
+            {t("cta")}
+          </Button>
+        </Link>
       </div>
     </section>
   );
@@ -93,18 +95,20 @@ const Three = ({ isRTL }: SectionProps) => {
 
       {/* Content */}
       <div className="relative z-20 text-left rtl:text-right text-white p-8 max-w-2xl">
-        <h2 className="text-4xl md:text-6xl font-medium mb-4 drop-shadow-lg">
+        <h2 className="text-4xl md:text-6xl font-medium mb-4 drop-shadow-lg capitalize">
           {t("title")}
         </h2>
         <p className="text-lg md:text-2xl mb-6 drop-shadow">
           {t("description")}
         </p>
-        <Button
-          size="xl"
-          className="rounded-full bg-white hover:bg-primary/80 text-black font-semibold py-3 px-8 shadow-lg transition"
-        >
-          {t("cta")}
-        </Button>
+        <Link href="/services">
+          <Button
+            size="xl"
+            className="rounded-full bg-white hover:bg-primary/80 text-black font-semibold py-3 px-8 shadow-lg transition"
+          >
+            {t("cta")}
+          </Button>
+        </Link>
       </div>
     </section>
   );
@@ -142,18 +146,20 @@ const Four = ({ isRTL }: SectionProps) => {
 
       {/* Content */}
       <div className="relative z-20 text-left rtl:text-right text-white p-8 max-w-2xl">
-        <h2 className="text-4xl md:text-6xl font-medium mb-4 drop-shadow-lg">
+        <h2 className="text-4xl md:text-6xl font-medium mb-4 drop-shadow-lg capitalize">
           {t("title")}
         </h2>
         <p className="text-lg md:text-2xl mb-6 drop-shadow">
           {t("description")}
         </p>
-        <Button
-          size="xl"
-          className="rounded-full bg-white hover:bg-primary/80 text-black font-semibold py-3 px-8 shadow-lg transition"
-        >
-          {t("cta")}
-        </Button>
+        <Link href="/services/creative-design">
+          <Button
+            size="xl"
+            className="rounded-full bg-white hover:bg-primary/80 text-black font-semibold py-3 px-8 shadow-lg transition"
+          >
+            {t("cta")}
+          </Button>
+        </Link>
       </div>
     </section>
   );
@@ -177,18 +183,20 @@ const Five = ({ isRTL }: SectionProps) => {
 
       {/* Content */}
       <div className="relative z-20 text-left rtl:text-right text-white p-8 max-w-sm sm:max-w-2xl">
-        <h2 className="text-4xl md:text-6xl font-medium mb-4 drop-shadow-lg">
+        <h2 className="text-4xl md:text-6xl font-medium mb-4 drop-shadow-lg capitalize">
           {t("title")}
         </h2>
         <p className="text-lg md:text-2xl mb-6 drop-shadow">
           {t("description")}
         </p>
-        <Button
-          size="xl"
-          className="rounded-full bg-white hover:bg-primary/80 text-black font-semibold py-3 px-8 shadow-lg transition"
-        >
-          {t("cta")}
-        </Button>
+        <Link href="/services/point-of-sale">
+          <Button
+            size="xl"
+            className="rounded-full bg-white hover:bg-primary/80 text-black font-semibold py-3 px-8 shadow-lg transition"
+          >
+            {t("cta")}
+          </Button>
+        </Link>
       </div>
     </section>
   );
@@ -212,18 +220,20 @@ const Six = ({ isRTL }: SectionProps) => {
 
       {/* Content */}
       <div className="relative z-20 text-left rtl:text-right text-dark p-8 max-w-xl space-y-8">
-        <h2 className="text-4xl md:text-6xl font-medium mb-4 drop-shadow-lg">
+        <h2 className="text-4xl md:text-6xl font-medium mb-4 drop-shadow-lg capitalize">
           {t("title")}
         </h2>
         <p className="text-lg md:text-2xl mb-6 drop-shadow">
           {t("description")}
         </p>
-        <Button
-          size="xl"
-          className="rounded-full bg-primary hover:bg-primary/80 text-white font-semibold py-3 px-8 shadow-lg transition"
-        >
-          {t("cta")}
-        </Button>
+        <Link href="/services/outdoor-advertising">
+          <Button
+            size="xl"
+            className="rounded-full bg-white hover:bg-primary/80 text-black font-semibold py-3 px-8 shadow-lg transition"
+          >
+            {t("cta")}
+          </Button>
+        </Link>
       </div>
     </section>
   );

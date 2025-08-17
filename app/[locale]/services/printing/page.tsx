@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import * as motion from "motion/react-client";
 import Image from "next/image";
@@ -67,16 +69,16 @@ const PrintingPage = () => {
               key={index}
               className={`h-full w-full ${bgColor} text-white p-6 sm:p-8 aspect-square flex flex-col justify-center overflow-hidden`}
             >
-              <h3 className="text-2xl sm:text-3xl lg:text-2xl xl:text-4xl font-medium">
+              <h3 className="text-2xl sm:text-3xl lg:text-2xl xl:text-4xl font-medium line-clamp-3 h-24 sm:h-28 lg:h-24 xl:h-36 capitalize">
                 {t(`printing.services.${index}.title`)}
               </h3>
-              <p className="text-base sm:text-lg lg:text-base xl:text-lg font-light leading-6 mt-4">
+              <p className="text-base sm:text-lg lg:text-base xl:text-lg font-light leading-6 line-clamp-5 h-30 sm:h-32 lg:h-30 xl:h-40">
                 {t(`printing.services.${index}.description`)}
               </p>
               <Button
-                size="lg"
+                size="xl"
                 onClick={openDialog}
-                className="mt-4 px-4 sm:px-6 py-2 bg-white text-black rounded-full text-sm font-medium hover:bg-gray-100 transition-all duration-300 w-fit cursor-pointer hover:scale-105 hover:shadow-lg active:scale-95 group"
+                className="px-4 sm:px-6 py-2 bg-white text-black rounded-full text-sm font-medium hover:bg-gray-100 transition-all duration-300 w-fit cursor-pointer hover:scale-105 hover:shadow-lg active:scale-95 group"
               >
                 {t("printing.requestQuote")}
               </Button>
@@ -100,16 +102,16 @@ const PrintingPage = () => {
               key={index + 4}
               className={`h-full w-full ${bgColor} text-white p-6 sm:p-8 aspect-square flex flex-col justify-center overflow-hidden`}
             >
-              <h3 className="text-2xl sm:text-3xl lg:text-2xl xl:text-4xl font-medium">
+              <h3 className="text-2xl sm:text-3xl lg:text-2xl xl:text-4xl font-medium line-clamp-3 h-24 sm:h-28 lg:h-24 xl:h-36 capitalize">
                 {t(`printing.services.${index + 4}.title`)}
               </h3>
-              <p className="text-base sm:text-lg lg:text-base xl:text-lg font-light leading-6 mt-4">
+              <p className="text-base sm:text-lg lg:text-base xl:text-lg font-light leading-6 line-clamp-5 h-30 sm:h-32 lg:h-30 xl:h-40">
                 {t(`printing.services.${index + 4}.description`)}
               </p>
               <Button
-                size="lg"
+                size="xl"
                 onClick={openDialog}
-                className="mt-4 px-4 sm:px-6 py-2 bg-white text-black rounded-full text-sm font-medium hover:bg-gray-100 transition-all duration-300 w-fit cursor-pointer hover:scale-105 hover:shadow-lg active:scale-95 group"
+                className="px-4 sm:px-6 py-2 bg-white text-black rounded-full text-sm font-medium hover:bg-gray-100 transition-all duration-300 w-fit cursor-pointer hover:scale-105 hover:shadow-lg active:scale-95 group"
               >
                 {t("printing.requestQuote")}
               </Button>

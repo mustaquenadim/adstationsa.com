@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import * as motion from "motion/react-client";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { useTranslations, useLocale } from "next-intl";
 
 const ServicesPage = () => {
@@ -75,9 +75,8 @@ const ServicesPage = () => {
 
         {/* Background Image */}
         <div
-          className={`absolute ${
-            isRTL ? "left-10" : "right-10"
-          } top-40 hidden md:block`}
+          className={`absolute ${isRTL ? "left-10" : "right-10"
+            } top-40 hidden md:block`}
         >
           <motion.div
             initial={{ opacity: 0, x: isRTL ? -100 : 100 }}
@@ -115,24 +114,23 @@ const ServicesPage = () => {
               key={index}
               className={`h-full w-full ${service.bgColor} text-white p-6 sm:p-8 aspect-square flex flex-col justify-center overflow-hidden`}
             >
-              <h3 className="text-2xl sm:text-3xl lg:text-2xl xl:text-4xl font-medium">
+              <h3 className="text-2xl sm:text-3xl lg:text-2xl xl:text-4xl font-medium line-clamp-3 h-24 sm:h-28 lg:h-24 xl:h-36 capitalize">
                 {t(`list.${index}.title`)}
               </h3>
-              <p className="text-base sm:text-lg lg:text-base xl:text-lg font-light leading-6 mt-4">
+              <p className="text-base sm:text-lg lg:text-base xl:text-lg font-light leading-6 line-clamp-5 h-30 sm:h-32 lg:h-30 xl:h-40">
                 {t(`list.${index}.description`)}
               </p>
-              <Link href={service.link}>
+              <Link href={service.link as any}>
                 <Button
-                  size="lg"
-                  className="mt-4 px-4 sm:px-6 py-2 bg-white text-black rounded-full text-sm font-medium hover:bg-gray-100 transition-all duration-300 w-fit cursor-pointer hover:scale-105 hover:shadow-lg active:scale-95 group"
+                  size="xl"
+                  className="px-4 sm:px-6 py-2 bg-white text-black rounded-full text-sm font-medium hover:bg-gray-100 transition-all duration-300 w-fit cursor-pointer hover:scale-105 hover:shadow-lg active:scale-95 group"
                 >
                   {t("main.learnMore")}{" "}
                   <ArrowRight
-                    className={`w-4 h-4 transition-transform duration-300 ${
-                      isRTL
-                        ? "rotate-180 group-hover:-translate-x-1"
-                        : "group-hover:translate-x-1"
-                    }`}
+                    className={`w-4 h-4 transition-transform duration-300 ${isRTL
+                      ? "rotate-180 group-hover:-translate-x-1"
+                      : "group-hover:translate-x-1"
+                      }`}
                   />
                 </Button>
               </Link>
@@ -156,24 +154,23 @@ const ServicesPage = () => {
               key={index + 4}
               className={`h-full w-full ${service.bgColor} text-white p-6 sm:p-8 aspect-square flex flex-col justify-center overflow-hidden`}
             >
-              <h3 className="text-2xl sm:text-3xl lg:text-2xl xl:text-4xl font-medium">
+              <h3 className="text-2xl sm:text-3xl lg:text-2xl xl:text-4xl font-medium line-clamp-3 h-24 sm:h-28 lg:h-24 xl:h-36 capitalize">
                 {t(`list.${index + 4}.title`)}
               </h3>
-              <p className="text-base sm:text-lg lg:text-base xl:text-lg font-light leading-6 mt-4">
+              <p className="text-base sm:text-lg lg:text-base xl:text-lg font-light leading-6 line-clamp-5 h-30 sm:h-32 lg:h-30 xl:h-40">
                 {t(`list.${index + 4}.description`)}
               </p>
-              <Link href={service.link}>
+              <Link href={service.link as any}>
                 <Button
-                  size="lg"
-                  className="mt-4 px-4 sm:px-6 py-2 bg-white text-black rounded-full text-sm font-medium hover:bg-gray-100 transition-all duration-300 w-fit cursor-pointer hover:scale-105 hover:shadow-lg active:scale-95 group"
+                  size="xl"
+                  className="px-4 sm:px-6 py-2 bg-white text-black rounded-full text-sm font-medium hover:bg-gray-100 transition-all duration-300 w-fit cursor-pointer hover:scale-105 hover:shadow-lg active:scale-95 group"
                 >
                   {t("main.learnMore")}{" "}
                   <ArrowRight
-                    className={`w-4 h-4 transition-transform duration-300 ${
-                      isRTL
-                        ? "rotate-180 group-hover:-translate-x-1"
-                        : "group-hover:translate-x-1"
-                    }`}
+                    className={`w-4 h-4 transition-transform duration-300 ${isRTL
+                      ? "rotate-180 group-hover:-translate-x-1"
+                      : "group-hover:translate-x-1"
+                      }`}
                   />
                 </Button>
               </Link>
