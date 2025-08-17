@@ -16,6 +16,8 @@ import {
 import {
   Sheet,
   SheetContent,
+  SheetHeader,
+  SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
 import {
@@ -171,15 +173,18 @@ export default function Header() {
                   </svg>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-80 p-6">
+              <SheetContent side={locale === 'ar' ? 'left' : 'right'} className="w-80 p-6">
+                <SheetHeader dir="ltr">
+                  <SheetTitle>
+                    {/* Logo */}
+                    <div>
+                      <Link href="/" className="text-primary hover:text-primary/90">
+                        <Logo variant="green-black" className="!w-32 max-w-32" />
+                      </Link>
+                    </div>
+                  </SheetTitle>
+                </SheetHeader>
                 <div className="flex flex-col h-full">
-                  {/* Logo */}
-                  <div className="mb-8">
-                    <Link href="/" className="text-primary hover:text-primary/90">
-                      <Logo variant="green-black" className="!w-32 max-w-32" />
-                    </Link>
-                  </div>
-
                   {/* Navigation Links */}
                   <nav className="flex-1">
                     <ul className="space-y-4">
