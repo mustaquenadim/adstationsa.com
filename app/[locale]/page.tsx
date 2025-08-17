@@ -86,8 +86,7 @@ const Three = ({ isRTL }: SectionProps) => {
       <Image
         src="/bg-three.png"
         alt="Hero Background"
-        layout="fill"
-        objectFit="cover"
+        fill
         quality={90}
         className={`z-0 object-cover ${isRTL ? "scale-x-[-1]" : ""}`}
         priority
@@ -124,10 +123,9 @@ const Four = ({ isRTL }: SectionProps) => {
         <Image
           src="/bg-four-mobile.png"
           alt="Hero Background Mobile"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="left bottom"
+          fill
           quality={90}
+          className="object-cover object-left-bottom"
           priority
         />
       </div>
@@ -137,9 +135,9 @@ const Four = ({ isRTL }: SectionProps) => {
         <Image
           src={isRTL ? "/bg-four-ar.png" : "/bg-four-en.png"}
           alt="Hero Background Desktop"
-          layout="fill"
-          objectFit="cover"
+          fill
           quality={90}
+          className="object-cover"
           priority
         />
       </div>
@@ -211,10 +209,9 @@ const Six = ({ isRTL }: SectionProps) => {
       <Image
         src={isRTL ? "/bg-six-ar.png" : "/bg-six-en.png"}
         alt="Hero Background"
-        layout="fill"
-        objectFit="cover"
+        fill
         quality={90}
-        className="z-0"
+        className="z-0 object-cover"
         priority
       />
 
