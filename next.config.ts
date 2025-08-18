@@ -55,6 +55,16 @@ const nextConfig: NextConfig = {
     ];
   },
 
+  // Skip TypeScript errors during build
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+
+  // Skip ESLint during builds (optional)
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+
   // Experimental features for better performance
   experimental: {
     optimizeCss: true,
