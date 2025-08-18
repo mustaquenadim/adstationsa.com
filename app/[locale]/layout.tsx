@@ -1,7 +1,6 @@
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
-import { routing } from "@/i18n/routing";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { QuoteDialogProvider } from "@/contexts/quote-dialog-context";
@@ -13,6 +12,7 @@ import {
 import { Be_Vietnam_Pro } from "next/font/google";
 import localFont from "next/font/local";
 import "../globals.css";
+import { routing } from "@/i18n/routing";
 
 const beVietnamPro = Be_Vietnam_Pro({
   variable: "--font-be-vietnam-pro",
@@ -137,7 +137,9 @@ export default async function LocaleLayout({ children, params }: Props) {
       </head>
 
       <body
-        className={`${beVietnamPro.variable} ${montserratArabic.variable} antialiased ${isRTL ? 'font-arabic' : 'font-english'}`}
+        className={`${beVietnamPro.variable} ${
+          montserratArabic.variable
+        } antialiased ${isRTL ? "font-arabic" : "font-english"}`}
         suppressHydrationWarning
       >
         <QuoteDialogProvider>

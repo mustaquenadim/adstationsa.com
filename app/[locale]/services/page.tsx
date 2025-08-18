@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import * as motion from "motion/react-client";
 import Image from "next/image";
-import { Link } from "@/i18n/routing";
+import { Link } from "@/i18n/navigation";
 import { useTranslations, useLocale } from "next-intl";
 
 const ServicesPage = () => {
@@ -75,8 +75,9 @@ const ServicesPage = () => {
 
         {/* Background Image */}
         <div
-          className={`absolute ${isRTL ? "left-10" : "right-10"
-            } top-40 hidden md:block`}
+          className={`absolute ${
+            isRTL ? "left-10" : "right-10"
+          } top-40 hidden md:block`}
         >
           <motion.div
             initial={{ opacity: 0, x: isRTL ? -100 : 100 }}
@@ -127,10 +128,11 @@ const ServicesPage = () => {
                 >
                   {t("main.learnMore")}{" "}
                   <ArrowRight
-                    className={`w-4 h-4 transition-transform duration-300 ${isRTL
-                      ? "rotate-180 group-hover:-translate-x-1"
-                      : "group-hover:translate-x-1"
-                      }`}
+                    className={`w-4 h-4 transition-transform duration-300 ${
+                      isRTL
+                        ? "rotate-180 group-hover:-translate-x-1"
+                        : "group-hover:translate-x-1"
+                    }`}
                   />
                 </Button>
               </Link>
@@ -167,10 +169,11 @@ const ServicesPage = () => {
                 >
                   {t("main.learnMore")}{" "}
                   <ArrowRight
-                    className={`w-4 h-4 transition-transform duration-300 ${isRTL
-                      ? "rotate-180 group-hover:-translate-x-1"
-                      : "group-hover:translate-x-1"
-                      }`}
+                    className={`w-4 h-4 transition-transform duration-300 ${
+                      isRTL
+                        ? "rotate-180 group-hover:-translate-x-1"
+                        : "group-hover:translate-x-1"
+                    }`}
                   />
                 </Button>
               </Link>

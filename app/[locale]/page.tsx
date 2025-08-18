@@ -1,7 +1,7 @@
 import Hero from "@/components/hero";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { Link } from "@/i18n/routing";
+import { Link } from "@/i18n/navigation";
 import { useTranslations, useLocale } from "next-intl";
 import { Metadata } from "next";
 import { generatePageMetadata } from "@/lib/seo/metadata";
@@ -46,8 +46,9 @@ const Two = ({ isRTL }: SectionProps) => {
     <section className="relative w-full h-screen flex items-start md:items-center justify-start overflow-hidden bg-[#8dc73f]">
       {/* Watermark Logo */}
       <div
-        className={`absolute -bottom-10 md:-top-10 z-10 ${isRTL ? "-left-10" : "-right-10"
-          }`}
+        className={`absolute -bottom-10 md:-top-10 z-10 ${
+          isRTL ? "-left-10" : "-right-10"
+        }`}
       >
         <Image
           src="/watermark-logo.svg"
@@ -170,7 +171,9 @@ const Five = ({ isRTL }: SectionProps) => {
   return (
     <section className="relative w-full min-h-screen md:h-screen flex flex-col md:flex-row items-center md:justify-between overflow-hidden bg-[#027dc3] py-10 md:py-0">
       {/* Content */}
-      <div className={`relative z-20 text-left rtl:text-right text-white p-8 max-w-sm sm:max-w-2xl`}>
+      <div
+        className={`relative z-20 text-left rtl:text-right text-white p-8 max-w-sm sm:max-w-2xl`}
+      >
         <h2 className="text-4xl md:text-6xl font-medium mb-4 drop-shadow-lg capitalize">
           {t("title")}
         </h2>
@@ -188,10 +191,12 @@ const Five = ({ isRTL }: SectionProps) => {
       </div>
 
       {/* Image */}
-      <div className={`m-auto relative w-full h-[32rem] sm:h-[36rem] md:flex-1 md:h-full md:max-w-lg`}>
+      <div
+        className={`m-auto relative w-full h-[32rem] sm:h-[36rem] md:flex-1 md:h-full md:max-w-lg`}
+      >
         <Image
-          src='/point-of-sale.png'
-          alt='Point of Sale Image'
+          src="/point-of-sale.png"
+          alt="Point of Sale Image"
           fill
           className="object-contain"
           priority

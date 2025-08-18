@@ -11,10 +11,10 @@ import {
   YouTube,
   SaudiBusinessCenter,
 } from "./icons";
-import { Link } from "@/i18n/routing";
+import { Link } from "@/i18n/navigation";
 
 const Footer = () => {
-  const t = useTranslations('footer');
+  const t = useTranslations("footer");
 
   return (
     <footer className="bg-black text-white">
@@ -26,43 +26,43 @@ const Footer = () => {
             href="/about"
             className="text-white hover:text-gray-300 transition-colors text-center sm:text-left"
           >
-            {t('navigation.about')}
+            {t("navigation.about")}
           </Link>
           <Link
             href="/services"
             className="text-white hover:text-gray-300 transition-colors text-center sm:text-left"
           >
-            {t('navigation.services')}
+            {t("navigation.services")}
           </Link>
           <Link
             href="/why-adstation"
             className="text-white hover:text-gray-300 transition-colors text-center sm:text-left"
           >
-            {t('navigation.whyAdstation')}
+            {t("navigation.whyAdstation")}
           </Link>
           <Link
             href="/blog"
             className="text-white hover:text-gray-300 transition-colors text-center sm:text-left"
           >
-            {t('navigation.blog')}
+            {t("navigation.blog")}
           </Link>
           <Link
             href="/contact"
             className="text-white hover:text-gray-300 transition-colors text-center sm:text-left"
           >
-            {t('navigation.contact')}
+            {t("navigation.contact")}
           </Link>
           <Link
             href="/join-us"
             className="text-white hover:text-gray-300 transition-colors text-center sm:text-left"
           >
-            {t('cta.becomePartner')}
+            {t("cta.becomePartner")}
           </Link>
           <Link
             href="/quote"
             className="text-white hover:text-gray-300 transition-colors text-center sm:text-left"
           >
-            {t('cta.getQuote')}
+            {t("cta.getQuote")}
           </Link>
         </div>
 

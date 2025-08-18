@@ -2,8 +2,8 @@
 
 import { useEffect, useState, useMemo, useCallback } from "react";
 import { useTranslations, useLocale } from "next-intl";
-import { usePathname, useRouter } from "@/i18n/routing";
-import { Link } from "@/i18n/routing";
+import { usePathname, useRouter } from "@/i18n/navigation";
+import { Link } from "@/i18n/navigation";
 import Logo from "@/components/logo";
 import { useQuoteDialog } from "@/contexts/quote-dialog-context";
 import { Button } from "@/components/ui/button";
@@ -65,28 +65,38 @@ const useScrollDetection = () => {
   return isScrolled;
 };
 
-const useNavigationLinks = (t: ReturnType<typeof useTranslations>): NavigationLink[] => {
-  return useMemo(() => [
-    { href: "/" as const, label: t("navigation.home") },
-    { href: "/about" as const, label: t("navigation.about") },
-    { href: "/services" as const, label: t("navigation.services") },
-    { href: "/why-adstation" as const, label: t("navigation.whyAdstation") },
-    { href: "/join-us" as const, label: t("navigation.joinUs") },
-  ], [t]);
+const useNavigationLinks = (
+  t: ReturnType<typeof useTranslations>
+): NavigationLink[] => {
+  return useMemo(
+    () => [
+      { href: "/" as const, label: t("navigation.home") },
+      { href: "/about" as const, label: t("navigation.about") },
+      { href: "/services" as const, label: t("navigation.services") },
+      { href: "/why-adstation" as const, label: t("navigation.whyAdstation") },
+      { href: "/join-us" as const, label: t("navigation.joinUs") },
+    ],
+    [t]
+  );
 };
 
 const useHeaderStyles = (isScrolled: boolean): HeaderStylesConfig => {
-  return useMemo(() => ({
-    header: `fixed top-0 left-0 right-0 z-50 px-4 md:px-6 pt-4 pb-4 transition-all duration-300 ${isScrolled ? "bg-black backdrop-blur-sm text-white" : "bg-transparent"
+  return useMemo(
+    () => ({
+      header: `fixed top-0 left-0 right-0 z-50 px-4 md:px-6 pt-4 pb-4 transition-all duration-300 ${
+        isScrolled ? "bg-black backdrop-blur-sm text-white" : "bg-transparent"
       }`,
-    navigation: isScrolled
-      ? "text-gray-300 hover:text-white hover:border-b-white data-[active]:border-b-primary data-[active]:text-primary"
-      : "text-white hover:text-white hover:border-b-white data-[active]:border-b-white data-[active]:text-white",
-    languageSelector: `cursor-pointer rounded-full w-auto border-none bg-transparent text-sm transition-colors duration-300 flex items-center gap-2 max-md:hidden ${isScrolled
-      ? "text-gray-300 hover:text-white hover:bg-gray-800"
-      : "text-white hover:text-primary hover:bg-white/10"
+      navigation: isScrolled
+        ? "text-gray-300 hover:text-white hover:border-b-white data-[active]:border-b-primary data-[active]:text-primary"
+        : "text-white hover:text-white hover:border-b-white data-[active]:border-b-white data-[active]:text-white",
+      languageSelector: `cursor-pointer rounded-full w-auto border-none bg-transparent text-sm transition-colors duration-300 flex items-center gap-2 max-md:hidden ${
+        isScrolled
+          ? "text-gray-300 hover:text-white hover:bg-gray-800"
+          : "text-white hover:text-primary hover:bg-white/10"
       }`,
-  }), [isScrolled]);
+    }),
+    [isScrolled]
+  );
 };
 
 // Components
@@ -103,7 +113,7 @@ const HeaderLogo = ({ pathname }: { pathname: string }) => {
 const DesktopNavigation = ({
   navigationLinks,
   pathname,
-  styles
+  styles,
 }: {
   navigationLinks: NavigationLink[];
   pathname: string;
@@ -131,7 +141,7 @@ const LanguageSelector = ({
   onLanguageChange,
   styles,
   t,
-  className = ""
+  className = "",
 }: {
   locale: string;
   onLanguageChange: (locale: string) => void;
@@ -157,7 +167,7 @@ const MobileNavigation = ({
   locale,
   onLanguageChange,
   onQuoteClick,
-  t
+  t,
 }: {
   navigationLinks: NavigationLink[];
   pathname: string;
@@ -178,7 +188,10 @@ const MobileNavigation = ({
           <Menu className="!w-8 !h-8" />
         </Button>
       </SheetTrigger>
-      <SheetContent side={locale === 'ar' ? 'left' : 'right'} className="w-80 p-6">
+      <SheetContent
+        side={locale === "ar" ? "left" : "right"}
+        className="w-80 p-6"
+      >
         <SheetHeader dir="ltr">
           <SheetTitle>
             <Link href="/" className="text-primary hover:text-primary/90">
@@ -193,10 +206,11 @@ const MobileNavigation = ({
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className={`block py-3 px-4 rounded-lg text-lg font-medium transition-colors ${pathname === link.href
-                      ? "bg-primary text-white"
-                      : "text-gray-700 hover:bg-gray-100"
-                      }`}
+                    className={`block py-3 px-4 rounded-lg text-lg font-medium transition-colors ${
+                      pathname === link.href
+                        ? "bg-primary text-white"
+                        : "text-gray-700 hover:bg-gray-100"
+                    }`}
                   >
                     {link.label}
                   </Link>
@@ -235,7 +249,7 @@ const QuoteDialog = ({
   isOpen,
   onOpenChange,
   onClose,
-  t
+  t,
 }: {
   isOpen: boolean;
   onOpenChange: (open: boolean) => void;
@@ -264,24 +278,34 @@ export default function Header() {
   const pathname = usePathname();
   const router = useRouter();
   const locale = useLocale();
-  const { isOpen: isQuoteDialogOpen, openDialog, closeDialog } = useQuoteDialog();
+  const {
+    isOpen: isQuoteDialogOpen,
+    openDialog,
+    closeDialog,
+  } = useQuoteDialog();
   const t = useTranslations("header");
 
   const isScrolled = useScrollDetection();
   const navigationLinks = useNavigationLinks(t);
   const styles = useHeaderStyles(isScrolled);
 
-  const handleLanguageChange = useCallback((newLocale: string) => {
-    router.replace(pathname, { locale: newLocale });
-  }, [router, pathname]);
+  const handleLanguageChange = useCallback(
+    (newLocale: string) => {
+      router.replace(pathname, { locale: newLocale });
+    },
+    [router, pathname]
+  );
 
-  const handleQuoteDialogChange = useCallback((open: boolean) => {
-    if (open) {
-      openDialog();
-    } else {
-      closeDialog();
-    }
-  }, [openDialog, closeDialog]);
+  const handleQuoteDialogChange = useCallback(
+    (open: boolean) => {
+      if (open) {
+        openDialog();
+      } else {
+        closeDialog();
+      }
+    },
+    [openDialog, closeDialog]
+  );
 
   return (
     <header className={styles.header}>

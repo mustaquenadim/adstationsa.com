@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next'
-import {routing} from '@/i18n/routing';
+import {routing} from '@/i18n/navigation';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://adstationsa.com'
