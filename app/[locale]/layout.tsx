@@ -107,13 +107,13 @@ export default async function LocaleLayout({ children, params }: Props) {
         <meta name="theme-color" content="#8dc73f" />
         <meta name="msapplication-TileColor" content="#8dc73f" />
 
-        <script
+        {/* <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: combinedSchema,
           }}
           suppressHydrationWarning
-        />
+        /> */}
 
         {/* Arabic SEO specific meta tags */}
         {isRTL && (
@@ -142,13 +142,13 @@ export default async function LocaleLayout({ children, params }: Props) {
         } antialiased ${isRTL ? "font-arabic" : "font-english"}`}
         suppressHydrationWarning
       >
-        <QuoteDialogProvider>
-          <NextIntlClientProvider messages={messages}>
+        <NextIntlClientProvider messages={messages}>
+          <QuoteDialogProvider>
             <Header />
             <main className="">{children}</main>
             <Footer />
-          </NextIntlClientProvider>
-        </QuoteDialogProvider>
+          </QuoteDialogProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );
