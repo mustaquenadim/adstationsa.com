@@ -218,7 +218,7 @@ export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
       control={control}
       name={name}
       render={() => (
-        <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
+        <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-3 space-y-0 items-start">
           <FormLabel className="flex shrink-0">{label}</FormLabel>
           <div className="w-full">
             <FormControl>
@@ -421,13 +421,13 @@ export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
         onReset={onReset}
         className="space-y-8 @container"
       >
-        <div className="grid grid-cols-12 gap-4">
+        <div className="grid grid-cols-12 gap-6">
           {/* Company Name */}
           <FormField
             control={form.control}
             name="companyName"
             render={({ field }) => (
-              <FormItem className="col-span-12 @3xl:col-span-6 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
+              <FormItem className="col-span-12 @3xl:col-span-6 col-start-auto flex self-end flex-col gap-3 space-y-0 items-start">
                 <FormLabel className="flex shrink-0">
                   {t("companyName")}
                 </FormLabel>
@@ -437,7 +437,7 @@ export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
                       placeholder={t("placeholders.companyName")}
                       type="text"
                       id="companyName"
-                      className=""
+                      className="rounded-full"
                       spellCheck={false}
                       data-ms-editor="false"
                       {...field}
@@ -454,7 +454,7 @@ export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
             control={form.control}
             name="responsiblePerson"
             render={({ field }) => (
-              <FormItem className="col-span-12 @3xl:col-span-6 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
+              <FormItem className="col-span-12 @3xl:col-span-6 col-start-auto flex self-end flex-col gap-3 space-y-0 items-start">
                 <FormLabel className="flex shrink-0">
                   {t("responsiblePerson")}
                 </FormLabel>
@@ -464,7 +464,7 @@ export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
                       placeholder={t("placeholders.responsiblePerson")}
                       type="text"
                       id="responsiblePerson"
-                      className=""
+                      className="rounded-full"
                       spellCheck={false}
                       data-ms-editor="false"
                       {...field}
@@ -481,7 +481,7 @@ export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
             control={form.control}
             name="email"
             render={({ field }) => (
-              <FormItem className="col-span-12 @3xl:col-span-6 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
+              <FormItem className="col-span-12 @3xl:col-span-6 col-start-auto flex self-end flex-col gap-3 space-y-0 items-start">
                 <FormLabel className="flex shrink-0">{t("email")}</FormLabel>
                 <div className="w-full">
                   <FormControl>
@@ -506,7 +506,7 @@ export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
             control={form.control}
             name="mobileNumber"
             render={({ field }) => (
-              <FormItem className="col-span-12 @3xl:col-span-6 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
+              <FormItem className="col-span-12 @3xl:col-span-6 col-start-auto flex self-end flex-col gap-3 space-y-0 items-start">
                 <FormLabel className="flex shrink-0">
                   {t("mobileNumber")}
                 </FormLabel>
@@ -516,7 +516,7 @@ export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
                       placeholder={t("placeholders.mobileNumber")}
                       type="tel"
                       id="mobileNumber"
-                      className=""
+                      className="rounded-full"
                       spellCheck={false}
                       data-ms-editor="false"
                       {...field}
@@ -533,12 +533,12 @@ export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
             control={form.control}
             name="state"
             render={({ field }) => (
-              <FormItem className="col-span-12 @3xl:col-span-6 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
+              <FormItem className="col-span-12 @3xl:col-span-6 col-start-auto flex self-end flex-col gap-3 space-y-0 items-start">
                 <FormLabel className="flex shrink-0">{t("state")}</FormLabel>
                 <div className="w-full">
                   <FormControl>
                     <Select value={field.value} onValueChange={field.onChange}>
-                      <SelectTrigger className="w-full">
+                      <SelectTrigger className="w-full rounded-full">
                         <SelectValue
                           placeholder={t("placeholders.selectState")}
                         />
@@ -563,7 +563,7 @@ export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
             control={form.control}
             name="targetCity"
             render={({ field }) => (
-              <FormItem className="col-span-12 @3xl:col-span-6 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
+              <FormItem className="col-span-12 @3xl:col-span-6 col-start-auto flex self-end flex-col gap-3 space-y-0 items-start">
                 <FormLabel className="flex shrink-0">
                   {t("targetCity")}
                 </FormLabel>
@@ -573,7 +573,7 @@ export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
                       placeholder={t("placeholders.targetCity")}
                       type="text"
                       id="targetCity"
-                      className=""
+                      className="rounded-full"
                       spellCheck={false}
                       data-ms-editor="false"
                       {...field}
@@ -624,13 +624,13 @@ export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
             control={form.control}
             name="contactPreference"
             render={() => (
-              <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
+              <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-4 space-y-0 items-start">
                 <FormLabel className="flex shrink-0">
                   {t("contactPreference")}
                 </FormLabel>
                 <div className="w-full">
                   <FormControl>
-                    <div className="grid w-full gap-2">
+                    <div className="flex items-center justify-between flex-wrap gap-4">
                       {contactOptions.map((option) => (
                         <FormField
                           key={option.id}
@@ -682,7 +682,7 @@ export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
             control={form.control}
             name="uploadedFiles"
             render={({ field }) => (
-              <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
+              <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-3 space-y-0 items-start">
                 <FormLabel className="flex shrink-0">
                   {t("uploadFile")}
                 </FormLabel>
@@ -708,7 +708,11 @@ export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
           {/* Submit Button */}
           <div className="col-span-12 @3xl:col-span-6 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
             <div className="w-full">
-              <Button type="submit" variant="default" className="w-full">
+              <Button
+                type="submit"
+                variant="default"
+                className="w-full rounded-full"
+              >
                 {t("submitButton")}
               </Button>
             </div>
@@ -717,7 +721,11 @@ export default function RequestQuoteForm({ onSuccess }: RequestQuoteFormProps) {
           {/* Reset Button */}
           <div className="col-span-12 @3xl:col-span-6 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
             <div className="w-full">
-              <Button type="reset" variant="outline" className="w-full">
+              <Button
+                type="reset"
+                variant="outline"
+                className="w-full rounded-full"
+              >
                 {t("resetButton")}
               </Button>
             </div>

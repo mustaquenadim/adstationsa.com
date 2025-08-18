@@ -104,12 +104,12 @@ export default function PartnerRegistrationForm() {
         onReset={onReset}
         className="space-y-8 @container"
       >
-        <div className="grid grid-cols-12 gap-4">
+        <div className="grid grid-cols-12 gap-6">
           <FormField
             control={form.control}
             name="partner-name"
             render={({ field }) => (
-              <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
+              <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-3 space-y-0 items-start">
                 <FormLabel className="flex shrink-0">
                   {t("partnerName")}
                 </FormLabel>
@@ -122,7 +122,7 @@ export default function PartnerRegistrationForm() {
                         placeholder=""
                         type="text"
                         id="partner-name"
-                        className=""
+                        className="rounded-full"
                         spellCheck={false}
                         data-ms-editor="false"
                         {...field}
@@ -139,7 +139,7 @@ export default function PartnerRegistrationForm() {
             control={form.control}
             name="partner-type"
             render={({ field }) => (
-              <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
+              <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-3 space-y-0 items-start">
                 <FormLabel className="flex shrink-0">
                   {t("partnerType")}
                 </FormLabel>
@@ -147,7 +147,7 @@ export default function PartnerRegistrationForm() {
                 <div className="w-full">
                   <FormControl>
                     <Select {...field} onValueChange={field.onChange}>
-                      <SelectTrigger className="w-full">
+                      <SelectTrigger className="w-full rounded-full">
                         <SelectValue
                           placeholder={t("placeholders.selectPartnerType")}
                         />
@@ -170,7 +170,7 @@ export default function PartnerRegistrationForm() {
             control={form.control}
             name="partner-logo"
             render={({ field }) => (
-              <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
+              <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-3 space-y-0 items-start">
                 <FormLabel className="flex shrink-0">
                   {t("officialLogo")}
                 </FormLabel>
@@ -183,7 +183,7 @@ export default function PartnerRegistrationForm() {
                         placeholder=""
                         type="file"
                         id="partner-logo"
-                        className=""
+                        className="rounded-full"
                         {...field}
                       />
                     </div>
@@ -198,13 +198,13 @@ export default function PartnerRegistrationForm() {
             control={form.control}
             name="state"
             render={({ field }) => (
-              <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
+              <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-3 space-y-0 items-start">
                 <FormLabel className="flex shrink-0">{t("state")}</FormLabel>
 
                 <div className="w-full">
                   <FormControl>
                     <Select {...field} onValueChange={field.onChange}>
-                      <SelectTrigger className="w-full">
+                      <SelectTrigger className="w-full rounded-full">
                         <SelectValue
                           placeholder={t("placeholders.selectState")}
                         />
@@ -228,13 +228,13 @@ export default function PartnerRegistrationForm() {
             control={form.control}
             name="city"
             render={({ field }) => (
-              <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
+              <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-3 space-y-0 items-start">
                 <FormLabel className="flex shrink-0">{t("city")}</FormLabel>
 
                 <div className="w-full">
                   <FormControl>
                     <Select {...field} onValueChange={field.onChange}>
-                      <SelectTrigger className="w-full">
+                      <SelectTrigger className="w-full rounded-full">
                         <SelectValue
                           placeholder={t("placeholders.selectCity")}
                         />
@@ -258,7 +258,7 @@ export default function PartnerRegistrationForm() {
             control={form.control}
             name="neighborhood"
             render={({ field }) => (
-              <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
+              <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-3 space-y-0 items-start">
                 <FormLabel className="flex shrink-0">
                   {t("neighborhood")}
                 </FormLabel>
@@ -271,7 +271,7 @@ export default function PartnerRegistrationForm() {
                         placeholder={t("placeholders.enterNeighborhood")}
                         type="text"
                         id="neighborhood"
-                        className=""
+                        className="rounded-full"
                         spellCheck={false}
                         data-ms-editor="false"
                         {...field}
@@ -288,7 +288,7 @@ export default function PartnerRegistrationForm() {
             control={form.control}
             name="street"
             render={({ field }) => (
-              <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
+              <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-3 space-y-0 items-start">
                 <FormLabel className="flex shrink-0">{t("street")}</FormLabel>
 
                 <div className="w-full">
@@ -299,7 +299,7 @@ export default function PartnerRegistrationForm() {
                         placeholder={t("placeholders.enterStreet")}
                         type="text"
                         id="street"
-                        className=""
+                        className="rounded-full"
                         spellCheck={false}
                         data-ms-editor="false"
                         {...field}
@@ -316,14 +316,14 @@ export default function PartnerRegistrationForm() {
             control={form.control}
             name="offered-services"
             render={() => (
-              <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
+              <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-4 space-y-0 items-start">
                 <FormLabel className="flex shrink-0">
                   {t("servicesOffered")}
                 </FormLabel>
 
                 <div className="w-full">
                   <FormControl>
-                    <div className="grid w-full gap-2 @3xl:grid-cols-2">
+                    <div className="grid w-full gap-4 @3xl:grid-cols-2">
                       {offeredServices.map((service) => (
                         <FormField
                           key={service.value}
@@ -379,7 +379,7 @@ export default function PartnerRegistrationForm() {
             control={form.control}
             name="work-samples"
             render={({ field }) => (
-              <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
+              <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-3 space-y-0 items-start">
                 <FormLabel className="flex shrink-0">
                   {t("workSamples")}
                 </FormLabel>
@@ -392,7 +392,7 @@ export default function PartnerRegistrationForm() {
                         placeholder=""
                         type="file"
                         id="work-samples"
-                        className=""
+                        className="rounded-full"
                         {...field}
                       />
                     </div>
@@ -409,7 +409,7 @@ export default function PartnerRegistrationForm() {
             control={form.control}
             name="responsible-person-name"
             render={({ field }) => (
-              <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
+              <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-3 space-y-0 items-start">
                 <FormLabel className="flex shrink-0">
                   {t("responsiblePersonName")}
                 </FormLabel>
@@ -422,7 +422,7 @@ export default function PartnerRegistrationForm() {
                         placeholder=""
                         type="text"
                         id="responsible-person-name"
-                        className=""
+                        className="rounded-full"
                         spellCheck={false}
                         data-ms-editor="false"
                         {...field}
@@ -439,7 +439,7 @@ export default function PartnerRegistrationForm() {
             control={form.control}
             name="contact-number"
             render={({ field }) => (
-              <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-2 space-y-0 items-start">
+              <FormItem className="col-span-12 col-start-auto flex self-end flex-col gap-3 space-y-0 items-start">
                 <FormLabel className="flex shrink-0">
                   {t("contactNumber")}
                 </FormLabel>
@@ -452,7 +452,7 @@ export default function PartnerRegistrationForm() {
                         placeholder=""
                         type="tel"
                         id="contact-number"
-                        className=""
+                        className="rounded-full"
                         spellCheck={false}
                         data-ms-editor="false"
                         {...field}
