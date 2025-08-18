@@ -1,528 +1,561 @@
 {
-    "header": {
-        "navigation": {
-            "home": "Home",
-            "about": "About Us",
-            "services": "Our Services",
-            "whyAdstation": "Why AdStation?",
-            "joinUs": "Become Our Partner"
-        },
-        "requestQuote": "Request a Quote",
-        "requestQuoteDialog": {
-            "title": "Request a Quote",
-            "description": "Fill out the form below and we'll get back to you with a customized quote for your advertising needs."
-        },
-        "requestQuoteForm": {
-            "companyName": "Company Name",
-            "responsiblePerson": "Responsible Person",
-            "email": "Email",
-            "mobileNumber": "Mobile Number",
-            "state": "State",
-            "targetCity": "Target City/Area",
-            "selectServices": "Select Services",
-            "orderDetails": "Order Details",
-            "contactPreference": "Contact Preference",
-            "uploadFile": "Upload File",
-            "uploadFileDescription": "You can upload multiple files. Maximum file size: 5MB",
-            "resetButton": "Reset",
-            "submitButton": "Submit Request",
-            "placeholders": {
-                "companyName": "Enter your company name",
-                "responsiblePerson": "Enter responsible person name",
-                "email": "Enter your email address",
-                "mobileNumber": "Enter your mobile number",
-                "selectState": "Select State",
-                "targetCity": "Enter target city or area",
-                "orderDetails": "Please describe your order requirements..."
-            },
-            "states": {
-                "riyadh": "Riyadh",
-                "jeddah": "Jeddah",
-                "dammam": "Dammam",
-                "makkah": "Makkah",
-                "medina": "Medina",
-                "other": "Other"
-            },
-            "services": {
-                "outdoorAdvertising": "Outdoor Advertising",
-                "indoorSignage": "Indoor Signage",
-                "creativeDesign": "Creative Design",
-                "printing": "Printing Services",
-                "exhibitionsEvents": "Exhibitions & Events",
-                "pointOfSale": "Point of Sale"
-            },
-            "contactOptions": {
-                "email": "Email",
-                "phone": "Phone Call",
-                "whatsapp": "WhatsApp"
-            },
-            "validation": {
-                "companyNameRequired": "Company name is required",
-                "responsiblePersonRequired": "Responsible person is required",
-                "invalidEmail": "Please enter a valid email address",
-                "mobileNumberRequired": "Mobile number is required",
-                "stateRequired": "Please select a state",
-                "targetCityRequired": "Target city/area is required",
-                "servicesRequired": "Please select at least one service",
-                "orderDetailsRequired": "Order details are required",
-                "contactPreferenceRequired": "Please select a contact preference"
-            },
-            "successMessage": "Thank you! Your quote request has been submitted successfully. We'll get back to you soon."
-        },
-        "language": {
-            "label": "Language",
-            "arabic": "العربية",
-            "english": "English"
-        }
+  "header": {
+    "navigation": {
+      "home": "Home",
+      "about": "About Us",
+      "services": "Our Services",
+      "whyAdstation": "Why AdStation?",
+      "joinUs": "Become Our Partner"
     },
-    "home": {
-        "hero": {
-            "title": "The first Saudi platform for advertising services",
-            "description": "Adstation is a unified platform connecting top advertising agencies and companies to handle ad requests professionally.",
-            "cta": "Get Started"
-        },
-        "section2": {
-            "title": "Your advertising partner that saves you time, effort and cost",
-            "description": "Adstation helps business owners and marketing and advertising managers get all their advertising and publicity work done, from logo design to designing and implementing all types of billboards, product stands, and everything else they need...",
-            "cta": "See Our Work"
-        },
-        "section3": {
-            "title": "Explore over 70 advertising services waiting for you",
-            "description": "Adstation is an integrated platform specializing in advertising requests, bringing together the largest group of advertising agencies and companies, all in one place, according to professional standards.",
-            "cta": "Explore Services"
-        },
-        "section4": {
-            "title": "Product and application logo design services",
-            "description": "Adstation provides factories and importers with specialized solutions in product design and its various applications, from logo to distribution. Experienced agencies.",
-            "cta": "Explore Services"
-        },
-        "section5": {
-            "title": "Point of Sale Production Display Solutions",
-            "description": "Adstation partners with companies, factories, and designers to deliver display solutions that showcase your products in grocery stores, supermarkets, and other retail outlets.",
-            "cta": "Explore Services"
-        },
-        "section6": {
-            "title": "Billboards: All types of outdoor advertising and promotional panels",
-            "description": "At Adstation, you will find the best producers of project fencing panels, unipolar panels, wall panels, facade panels, and building roof panels.",
-            "cta": "Explore Services"
-        }
+    "requestQuote": "Request a Quote",
+    "requestQuoteDialog": {
+      "title": "Request a Quote",
+      "description": "Fill out the form below and we'll get back to you with a customized quote for your advertising needs."
     },
-    "about": {
-        "hero": {
-            "title": "Who We Are",
-            "subtitle": "The smart future of traditional advertising",
-            "description": "The first Saudi platform to bring together the best traditional advertising service providers under one digital roof, making your advertising experience simpler and faster."
-        },
-        "brandSection": {
-            "title": "adstation",
-            "description": "It's your smart choice for managing and implementing everything related to traditional advertising—from logo design to achieving widespread distribution across all applications and advertising and promotion solutions with high quality, ease, and greater professionalism."
-        },
-        "storySection": {
-            "title": "Adstation Story",
-            "description": "At the heart of the Kingdom's evolving business environment, among the challenges facing many business owners, marketing and advertising managers is the difficulty in obtaining reliable traditional advertising services that support their business growth. AdStation was born: a platform that combines expertise, professionalism, and technical solutions, providing easy access to the best traditional advertising providers in all cities of the Kingdom."
-        },
-        "cards": {
-            "vision": {
-                "overlayText": "Doesn't Know the Impossible",
-                "title": "Our Vision",
-                "description": "Our vision is to be the leading platform for traditional advertising solutions in the Kingdom within the next four years, expanding from the Gulf to the world."
-            },
-            "mission": {
-                "overlayText": "Changing the Future of Advertising",
-                "title": "Our Mission",
-                "description": "Our mission is to enable small and medium-sized companies to reach their audience through well-planned, high-quality traditional advertisements at fair prices, with simple digital execution."
-            },
-            "values": {
-                "overlayText": "Our Values",
-                "title": "Our Values",
-                "experience": "Experience: We have a dedicated team that combines market knowledge and forward-looking vision.",
-                "innovation": "Innovation: We use technology to create advanced and accessible advertising solutions.",
-                "transparency": "Transparency and Collaboration: We guarantee a clear experience, fair prices, and measurable results.",
-                "clientCentric": "Client-centric: We design our services based on our clients' needs, enabling them to achieve their advertising goals."
-            }
-        }
-    },
-    "services": {
-        "main": {
-            "title": "Our Services",
-            "heroTitle": "Services and solutions of adstation",
-            "heroDescription": "Integrated advertising solutions with more than 70 services... and expansion continues",
-            "description": "At Adstation, we offer a variety of advertising and promotional services through partnerships with more than 40 professional providers, ensuring quality and diversity with the best options from design to implementation. We provide innovative solutions to meet your advertising needs.",
-            "sectionTitle": "Our Services",
-            "learnMore": "Learn More"
-        },
-        "list": [
-            {
-                "title": "Creative Design Solutions",
-                "description": "Identity design offering a wide range of professional design solutions with more than 20 services"
-            },
-            {
-                "title": "Printing Solutions",
-                "description": "We provide all types of printing methods in implementing various types of printing"
-            },
-            {
-                "title": "Outdoor Advertising Solutions",
-                "description": "An integrated network of distinguished advertising service locations capable of providing everything related to outdoor signage work"
-            },
-            {
-                "title": "Indoor Signage Solutions",
-                "description": "We excel in implementing all forms of indoor signage with the highest quality standards"
-            },
-            {
-                "title": "Exhibitions and Events",
-                "description": "Our expertise extends to implementing exhibition wings, designing display platforms, and various events, providing necessary services for our clients commercial participations"
-            },
-            {
-                "title": "Point of Sale Product Solutions",
-                "description": "We have extensive experience in designing and implementing high-end promotional models with integrated solutions for product marketing within malls and commercial centers"
-            },
-            {
-                "title": "Advertising Campaign Solutions",
-                "description": "Organization and booking of outdoor advertising campaigns with strategic locations to ensure maximum spread and effectiveness"
-            }
-        ],
-        "creativeDesign": {
-            "title": "Creative Design Services",
-            "description": "We offer you a comprehensive variety of creative design services, from logos to prints, digital applications, product design solutions, and more.",
-            "sectionTitle": "The list of design services and solutions includes",
-            "requestQuote": "Request a Quote",
-            "services": [
-                {
-                    "title": "3D design for facades and display platforms",
-                    "description": "We employ designers specialized in this type of design for products and services, to achieve speed and efficiency according to the latest practices."
-                },
-                {
-                    "title": "Product design, packaging, and display applications",
-                    "description": "We employ designers and agencies specialized in this type of design for the products and applications you need, according to the latest practical and professional practices."
-                },
-                {
-                    "title": "Logo Design (Projects, Companies, Events)",
-                    "description": "Access top creative talent—from independent designers to expert agencies—with previews of their work before you commit."
-                },
-                {
-                    "title": "3D design for commemorative shields and gifts",
-                    "description": "We know the needs of institutions and companies to excel in their activities and we provide specialized providers in designing this type of design."
-                },
-                {
-                    "title": "Design of commercial prints and corporate brochures",
-                    "description": "From our list of partners specializing in designing and creating advertising print designs with new and traditional templates that suit your aspirations"
-                },
-                {
-                    "title": "Interior design for restaurants, retail, and sales spaces",
-                    "description": "We have expert partners who design branches and points of sale, such as restaurants and retail stores, to suit your brand and applications."
-                },
-                {
-                    "title": "Digital Brand Identity Design and Development",
-                    "description": "To have an online presence, we offer you designers specialized in this type of digital design solutions efficiently and quickly according to your marketing goals."
-                }
-            ]
-        },
+    "requestQuoteForm": {
+      "companyName": "Company Name",
+      "responsiblePerson": "Responsible Person",
+      "email": "Email",
+      "mobileNumber": "Mobile Number",
+      "state": "State",
+      "targetCity": "Target City/Area",
+      "selectServices": "Select Services",
+      "orderDetails": "Order Details",
+      "contactPreference": "Contact Preference",
+      "uploadFile": "Upload File",
+      "uploadFileDescription": "You can upload multiple files. Maximum file size: 5MB",
+      "resetButton": "Reset",
+      "submitButton": "Submit Request",
+      "placeholders": {
+        "companyName": "Enter your company name",
+        "responsiblePerson": "Enter responsible person name",
+        "email": "Enter your email address",
+        "mobileNumber": "Enter your mobile number",
+        "selectState": "Select State",
+        "targetCity": "Enter target city or area",
+        "orderDetails": "Please describe your order requirements..."
+      },
+      "states": {
+        "riyadh": "Riyadh",
+        "jeddah": "Jeddah",
+        "dammam": "Dammam",
+        "makkah": "Makkah",
+        "medina": "Medina",
+        "other": "Other"
+      },
+      "services": {
+        "advertisingCampaigns": "Manage Advertising Campaigns",
+        "promotionTeams": "Managing Promotion Teams",
+        "creativeDesigns": "Creative Designs",
         "printing": {
-            "title": "Printing services and solutions",
-            "description": "Whatever the type of printing, order it via adstation We provide you with instant quotes and follow up on your order until delivery – all from one platform and with the click of a button.",
-            "sectionTitle": "Our list of services and printing solutions includes",
-            "requestQuote": "Request a Quote",
-            "services": [
-                {
-                    "title": "Digital Printing",
-                    "description": "High-quality digital printing services for banners, posters, and promotional materials with quick turnaround times."
-                },
-                {
-                    "title": "Offset Printing",
-                    "description": "Professional offset printing for large volume projects including brochures, catalogs, and corporate materials."
-                },
-                {
-                    "title": "Large Format Printing",
-                    "description": "Specialized large format printing for billboards, vehicle wraps, and outdoor advertising displays."
-                },
-                {
-                    "title": "UV Printing",
-                    "description": "Advanced UV printing technology for durable, weather-resistant prints on various substrates."
-                },
-                {
-                    "title": "3D Printing",
-                    "description": "Innovative 3D printing solutions for prototypes, promotional models, and custom displays."
-                },
-                {
-                    "title": "Screen Printing",
-                    "description": "Traditional screen printing for textiles, promotional items, and specialty applications."
-                },
-                {
-                    "title": "Variable Data Printing",
-                    "description": "Personalized printing solutions for direct mail campaigns and targeted marketing materials."
-                }
-            ]
+          "main": "Printing of All Kinds",
+          "paperPublications": "Paper Publications",
+          "3dPrinting": "3D Printing",
+          "uvPrinting": "UV Printing",
+          "bagPrinting": "Bag Printing for Products",
+          "stickersPrinting": "Printing Stickers of All Kinds",
+          "packagingPrinting": "Printing Packaging Materials",
+          "bannersFlexos": "Printing and Installing Banners and Flexos"
         },
-        "outdoorAdvertising": {
-            "title": "Services and solutions for all types of panels",
-            "description": "We provide you with all the services and solutions for external panels adstation Available in various sizes and materials, whether for road signs, facades, or temporary billboards, we offer everything you need for outdoor advertising. Our experts understand your requirements and negotiate to achieve the best results.",
-            "sectionTitle": "Our list of services and panel solutions includes",
-            "requestQuote": "Request a Quote",
-            "services": [
-                {
-                    "title": "Advertising Project Fences Hoarding Panels",
-                    "description": "We deliver high-quality advertising fence solutions through trusted partners, tailored for both temporary and permanent project needs."
-                },
-                {
-                    "title": "Manufacture of giant billboards on roads and buildings",
-                    "description": "ADSTATION is proud of its partner service providers who specialize in manufacturing and executing giant billboards on roads, buildings, and roofs, with high quality and professional standards."
-                },
-                {
-                    "title": "Cladding panels and raised letters",
-                    "description": "High-quality cladding panels and raised letters in various materials including aluminum composite, acrylic, and stainless steel, with lighting options."
-                },
-                {
-                    "title": "Exhibition boards",
-                    "description": "Exhibition facade panels, internal information displays, temporary roll-ups and stands, plus illuminated panels for professional visual appeal."
-                },
-                {
-                    "title": "Suspended Column Panels",
-                    "description": "Our lampposts are available in a variety of styles, including single, double, illuminated, and seasonal, all designed to be clearly and attractively displayed on streets, events, and temporary or permanent advertisements."
-                },
-                {
-                    "title": "Interior panels for facilities, companies, and buildings",
-                    "description": "Professional indoor signage including department signs, parking signs, and event displays with high quality and clear organization."
-                },
-                {
-                    "title": "Paintings",
-                    "description": "ADSTATION partners offer integrated solutions for designing and implementing various types of 3D billboards with innovative ideas that attract attention."
-                }
-            ]
+        "exteriorPanels": {
+          "main": "Exterior Panels",
+          "projectFencePanels": "Project Fence Panels",
+          "hangingColumnPanels": "Hanging Column Panels",
+          "billboards": "Billboards",
+          "sideGalleryPanels": "Side Gallery Panels & Facades",
+          "roadSigns": "Road Signs",
+          "claddingPaintings": "Cladding Paintings and Bold Letters"
         },
-        "indoorSignage": {
-            "title": "Indoor Signage Solutions",
-            "description": "Professional indoor signage solutions that enhance your brand presence and improve customer experience in any indoor environment.",
-            "sectionTitle": "Our Indoor Signage Services",
-            "requestQuote": "Request a Quote",
-            "services": [
-                {
-                    "title": "Retail Store Signage",
-                    "description": "Custom indoor signage solutions for retail stores, boutiques, and shopping centers to enhance brand presence."
-                },
-                {
-                    "title": "Office Building Signage",
-                    "description": "Professional signage for office buildings, corporate headquarters, and business centers with modern designs."
-                },
-                {
-                    "title": "Mall & Shopping Center Signs",
-                    "description": "Comprehensive signage solutions for malls, shopping centers, and commercial complexes."
-                },
-                {
-                    "title": "Restaurant & Hospitality Signs",
-                    "description": "Custom signage for restaurants, hotels, and hospitality venues to create memorable dining experiences."
-                },
-                {
-                    "title": "Healthcare Facility Signage",
-                    "description": "Specialized signage for hospitals, clinics, and healthcare facilities with clear wayfinding systems."
-                },
-                {
-                    "title": "Educational Institution Signs",
-                    "description": "Signage solutions for schools, universities, and educational institutions with informative displays."
-                },
-                {
-                    "title": "Digital Indoor Displays",
-                    "description": "Interactive digital signage and display systems for modern indoor environments."
-                }
-            ]
-        },
+        "interiorPanels": "Interior Panels",
         "exhibitionsEvents": {
-            "title": "Exhibition and Event Services and Solutions",
-            "description": "Professional partners from freelancers and agencies in adstation We are ready to provide quality event services that achieve your goals with unforgettable participation and make an impact.",
-            "sectionTitle": "Our list of services and solutions for exhibitions and events includes",
-            "requestQuote": "Request a Quote",
-            "services": [
-                {
-                    "title": "Renting all kinds of advertising stands",
-                    "description": "ADSTATION, in collaboration with its partners, seeks to offer pop-up and roll-up stand rental services with printing, aiming to provide economical and effective solutions for clients attending small or limited-capacity events."
-                },
-                {
-                    "title": "Rental of screens and interactive devices",
-                    "description": "At ADSTATION, we aim to facilitate our clients' access to professional advertising screen booking and installation services, as well as interactive devices with audiences, from specialized providers, to ensure a comprehensive service for your event."
-                },
-                {
-                    "title": "Design and implementation of Suites and booths",
-                    "description": "According to your budgets and marketing goals, our partners transform them into designs specific to you with innovative options, and we negotiate with them to provide a comprehensive service with minimal effort."
-                },
-                {
-                    "title": "Event and conference theatre design",
-                    "description": "We provide experts and specialists in designing and equipping theaters and facades for events and activities according to the type and purpose of the event."
-                },
-                {
-                    "title": "Photographing and documenting events",
-                    "description": "Through our partners, we guarantee that you will receive professional photography and editing of events and activities."
-                }
-            ]
+          "main": "Exhibition & Events",
+          "advertisingStandRental": "Advertising Stand Rental",
+          "monitorsRental": "Rental of Monitors and Interactive Devices",
+          "theaterDesign": "Event and Conference Theater Design",
+          "pavilionsBooth": "Design and Implementation of Pavilions and Booths",
+          "filmingDocumenting": "Filming and documenting events"
         },
-        "pointOfSale": {
-            "title": "Point-of-Sale Product Services",
-            "description": "In cooperation with professional partners in adstation We strive to provide unique point-of-sale product display solutions, aimed at enhancing the presence of your brand's products in the customer's shopping experience and increasing sales. From interior design and visual creativity to creating an attractive shopping environment, we save you a lot of time searching for specialized suppliers who can make a difference in your success in the market.",
-            "sectionTitle": "Our list of services and product solutions includes",
-            "requestQuote": "Request a Quote",
-            "services": [
-                {
-                    "title": "Brand Ambassador & Promo Team Management",
-                    "description": "Managing merchandising teams and promoting them as brand ambassadors at points of sale are services that Adstation coordinates with partners specialized in this type of field."
-                },
-                {
-                    "title": "Promote products on store shelves",
-                    "description": "Enhance shelf presence with customized visual branding solutions that motivate shoppers and increase in-store sales."
-                },
-                {
-                    "title": "Product display systems",
-                    "description": "Design and implement attractive floor display stands and kiosks to highlight new products in main aisles, enhancing brand presence and increasing sales."
-                },
-                {
-                    "title": "Shopper Research",
-                    "description": "Design and conduct studies on products and shopper audiences, and identify opportunities and threats."
-                },
-                {
-                    "title": "Management and design of tasting campaigns",
-                    "description": "To have an online presence, we offer you designers specialized in this type of digital design solutions efficiently and quickly according to your marketing goals."
-                }
-            ]
-        },
-        "advertisingCampaigns": {
-            "title": "Booking Services Advertising Campaigns",
-            "description": "Soon on adstation Outdoor advertising campaign booking service in streets, malls, airports, metro and bus stations",
-            "sectionTitle": "Every day...more services, stronger partnerships To help you grow"
+        "productsPos": {
+          "main": "Products & POS",
+          "shopperResearch": "Shopper Research",
+          "promotionTeamsManagement": "Managing Promotion Teams",
+          "posPromotionTools": "Designing POS Promotion Tools",
+          "productLogosDesign": "Product Logos and Applications Design",
+          "racksGondolas": "Design and Implementation of Racks and Gondolas"
         }
+      },
+      "contactOptions": {
+        "email": "Email",
+        "phone": "Phone Call",
+        "whatsapp": "WhatsApp"
+      },
+      "validation": {
+        "companyNameRequired": "Company name is required",
+        "responsiblePersonRequired": "Responsible person is required",
+        "invalidEmail": "Please enter a valid email address",
+        "mobileNumberRequired": "Mobile number is required",
+        "stateRequired": "Please select a state",
+        "targetCityRequired": "Target city/area is required",
+        "servicesRequired": "Please select at least one service",
+        "orderDetailsRequired": "Order details are required",
+        "contactPreferenceRequired": "Please select a contact preference"
+      },
+      "successMessage": "Thank you! Your quote request has been submitted successfully. We'll get back to you soon."
     },
-    "whyAdstation": {
-        "hero": {
-            "title": "We are more than just a platform.. We are your partner for",
-            "smartAdvertising": "Smart Advertising",
-            "subtitle": "Why Adstation?",
-            "description": "In the world of traditional advertising, many marketing managers waste time and effort searching for the ideal advertising partner."
-        },
-        "advantages": {
-            "title": "Advantages",
-            "brand": "adstation",
-            "subtitle": "Competitiveness"
-        },
-        "features": {
-            "localLeadership": {
-                "title": "Local Leadership",
-                "description": "The first specialized Saudi platform that integrates traditional advertising services with digital solutions to keep pace with market development."
-            },
-            "diverseExpertise": {
-                "title": "Diverse Expertise",
-                "description": "A diverse team of experts in advertising and marketing, and sales managers for local and global brands."
-            },
-            "smartSolutions": {
-                "title": "Smart Solutions",
-                "description": "We combine the power of traditional advertising with the efficiency of digital technology to give you the best return on investment."
-            },
-            "fullTransparency": {
-                "title": "Full Transparency",
-                "description": "Clear prices, real evaluations for providers, and continuous follow-up from order to completion."
-            },
-            "spendingEfficiency": {
-                "title": "Spending Efficiency",
-                "description": "Our experts negotiate on your behalf to achieve the best prices from trusted providers, with maximum value for investment."
-            },
-            "betterOptions": {
-                "title": "Better Options",
-                "description": "We submit your request to more than 5 providers in each category, so you can choose from multiple offers and ideas that achieve superior results for you."
-            },
-            "savingTimeAndEffort": {
-                "title": "Saving Time and Effort",
-                "description": "Our team follows up on your requests step by step, ensuring fast completion without you bearing the burdens of communication and coordination."
-            },
-            "diverseAndIntegratedServices": {
-                "title": "Diverse and Integrated Services",
-                "description": "We cover more than 50 traditional advertising services, and continuously expand through new partnerships with specialized service providers."
-            },
-            "wideGeographicalCoverage": {
-                "title": "Wide Geographical Coverage",
-                "description": "Our services reach all cities in the Kingdom and ensure fast completion of your projects and advertising campaigns at the lowest cost, with speed and high reliability through a wide network of advertising service providers."
-            }
-        }
-    },
-    "joinUs": {
-        "hero": {
-            "title": "Join Our Partners",
-            "subtitle": "Your smart partner for digital growth",
-            "description": "Adstation, the first digital platform that connects advertising service providers with their clients, aims to provide integrated services to businesses and organizations. With an ambitious vision, we seek to facilitate access to advertising services through smart partnerships, achieving shared goals that align with digital transformation and create greater opportunities for success for the advertising sector."
-        },
-        "whySection": {
-            "title": "Why Adstation?",
-            "benefits": [
-                {
-                    "title": "Additional Digital Sales Channel",
-                    "description": "We showcase your services to thousands of targeted customers through our digital platform, increasing your revenue."
-                },
-                {
-                    "title": "Free Promotion with No Upfront Costs",
-                    "description": "We cover the costs of marketing your services, without any financial obligations from you."
-                },
-                {
-                    "title": "Service Promotion Campaigns",
-                    "description": "We design marketing offers and campaigns tailored to your audience, enhancing the appeal of your services and increasing demand."
-                }
-            ]
-        },
-        "ctaSection": {
-            "title": "Join Our Partner Network!",
-            "description": "Make your advertising services accessible to thousands of customers! Register your data and information with us and start growing your business today."
-        },
-        "formSection": {
-            "title": "Partner Registration Form",
-            "subtitle": "Complete your partner application with detailed information"
-        },
-        "form": {
-            "partnerName": "Partner Name",
-            "partnerType": "Partner Type",
-            "officialLogo": "Official Logo",
-            "logoDescription": "Upload company logo (PDF, JPG, PNG) Max file size 5MB.",
-            "state": "State",
-            "city": "City",
-            "neighborhood": "Neighborhood",
-            "street": "Enter Street",
-            "servicesOffered": "Services Offered",
-            "workSamples": "Previous Work Samples",
-            "workSamplesDescription": "Upload multiple work samples (PDF, JPG, PNG). Max 5 files, 10MB each.",
-            "responsiblePersonName": "Responsible Person Name",
-            "contactNumber": "Contact Number",
-            "submitButton": "Submit Partner Application",
-            "resetButton": "Reset",
-            "placeholders": {
-                "selectPartnerType": "Select Partner Type",
-                "selectState": "Select a State",
-                "selectCity": "Select a City",
-                "enterNeighborhood": "Enter neighborhood",
-                "enterStreet": "Enter street"
-            },
-            "partnerTypes": {
-                "committee": "Committee",
-                "firm": "Firm",
-                "powerOfAttorney": "Power of Attorney",
-                "company": "Company"
-            },
-            "services": {
-                "manageAdvertisingCampaigns": "Manage Advertising Campaigns",
-                "managingPromotionTeams": "Managing Promotion Teams",
-                "productsAndPos": "Products & POS",
-                "exhibitionsAndEvents": "Exhibitions & Events",
-                "interiorPanels": "Interior Panels",
-                "printingOfAllKinds": "Printing of All Kinds",
-                "creativeDesigns": "Creative Designs"
-            },
-            "validation": {
-                "required": "This field is required"
-            }
-        }
-    },
-    "footer": {
-        "navigation": {
-            "about": "About Us",
-            "services": "Services",
-            "whyAdstation": "Why Adstation",
-            "blog": "Blog",
-            "contact": "Contact Us"
-        },
-        "cta": {
-            "becomePartner": "Become a Partner",
-            "getQuote": "Get a Quote"
-        }
+    "language": {
+      "label": "Language",
+      "arabic": "العربية",
+      "english": "English"
     }
+  },
+  "home": {
+    "hero": {
+      "title": "The first Saudi platform for advertising services",
+      "description": "Adstation is a unified platform connecting top advertising agencies and companies to handle ad requests professionally.",
+      "cta": "Get Started"
+    },
+    "section2": {
+      "title": "Your advertising partner that saves you time, effort and cost",
+      "description": "Adstation helps business owners and marketing and advertising managers get all their advertising and publicity work done, from logo design to designing and implementing all types of billboards, product stands, and everything else they need...",
+      "cta": "See Our Work"
+    },
+    "section3": {
+      "title": "Explore over 70 advertising services waiting for you",
+      "description": "Adstation is an integrated platform specializing in advertising requests, bringing together the largest group of advertising agencies and companies, all in one place, according to professional standards.",
+      "cta": "Explore Services"
+    },
+    "section4": {
+      "title": "Product and application logo design services",
+      "description": "Adstation provides factories and importers with specialized solutions in product design and its various applications, from logo to distribution. Experienced agencies.",
+      "cta": "Explore Services"
+    },
+    "section5": {
+      "title": "Point of Sale Production Display Solutions",
+      "description": "Adstation partners with companies, factories, and designers to deliver display solutions that showcase your products in grocery stores, supermarkets, and other retail outlets.",
+      "cta": "Explore Services"
+    },
+    "section6": {
+      "title": "Billboards: All types of outdoor advertising and promotional panels",
+      "description": "At Adstation, you will find the best producers of project fencing panels, unipolar panels, wall panels, facade panels, and building roof panels.",
+      "cta": "Explore Services"
+    }
+  },
+  "about": {
+    "hero": {
+      "title": "Who We Are",
+      "subtitle": "The smart future of traditional advertising",
+      "description": "The first Saudi platform to bring together the best traditional advertising service providers under one digital roof, making your advertising experience simpler and faster."
+    },
+    "brandSection": {
+      "title": "adstation",
+      "description": "It's your smart choice for managing and implementing everything related to traditional advertising—from logo design to achieving widespread distribution across all applications and advertising and promotion solutions with high quality, ease, and greater professionalism."
+    },
+    "storySection": {
+      "title": "Adstation Story",
+      "description": "At the heart of the Kingdom's evolving business environment, among the challenges facing many business owners, marketing and advertising managers is the difficulty in obtaining reliable traditional advertising services that support their business growth. AdStation was born: a platform that combines expertise, professionalism, and technical solutions, providing easy access to the best traditional advertising providers in all cities of the Kingdom."
+    },
+    "cards": {
+      "vision": {
+        "overlayText": "Doesn't Know the Impossible",
+        "title": "Our Vision",
+        "description": "Our vision is to be the leading platform for traditional advertising solutions in the Kingdom within the next four years, expanding from the Gulf to the world."
+      },
+      "mission": {
+        "overlayText": "Changing the Future of Advertising",
+        "title": "Our Mission",
+        "description": "Our mission is to enable small and medium-sized companies to reach their audience through well-planned, high-quality traditional advertisements at fair prices, with simple digital execution."
+      },
+      "values": {
+        "overlayText": "Our Values",
+        "title": "Our Values",
+        "experience": "Experience: We have a dedicated team that combines market knowledge and forward-looking vision.",
+        "innovation": "Innovation: We use technology to create advanced and accessible advertising solutions.",
+        "transparency": "Transparency and Collaboration: We guarantee a clear experience, fair prices, and measurable results.",
+        "clientCentric": "Client-centric: We design our services based on our clients' needs, enabling them to achieve their advertising goals."
+      }
+    }
+  },
+  "services": {
+    "main": {
+      "title": "Our Services",
+      "heroTitle": "Services and solutions of adstation",
+      "heroDescription": "Integrated advertising solutions with more than 70 services... and expansion continues",
+      "description": "At Adstation, we offer a variety of advertising and promotional services through partnerships with more than 40 professional providers, ensuring quality and diversity with the best options from design to implementation. We provide innovative solutions to meet your advertising needs.",
+      "sectionTitle": "Our Services",
+      "learnMore": "Learn More"
+    },
+    "list": [
+      {
+        "title": "Creative Design Solutions",
+        "description": "Identity design offering a wide range of professional design solutions with more than 20 services"
+      },
+      {
+        "title": "Printing Solutions",
+        "description": "We provide all types of printing methods in implementing various types of printing"
+      },
+      {
+        "title": "Outdoor Advertising Solutions",
+        "description": "An integrated network of distinguished advertising service locations capable of providing everything related to outdoor signage work"
+      },
+      {
+        "title": "Indoor Signage Solutions",
+        "description": "We excel in implementing all forms of indoor signage with the highest quality standards"
+      },
+      {
+        "title": "Exhibitions and Events",
+        "description": "Our expertise extends to implementing exhibition wings, designing display platforms, and various events, providing necessary services for our clients commercial participations"
+      },
+      {
+        "title": "Point of Sale Product Solutions",
+        "description": "We have extensive experience in designing and implementing high-end promotional models with integrated solutions for product marketing within malls and commercial centers"
+      },
+      {
+        "title": "Advertising Campaign Solutions",
+        "description": "Organization and booking of outdoor advertising campaigns with strategic locations to ensure maximum spread and effectiveness"
+      }
+    ],
+    "creativeDesign": {
+      "title": "Creative Design Services",
+      "description": "We offer you a comprehensive variety of creative design services, from logos to prints, digital applications, product design solutions, and more.",
+      "sectionTitle": "The list of design services and solutions includes",
+      "requestQuote": "Request a Quote",
+      "services": [
+        {
+          "title": "3D design for facades and display platforms",
+          "description": "We employ designers specialized in this type of design for products and services, to achieve speed and efficiency according to the latest practices."
+        },
+        {
+          "title": "Product design, packaging, and display applications",
+          "description": "We employ designers and agencies specialized in this type of design for the products and applications you need, according to the latest practical and professional practices."
+        },
+        {
+          "title": "Logo Design (Projects, Companies, Events)",
+          "description": "Access top creative talent—from independent designers to expert agencies—with previews of their work before you commit."
+        },
+        {
+          "title": "3D design for commemorative shields and gifts",
+          "description": "We know the needs of institutions and companies to excel in their activities and we provide specialized providers in designing this type of design."
+        },
+        {
+          "title": "Design of commercial prints and corporate brochures",
+          "description": "From our list of partners specializing in designing and creating advertising print designs with new and traditional templates that suit your aspirations"
+        },
+        {
+          "title": "Interior design for restaurants, retail, and sales spaces",
+          "description": "We have expert partners who design branches and points of sale, such as restaurants and retail stores, to suit your brand and applications."
+        },
+        {
+          "title": "Digital Brand Identity Design and Development",
+          "description": "To have an online presence, we offer you designers specialized in this type of digital design solutions efficiently and quickly according to your marketing goals."
+        }
+      ]
+    },
+    "printing": {
+      "title": "Printing services and solutions",
+      "description": "Whatever the type of printing, order it via adstation We provide you with instant quotes and follow up on your order until delivery – all from one platform and with the click of a button.",
+      "sectionTitle": "Our list of services and printing solutions includes",
+      "requestQuote": "Request a Quote",
+      "services": [
+        {
+          "title": "Digital Printing",
+          "description": "High-quality digital printing services for banners, posters, and promotional materials with quick turnaround times."
+        },
+        {
+          "title": "Offset Printing",
+          "description": "Professional offset printing for large volume projects including brochures, catalogs, and corporate materials."
+        },
+        {
+          "title": "Large Format Printing",
+          "description": "Specialized large format printing for billboards, vehicle wraps, and outdoor advertising displays."
+        },
+        {
+          "title": "UV Printing",
+          "description": "Advanced UV printing technology for durable, weather-resistant prints on various substrates."
+        },
+        {
+          "title": "3D Printing",
+          "description": "Innovative 3D printing solutions for prototypes, promotional models, and custom displays."
+        },
+        {
+          "title": "Screen Printing",
+          "description": "Traditional screen printing for textiles, promotional items, and specialty applications."
+        },
+        {
+          "title": "Variable Data Printing",
+          "description": "Personalized printing solutions for direct mail campaigns and targeted marketing materials."
+        }
+      ]
+    },
+    "outdoorAdvertising": {
+      "title": "Services and solutions for all types of panels",
+      "description": "We provide you with all the services and solutions for external panels adstation Available in various sizes and materials, whether for road signs, facades, or temporary billboards, we offer everything you need for outdoor advertising. Our experts understand your requirements and negotiate to achieve the best results.",
+      "sectionTitle": "Our list of services and panel solutions includes",
+      "requestQuote": "Request a Quote",
+      "services": [
+        {
+          "title": "Advertising Project Fences Hoarding Panels",
+          "description": "We deliver high-quality advertising fence solutions through trusted partners, tailored for both temporary and permanent project needs."
+        },
+        {
+          "title": "Manufacture of giant billboards on roads and buildings",
+          "description": "ADSTATION is proud of its partner service providers who specialize in manufacturing and executing giant billboards on roads, buildings, and roofs, with high quality and professional standards."
+        },
+        {
+          "title": "Cladding panels and raised letters",
+          "description": "High-quality cladding panels and raised letters in various materials including aluminum composite, acrylic, and stainless steel, with lighting options."
+        },
+        {
+          "title": "Exhibition boards",
+          "description": "Exhibition facade panels, internal information displays, temporary roll-ups and stands, plus illuminated panels for professional visual appeal."
+        },
+        {
+          "title": "Suspended Column Panels",
+          "description": "Our lampposts are available in a variety of styles, including single, double, illuminated, and seasonal, all designed to be clearly and attractively displayed on streets, events, and temporary or permanent advertisements."
+        },
+        {
+          "title": "Interior panels for facilities, companies, and buildings",
+          "description": "Professional indoor signage including department signs, parking signs, and event displays with high quality and clear organization."
+        },
+        {
+          "title": "Paintings",
+          "description": "ADSTATION partners offer integrated solutions for designing and implementing various types of 3D billboards with innovative ideas that attract attention."
+        }
+      ]
+    },
+    "indoorSignage": {
+      "title": "Indoor Signage Solutions",
+      "description": "Professional indoor signage solutions that enhance your brand presence and improve customer experience in any indoor environment.",
+      "sectionTitle": "Our Indoor Signage Services",
+      "requestQuote": "Request a Quote",
+      "services": [
+        {
+          "title": "Retail Store Signage",
+          "description": "Custom indoor signage solutions for retail stores, boutiques, and shopping centers to enhance brand presence."
+        },
+        {
+          "title": "Office Building Signage",
+          "description": "Professional signage for office buildings, corporate headquarters, and business centers with modern designs."
+        },
+        {
+          "title": "Mall & Shopping Center Signs",
+          "description": "Comprehensive signage solutions for malls, shopping centers, and commercial complexes."
+        },
+        {
+          "title": "Restaurant & Hospitality Signs",
+          "description": "Custom signage for restaurants, hotels, and hospitality venues to create memorable dining experiences."
+        },
+        {
+          "title": "Healthcare Facility Signage",
+          "description": "Specialized signage for hospitals, clinics, and healthcare facilities with clear wayfinding systems."
+        },
+        {
+          "title": "Educational Institution Signs",
+          "description": "Signage solutions for schools, universities, and educational institutions with informative displays."
+        },
+        {
+          "title": "Digital Indoor Displays",
+          "description": "Interactive digital signage and display systems for modern indoor environments."
+        }
+      ]
+    },
+    "exhibitionsEvents": {
+      "title": "Exhibition and Event Services and Solutions",
+      "description": "Professional partners from freelancers and agencies in adstation We are ready to provide quality event services that achieve your goals with unforgettable participation and make an impact.",
+      "sectionTitle": "Our list of services and solutions for exhibitions and events includes",
+      "requestQuote": "Request a Quote",
+      "services": [
+        {
+          "title": "Renting all kinds of advertising stands",
+          "description": "ADSTATION, in collaboration with its partners, seeks to offer pop-up and roll-up stand rental services with printing, aiming to provide economical and effective solutions for clients attending small or limited-capacity events."
+        },
+        {
+          "title": "Rental of screens and interactive devices",
+          "description": "At ADSTATION, we aim to facilitate our clients' access to professional advertising screen booking and installation services, as well as interactive devices with audiences, from specialized providers, to ensure a comprehensive service for your event."
+        },
+        {
+          "title": "Design and implementation of Suites and booths",
+          "description": "According to your budgets and marketing goals, our partners transform them into designs specific to you with innovative options, and we negotiate with them to provide a comprehensive service with minimal effort."
+        },
+        {
+          "title": "Event and conference theatre design",
+          "description": "We provide experts and specialists in designing and equipping theaters and facades for events and activities according to the type and purpose of the event."
+        },
+        {
+          "title": "Photographing and documenting events",
+          "description": "Through our partners, we guarantee that you will receive professional photography and editing of events and activities."
+        }
+      ]
+    },
+    "pointOfSale": {
+      "title": "Point-of-Sale Product Services",
+      "description": "In cooperation with professional partners in adstation We strive to provide unique point-of-sale product display solutions, aimed at enhancing the presence of your brand's products in the customer's shopping experience and increasing sales. From interior design and visual creativity to creating an attractive shopping environment, we save you a lot of time searching for specialized suppliers who can make a difference in your success in the market.",
+      "sectionTitle": "Our list of services and product solutions includes",
+      "requestQuote": "Request a Quote",
+      "services": [
+        {
+          "title": "Brand Ambassador & Promo Team Management",
+          "description": "Managing merchandising teams and promoting them as brand ambassadors at points of sale are services that Adstation coordinates with partners specialized in this type of field."
+        },
+        {
+          "title": "Promote products on store shelves",
+          "description": "Enhance shelf presence with customized visual branding solutions that motivate shoppers and increase in-store sales."
+        },
+        {
+          "title": "Product display systems",
+          "description": "Design and implement attractive floor display stands and kiosks to highlight new products in main aisles, enhancing brand presence and increasing sales."
+        },
+        {
+          "title": "Shopper Research",
+          "description": "Design and conduct studies on products and shopper audiences, and identify opportunities and threats."
+        },
+        {
+          "title": "Management and design of tasting campaigns",
+          "description": "To have an online presence, we offer you designers specialized in this type of digital design solutions efficiently and quickly according to your marketing goals."
+        }
+      ]
+    },
+    "advertisingCampaigns": {
+      "title": "Booking Services Advertising Campaigns",
+      "description": "Soon on adstation Outdoor advertising campaign booking service in streets, malls, airports, metro and bus stations",
+      "sectionTitle": "Every day...more services, stronger partnerships To help you grow"
+    }
+  },
+  "whyAdstation": {
+    "hero": {
+      "title": "We are more than just a platform.. We are your partner for",
+      "smartAdvertising": "Smart Advertising",
+      "subtitle": "Why Adstation?",
+      "description": "In the world of traditional advertising, many marketing managers waste time and effort searching for the ideal advertising partner."
+    },
+    "advantages": {
+      "title": "Advantages",
+      "brand": "adstation",
+      "subtitle": "Competitiveness"
+    },
+    "features": {
+      "localLeadership": {
+        "title": "Local Leadership",
+        "description": "The first specialized Saudi platform that integrates traditional advertising services with digital solutions to keep pace with market development."
+      },
+      "diverseExpertise": {
+        "title": "Diverse Expertise",
+        "description": "A diverse team of experts in advertising and marketing, and sales managers for local and global brands."
+      },
+      "smartSolutions": {
+        "title": "Smart Solutions",
+        "description": "We combine the power of traditional advertising with the efficiency of digital technology to give you the best return on investment."
+      },
+      "fullTransparency": {
+        "title": "Full Transparency",
+        "description": "Clear prices, real evaluations for providers, and continuous follow-up from order to completion."
+      },
+      "spendingEfficiency": {
+        "title": "Spending Efficiency",
+        "description": "Our experts negotiate on your behalf to achieve the best prices from trusted providers, with maximum value for investment."
+      },
+      "betterOptions": {
+        "title": "Better Options",
+        "description": "We submit your request to more than 5 providers in each category, so you can choose from multiple offers and ideas that achieve superior results for you."
+      },
+      "savingTimeAndEffort": {
+        "title": "Saving Time and Effort",
+        "description": "Our team follows up on your requests step by step, ensuring fast completion without you bearing the burdens of communication and coordination."
+      },
+      "diverseAndIntegratedServices": {
+        "title": "Diverse and Integrated Services",
+        "description": "We cover more than 50 traditional advertising services, and continuously expand through new partnerships with specialized service providers."
+      },
+      "wideGeographicalCoverage": {
+        "title": "Wide Geographical Coverage",
+        "description": "Our services reach all cities in the Kingdom and ensure fast completion of your projects and advertising campaigns at the lowest cost, with speed and high reliability through a wide network of advertising service providers."
+      }
+    }
+  },
+  "joinUs": {
+    "hero": {
+      "title": "Join Our Partners",
+      "subtitle": "Your smart partner for digital growth",
+      "description": "Adstation, the first digital platform that connects advertising service providers with their clients, aims to provide integrated services to businesses and organizations. With an ambitious vision, we seek to facilitate access to advertising services through smart partnerships, achieving shared goals that align with digital transformation and create greater opportunities for success for the advertising sector."
+    },
+    "whySection": {
+      "title": "Why Adstation?",
+      "benefits": [
+        {
+          "title": "Additional Digital Sales Channel",
+          "description": "We showcase your services to thousands of targeted customers through our digital platform, increasing your revenue."
+        },
+        {
+          "title": "Free Promotion with No Upfront Costs",
+          "description": "We cover the costs of marketing your services, without any financial obligations from you."
+        },
+        {
+          "title": "Service Promotion Campaigns",
+          "description": "We design marketing offers and campaigns tailored to your audience, enhancing the appeal of your services and increasing demand."
+        }
+      ]
+    },
+    "ctaSection": {
+      "title": "Join Our Partner Network!",
+      "description": "Make your advertising services accessible to thousands of customers! Register your data and information with us and start growing your business today."
+    },
+    "formSection": {
+      "title": "Partner Registration Form",
+      "subtitle": "Complete your partner application with detailed information"
+    },
+    "form": {
+      "partnerName": "Partner Name",
+      "partnerType": "Partner Type",
+      "officialLogo": "Official Logo",
+      "logoDescription": "Upload company logo (PDF, JPG, PNG) Max file size 5MB.",
+      "state": "State",
+      "city": "City",
+      "neighborhood": "Neighborhood",
+      "street": "Enter Street",
+      "servicesOffered": "Services Offered",
+      "workSamples": "Previous Work Samples",
+      "workSamplesDescription": "Upload multiple work samples (PDF, JPG, PNG). Max 5 files, 10MB each.",
+      "responsiblePersonName": "Responsible Person Name",
+      "contactNumber": "Contact Number",
+      "submitButton": "Submit Partner Application",
+      "resetButton": "Reset",
+      "placeholders": {
+        "selectPartnerType": "Select Partner Type",
+        "selectState": "Select a State",
+        "selectCity": "Select a City",
+        "enterNeighborhood": "Enter neighborhood",
+        "enterStreet": "Enter street"
+      },
+      "partnerTypes": {
+        "committee": "Committee",
+        "firm": "Firm",
+        "powerOfAttorney": "Power of Attorney",
+        "company": "Company"
+      },
+      "services": {
+        "manageAdvertisingCampaigns": "Manage Advertising Campaigns",
+        "managingPromotionTeams": "Managing Promotion Teams",
+        "productsAndPos": "Products & POS",
+        "exhibitionsAndEvents": "Exhibitions & Events",
+        "interiorPanels": "Interior Panels",
+        "printingOfAllKinds": "Printing of All Kinds",
+        "creativeDesigns": "Creative Designs"
+      },
+      "validation": {
+        "required": "This field is required"
+      }
+    }
+  },
+  "footer": {
+    "navigation": {
+      "about": "About Us",
+      "services": "Services",
+      "whyAdstation": "Why Adstation",
+      "blog": "Blog",
+      "contact": "Contact Us"
+    },
+    "cta": {
+      "becomePartner": "Become a Partner",
+      "getQuote": "Get a Quote"
+    }
+  }
 }
