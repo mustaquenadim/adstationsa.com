@@ -83,17 +83,15 @@ const useNavigationLinks = (
 const useHeaderStyles = (isScrolled: boolean): HeaderStylesConfig => {
   return useMemo(
     () => ({
-      header: `fixed top-0 left-0 right-0 z-50 px-4 md:px-6 pt-4 pb-4 transition-all duration-300 ${
-        isScrolled ? "bg-black backdrop-blur-sm text-white" : "bg-transparent"
-      }`,
+      header: `fixed top-0 left-0 right-0 z-50 px-4 md:px-6 pt-4 pb-4 transition-all duration-300 ${isScrolled ? "bg-black backdrop-blur-sm text-white" : "bg-transparent"
+        }`,
       navigation: isScrolled
         ? "text-gray-300 hover:text-white hover:border-b-white data-[active]:border-b-primary data-[active]:text-primary"
         : "text-white hover:text-white hover:border-b-white data-[active]:border-b-white data-[active]:text-white",
-      languageSelector: `cursor-pointer rounded-full w-auto border-none bg-transparent text-sm transition-colors duration-300 flex items-center gap-2 max-md:hidden ${
-        isScrolled
-          ? "text-gray-300 hover:text-white hover:bg-gray-800"
-          : "text-white hover:text-primary hover:bg-white/10"
-      }`,
+      languageSelector: `cursor-pointer rounded-full w-auto border-none bg-transparent text-sm transition-colors duration-300 flex items-center gap-2 max-md:hidden ${isScrolled
+        ? "text-gray-300 hover:text-white hover:bg-gray-800"
+        : "text-white hover:text-primary hover:bg-white/10"
+        }`,
     }),
     [isScrolled]
   );
@@ -126,7 +124,7 @@ const DesktopNavigation = ({
           <NavigationMenuLink
             active={pathname === link.href}
             asChild
-            className={`h-full justify-center rounded-none border-y-2 border-transparent py-1.5 font-medium hover:bg-transparent data-[active]:bg-transparent transition-colors duration-300 ${styles}`}
+            className={`h-full justify-center rounded-none border-y-2 border-transparent py-1.5 font-medium hover:bg-transparent data-[active]:bg-transparent data-[active]:hover:bg-transparent data-[active]:focus:bg-transparent focus:bg-transparent focus-visible:bg-transparent transition-colors duration-300 ${styles}`}
           >
             <Link href={link.href}>{link.label}</Link>
           </NavigationMenuLink>
@@ -206,11 +204,10 @@ const MobileNavigation = ({
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className={`block py-3 px-4 rounded-lg text-lg font-medium transition-colors ${
-                      pathname === link.href
-                        ? "bg-primary text-white"
-                        : "text-gray-700 hover:bg-gray-100"
-                    }`}
+                    className={`block py-3 px-4 rounded-lg text-lg font-medium transition-colors ${pathname === link.href
+                      ? "bg-primary text-white"
+                      : "text-gray-700 hover:bg-gray-100"
+                      }`}
                   >
                     {link.label}
                   </Link>
