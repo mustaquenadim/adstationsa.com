@@ -46,9 +46,8 @@ const Two = ({ isRTL }: SectionProps) => {
     <section className="relative w-full h-screen flex items-start md:items-center justify-start overflow-hidden bg-[#8dc73f]">
       {/* Watermark Logo */}
       <div
-        className={`absolute -bottom-10 md:-top-10 z-10 ${
-          isRTL ? "-left-10" : "-right-10"
-        }`}
+        className={`absolute -bottom-10 md:-top-10 z-10 ${isRTL ? "-left-10" : "-right-10"
+          }`}
       >
         <Image
           src="/watermark-logo.svg"
@@ -210,19 +209,9 @@ const Six = ({ isRTL }: SectionProps) => {
   const t = useTranslations("home.section6");
 
   return (
-    <section className="relative w-full h-screen flex items-start md:items-center justify-start overflow-hidden bg-[#fff]">
-      {/* Background Image */}
-      <Image
-        src={isRTL ? "/bg-six-ar.png" : "/bg-six-en.png"}
-        alt="Hero Background"
-        fill
-        quality={90}
-        className="z-0 object-cover"
-        priority
-      />
-
+    <section className="relative w-full min-h-screen md:h-screen flex flex-col md:flex-row items-center md:justify-between overflow-hidden py-10 md:py-0bg-[#d6d6d6]">
       {/* Content */}
-      <div className="relative z-20 text-left rtl:text-right text-dark p-8 max-w-xl space-y-8">
+      <div className="relative z-20 text-left rtl:text-right text-dark p-8 max-w-2xl space-y-8">
         <h2 className="text-4xl md:text-6xl font-medium mb-4 drop-shadow-lg capitalize">
           {t("title")}
         </h2>
@@ -232,11 +221,24 @@ const Six = ({ isRTL }: SectionProps) => {
         <Link href="/services/outdoor-advertising">
           <Button
             size="xl"
-            className="rounded-full bg-white hover:bg-primary/80 text-black font-semibold py-3 px-8 shadow-lg transition"
+            className="rounded-full bg-primary hover:bg-primary/80 text-white font-semibold py-3 px-8 shadow-lg transition"
           >
             {t("cta")}
           </Button>
         </Link>
+      </div>
+
+      {/* Image */}
+      <div
+        className={`m-auto relative w-full h-[32rem] sm:h-[36rem] md:flex-1 md:h-full`}
+      >
+        <Image
+          src="/section-six-img.png"
+          alt="Billboards: All types of outdoor advertising and promotional panels"
+          fill
+          className="object-contain"
+          priority
+        />
       </div>
     </section>
   );
