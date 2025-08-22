@@ -10,6 +10,8 @@ import {
 } from "@/lib/form-data/partner-form-schema";
 import { countries } from "@/lib/form-data/countries";
 import { saudiRegions, saudiCities } from "@/lib/form-data/saudi-locations";
+import { addDocument } from "@/lib/firebase";
+import { generateUniqueFileName, uploadFile } from "@/lib/firebase";
 
 export const usePartnerForm = () => {
   const t = useTranslations("joinUs.form");
@@ -23,14 +25,14 @@ export const usePartnerForm = () => {
     defaultValues: {
       partnerName: "",
       partnerType: "",
-      partnerLogo: "",
+  partnerLogo: "",
       country: "SA",
       state: "",
       city: "",
       neighborhood: "",
       street: "",
       offeredServices: [],
-      workSamples: "",
+  workSamples: "",
       responsiblePersonName: "",
       contactNumber: "",
     },
@@ -76,23 +78,10 @@ export const usePartnerForm = () => {
     [t]
   );
 
-  const onSubmit = (values: FormData) => {
-    // Transform back to original format for backwards compatibility
-    const transformedValues = {
-      "partner-name": values.partnerName,
-      "partner-type": values.partnerType,
-      "partner-logo": values.partnerLogo,
-      country: values.country,
-      state: values.state,
-      city: values.city,
-      neighborhood: values.neighborhood,
-      street: values.street,
-      "offered-services": values.offeredServices,
-      "work-samples": values.workSamples,
-      "responsible-person-name": values.responsiblePersonName,
-      "contact-number": values.contactNumber,
-    };
-    console.log(transformedValues);
+  const onSubmit = async (values: FormData) => {
+    await handlePersist(values);
+    // Reset form after successful submit
+    form.reset();
   };
 
   const onReset = () => {
@@ -113,3 +102,48 @@ export const usePartnerForm = () => {
     onReset,
   };
 };
+
+// Internal: persist to Firestore with optional Storage uploads
+async function handlePersist(values: any) {
+  try {
+    // Prepare file uploads if File objects are present
+    let partnerLogoUrl = typeof values.partnerLogo === 'string' ? values.partnerLogo : '';
+    let workSamplesUrl = typeof values.workSamples === 'string' ? values.workSamples : '';
+
+    if (values.partnerLogo && values.partnerLogo instanceof File) {
+      const unique = generateUniqueFileName(values.partnerLogo.name);
+      const path = `partners/logos/${unique}`;
+      partnerLogoUrl = await uploadFile(values.partnerLogo, path);
+    }
+
+    if (values.workSamples && values.workSamples instanceof File) {
+      const unique = generateUniqueFileName(values.workSamples.name);
+      const path = `partners/work-samples/${unique}`;
+      workSamplesUrl = await uploadFile(values.workSamples, path);
+    }
+
+    const payload = {
+      partnerName: values.partnerName,
+      partnerType: values.partnerType,
+      partnerLogo: partnerLogoUrl,
+      country: values.country,
+      state: values.state,
+      city: values.city,
+      neighborhood: values.neighborhood,
+      street: values.street,
+      offeredServices: values.offeredServices ?? [],
+      workSamples: workSamplesUrl,
+      responsiblePersonName: values.responsiblePersonName,
+      contactNumber: values.contactNumber,
+      status: 'pending',
+      submittedAt: new Date().toISOString(),
+    };
+
+    const id = await addDocument('partners', payload);
+    console.info('Partner saved with id', id);
+    return id;
+  } catch (err) {
+    console.error('Failed to save partner', err);
+    throw err;
+  }
+}

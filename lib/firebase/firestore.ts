@@ -105,6 +105,13 @@ export const addDocument = async <T = DocumentData>(
   return docRef.id;
 };
 
+// Domain-specific helper: save partner
+export const savePartner = async (
+  data: Omit<any, 'id' | 'createdAt' | 'updatedAt'>
+): Promise<string> => {
+  return addDocument('partners', data);
+};
+
 // Update a document
 export const updateDocument = async <T = DocumentData>(
   collectionName: string,

@@ -132,6 +132,7 @@ export default function PartnerRegistrationForm() {
                 className="w-full cursor-pointer rounded-full"
                 type="submit"
                 variant="default"
+                disabled={form.formState.isSubmitting}
               >
                 {t("submitButton")}
               </Button>
@@ -144,6 +145,7 @@ export default function PartnerRegistrationForm() {
                 className="w-full cursor-pointer rounded-full"
                 type="reset"
                 variant="outline"
+                disabled={form.formState.isSubmitting}
               >
                 {t("resetButton")}
               </Button>

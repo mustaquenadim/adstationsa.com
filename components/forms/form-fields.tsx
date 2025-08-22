@@ -20,14 +20,14 @@ import { Control, FieldPath } from "react-hook-form";
 type FormData = {
   partnerName: string;
   partnerType: string;
-  partnerLogo: string;
+  partnerLogo: File | string | null;
   country: string;
   state: string;
   city: string;
   neighborhood: string;
   street: string;
   offeredServices: string[];
-  workSamples: string;
+  workSamples: File | string | null;
   responsiblePersonName: string;
   contactNumber: string;
 };
@@ -87,7 +87,11 @@ export function TextInputField<T extends FieldPath<FormData>>({
                 className="rounded-full"
                 spellCheck={false}
                 data-ms-editor="false"
-                {...field}
+                name={field.name}
+                onBlur={field.onBlur}
+                ref={field.ref}
+                value={typeof field.value === "string" ? field.value : ""}
+                onChange={(e) => field.onChange(e.target.value)}
               />
             </FormControl>
             <FormMessage />
@@ -116,7 +120,18 @@ export function FileInputField<T extends FieldPath<FormData>>({
           <FormLabel className="flex shrink-0">{label}</FormLabel>
           <div className="w-full">
             <FormControl>
-              <Input type="file" className="rounded-full" {...field} />
+              <Input
+                type="file"
+                className="rounded-full"
+                // File inputs should be uncontrolled; don't pass `value`
+                name={field.name}
+                onBlur={field.onBlur}
+                ref={field.ref}
+                onChange={(e) => {
+                  const file = e.target.files?.[0] ?? null;
+                  field.onChange(file);
+                }}
+              />
             </FormControl>
             {description && <FormDescription>{description}</FormDescription>}
             <FormMessage />

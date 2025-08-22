@@ -4,14 +4,15 @@ export const createPartnerFormSchema = (t: (key: string) => string) =>
   z.object({
     partnerName: z.string().min(1, { message: t("validation.required") }),
     partnerType: z.string().min(1, { message: t("validation.required") }),
-    partnerLogo: z.string().default(""),
+  // Accept File | string | null at runtime (UI), will be normalized before persistence
+  partnerLogo: z.any().optional().nullable().default(""),
     country: z.string().min(1, { message: t("validation.required") }),
     state: z.string().min(1, { message: t("validation.required") }),
     city: z.string().min(1, { message: t("validation.required") }),
     neighborhood: z.string().min(1, { message: t("validation.required") }),
     street: z.string().min(1, { message: t("validation.required") }),
     offeredServices: z.array(z.string()).default([]),
-    workSamples: z.string().default(""),
+  workSamples: z.any().optional().nullable().default(""),
     responsiblePersonName: z.string().min(1, { message: t("validation.required") }),
     contactNumber: z.string().min(1, { message: t("validation.required") }),
   });
