@@ -13,6 +13,7 @@ import { countries } from "@/lib/form-data/countries";
 import { saudiRegions, saudiCities } from "@/lib/form-data/saudi-locations";
 import { addDocument } from "@/lib/firebase";
 import { generateUniqueFileName, uploadFile } from "@/lib/firebase";
+import { trackPartnerRegistration, trackFormSubmission } from "@/lib/firebase/analytics";
 
 export const usePartnerForm = () => {
   const t = useTranslations("joinUs.form");
@@ -81,6 +82,10 @@ export const usePartnerForm = () => {
 
   const onSubmit = async (values: FormData) => {
     try {
+      // Track form submission analytics
+      await trackFormSubmission('partner_registration', locale);
+      await trackPartnerRegistration(locale);
+      
       await handlePersist(values);
       // Show success toast
       toast.success(t("toast.success"));

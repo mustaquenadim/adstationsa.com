@@ -16,6 +16,7 @@ import {
   createContactOptions,
   DEFAULT_FORM_VALUES,
 } from "@/lib/form-data/request-quote-form-data";
+import { trackQuoteRequest, trackFormSubmission } from "@/lib/firebase/analytics";
 
 export const useRequestQuoteForm = (onSuccess?: () => void) => {
   const t = useTranslations("header.requestQuoteForm");
@@ -73,6 +74,11 @@ export const useRequestQuoteForm = (onSuccess?: () => void) => {
     
     try {
       console.log("Form submitted:", values);
+      
+      // Track form submission analytics
+      await trackFormSubmission('request_quote', locale);
+      await trackQuoteRequest(values.selectedServices.join(', '), locale);
+      
       // Handle form submission here
       // You can add API call here to submit the form data
       

@@ -14,6 +14,8 @@ import localFont from "next/font/local";
 import "../globals.css";
 import { routing } from "@/i18n/routing";
 import { Toaster } from "@/components/ui/sonner";
+import SimpleFirebaseAnalytics from "@/components/simple-firebase-analytics";
+import DebugFirebaseConfig from "@/components/debug-firebase-config";
 
 const beVietnamPro = Be_Vietnam_Pro({
   variable: "--font-be-vietnam-pro",
@@ -151,6 +153,8 @@ export default async function LocaleLayout({ children, params }: Props) {
           </QuoteDialogProvider>
         </NextIntlClientProvider>
         <Toaster />
+        <SimpleFirebaseAnalytics />
+        <DebugFirebaseConfig />
       </body>
     </html>
   );

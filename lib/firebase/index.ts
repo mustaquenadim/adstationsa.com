@@ -10,6 +10,9 @@ export * from './firestore';
 // Storage utilities
 export * from './storage';
 
+// Analytics utilities
+export * from './analytics';
+
 // Re-export commonly used Firebase types
 export type {
   User,
