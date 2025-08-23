@@ -7,13 +7,13 @@ export const metadata: Metadata = {
 
 export default function DebugPage() {
   return (
-    <div className="min-h-screen bg-gray-50 p-8">
+    <div className="min-h-screen bg-[#8dc73f] py-40 p-8">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold text-gray-900 mb-8">
+        <h1 className="text-3xl font-bold text-white mb-8">
           Firebase Analytics Debug
         </h1>
         <div className="bg-white shadow rounded-lg p-6">
-          <h2 className="text-xl font-semibold text-gray-800 mb-4">
+          <h2 className="text-xl font-semibold text-black mb-4">
             Debug Information
           </h2>
           <p className="text-gray-600 mb-4">
