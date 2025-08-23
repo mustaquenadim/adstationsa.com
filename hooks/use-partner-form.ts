@@ -2,6 +2,7 @@ import { useForm, Resolver } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations, useLocale } from "next-intl";
 import { useEffect, useMemo } from "react";
+import { toast } from "sonner";
 import { z } from "zod";
 import {
   createPartnerFormSchema,
@@ -79,9 +80,17 @@ export const usePartnerForm = () => {
   );
 
   const onSubmit = async (values: FormData) => {
-    await handlePersist(values);
-    // Reset form after successful submit
-    form.reset();
+    try {
+      await handlePersist(values);
+      // Show success toast
+      toast.success(t("toast.success"));
+      // Reset form after successful submit
+      form.reset();
+    } catch (error) {
+      console.error("Partner form submission error:", error);
+      // Show error toast
+      toast.error(t("toast.error"));
+    }
   };
 
   const onReset = () => {

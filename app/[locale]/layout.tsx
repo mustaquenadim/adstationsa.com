@@ -13,6 +13,7 @@ import { Be_Vietnam_Pro } from "next/font/google";
 import localFont from "next/font/local";
 import "../globals.css";
 import { routing } from "@/i18n/routing";
+import { Toaster } from "@/components/ui/sonner";
 
 const beVietnamPro = Be_Vietnam_Pro({
   variable: "--font-be-vietnam-pro",
@@ -149,6 +150,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             <Footer />
           </QuoteDialogProvider>
         </NextIntlClientProvider>
+        <Toaster />
       </body>
     </html>
   );
