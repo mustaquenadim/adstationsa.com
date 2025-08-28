@@ -1,12 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { Be_Vietnam_Pro } from "next/font/google";
 import { useTranslations, useLocale } from "next-intl";
-
-const beVietnamPro = Be_Vietnam_Pro({
-  subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-});
 
 const WhyAdstationPage = () => {
   const t = useTranslations("whyAdstation");
@@ -152,7 +146,9 @@ const WhyAdstationPage = () => {
             {t("advantages.title")}
           </div>
           <h2
-            className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl 2xl:text-[120px] font-semibold text-white ${beVietnamPro.className}`}
+            className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl 2xl:text-[120px] font-semibold text-white ${
+              isRTL ? "font-arabic" : "font-english"
+            }`}
           >
             {t("advantages.brand")}
           </h2>
